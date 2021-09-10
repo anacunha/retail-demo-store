@@ -25,5 +25,5 @@ phases:
       - git clone https://github.com/aws-samples/retail-demo-store
       - cd retail-demo-store/
       - pip install -r generators/requirements.txt
-      - ./stage.sh find-my-brew-us-west-2
-      - ./stage.sh find-my-brew-us-east-1
+      - ./stage.sh find-my-brew-staging-us-west-2
+      - ./stage.sh find-my-brew-staging-us-east-1
