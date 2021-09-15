@@ -5,7 +5,6 @@
       :to="{
         name: 'ProductDetail',
         params: { id: product.id },
-        query: { feature, exp: experimentCorrelationId },
       }"
     >
       <div>
@@ -15,9 +14,6 @@
           <div class="product-name">{{ product.name }}</div>
           <FiveStars></FiveStars>
           <div>{{ formattedPrice }}</div>
-          <div v-if="experiment" class="experiment mt-1 align-items-center text-muted small">
-            <i class="scale-icon fa fa-balance-scale mr-1"></i> {{ experimentDescription }}
-          </div>
         </div>
       </div>
     </router-link>
@@ -30,21 +26,6 @@ import { formatPrice } from '@/util/formatPrice';
 
 import FiveStars from '../../components/FiveStars/FiveStars.vue';
 
-const getFullExperimentType = (type) => {
-  switch (type) {
-    case 'ab':
-      return 'Experiment: A/B';
-    case 'interleaving':
-      return 'Experiment: Interleaved';
-    case 'mab':
-      return 'Experiment: Multi-Armed Bandit';
-    case 'optimizely':
-      return 'Experiment: Optimizely';
-    default:
-      return 'Experiment: Unknown';
-  }
-};
-
 export default {
   name: 'Product',
   components: {
@@ -52,8 +33,6 @@ export default {
   },
   props: {
     product: { type: Object, required: true },
-    experiment: { type: Object, required: false },
-    feature: { type: String, required: true },
   },
 
   computed: {
@@ -62,14 +41,6 @@ export default {
     },
     formattedPrice() {
       return formatPrice(this.product.price);
-    },
-    experimentCorrelationId() {
-      return this.experiment?.correlationId;
-    },
-    experimentDescription() {
-      if (!this.experiment) return null;
-
-      return `${getFullExperimentType(this.experiment.type)}; Variation: ${this.experiment.variationIndex}`;
     },
   },
 };

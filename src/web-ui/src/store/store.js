@@ -9,16 +9,13 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { welcomePageVisited } from './modules/welcomePageVisited/welcomePageVisited';
 import { categories } from './modules/categories/categories';
-import { cart } from './modules/cart/cart';
 import { modal, manageResponsiveModalState } from './modules/modal/modal';
-import { demoWalkthroughShown } from './modules/demoWalkthroughShown/demoWalkthroughShown';
 import { lastVisitedPage } from './modules/lastVisitedPage/lastVisitedPage';
-import { confirmationModal } from './modules/confirmationModal/confirmationModal';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  modules: { welcomePageVisited, categories, cart, modal, demoWalkthroughShown, lastVisitedPage, confirmationModal },
+  modules: { welcomePageVisited, categories, modal, lastVisitedPage },
   state: {
     user: null,
     provisionalUserID: uuidv4(),
@@ -67,8 +64,6 @@ const store = new Vuex.Store({
         'provisionalUserID',
         'sessionEventsRecorded',
         'welcomePageVisited',
-        'cart',
-        'demoWalkthroughShown',
         'lastVisitedPage',
       ],
     }),
