@@ -4,6 +4,7 @@
 import { mapState } from 'vuex';
 
 import { RepositoryFactory } from '@/repositories/RepositoryFactory';
+import { AnalyticsHandler } from '@/analytics/AnalyticsHandler';
 import { capitalize } from '@/util/capitalize';
 import { getProductImageUrl } from '../util/getProductImageUrl';
 
@@ -21,6 +22,9 @@ export const product = {
       if (!this.product) return null;
 
       return getProductImageUrl(this.product);
+    },
+    recordProductViewed() {
+      AnalyticsHandler.productViewed(this.user, this.product);
     },
     readableProductCategory() {
       if (!this.product) return null;
