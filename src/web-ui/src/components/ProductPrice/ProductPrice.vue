@@ -1,11 +1,10 @@
 <template>
   <div >
-    <span class="grey">Price:</span> <b v-bind:class="{discounted: discount}">{{ formattedPrice }}</b> <b v-if="discount">{{ discountedPrice }}</b>
+    <span class="grey">Price:</span> <b>{{ formattedPrice }}</b>
   </div>
 </template>
 
 <script>
-import { discountProductPrice } from '@/util/discountProductPrice';
 import { formatPrice } from '@/util/formatPrice';
 
 export default {
@@ -15,19 +14,11 @@ export default {
       type: Number,
       required: true,
     },
-    discount: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
   },
   computed: {
     formattedPrice() {
       return formatPrice(this.price);
     },
-    discountedPrice() {
-      return formatPrice(discountProductPrice(this.price))
-    }
   },
 };
 </script>

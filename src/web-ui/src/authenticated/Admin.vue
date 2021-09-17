@@ -3,7 +3,7 @@
     <div class="content">
       <div class="container text-left">
         <h1>Admin</h1>
-        
+
         <div class="row">
           <h5>Users</h5>
           <table class="table">
@@ -57,21 +57,6 @@
           </tr>
           </table>
         </div>
-
-        <div class="row">
-          <h2>Orders</h2>
-          <p>
-            {{ orders }}
-          </p>        
-        </div>
-
-        <div class="row">
-          <h2>Carts</h2>
-          <p>
-            {{ carts }}
-          </p>        
-        </div>
-
       </div>
     </div>
   </Layout>
@@ -79,13 +64,9 @@
 
 <script>
 import { RepositoryFactory } from '@/repositories/RepositoryFactory'
-
 import Layout from '@/components/Layout/Layout'
-
 const ProductsRepository = RepositoryFactory.get('products')
 const UsersRepository = RepositoryFactory.get('users')
-const OrdersRepository = RepositoryFactory.get('orders')
-const CartsRepository = RepositoryFactory.get('carts')
 
 export default {
   name: 'Admin',
@@ -98,16 +79,12 @@ export default {
       users: [],
       products: [],
       categories: [],
-      orders: [],
-      carts: []
     }
   },
   created () {
     this.getUsers();
     this.getProducts();
     this.getCategories();
-    this.getOrders();
-    this.getCarts();
   },
   methods: {
     async getUsers (){
@@ -121,15 +98,8 @@ export default {
     async getCategories (){
       const { data } = await ProductsRepository.getCategories()
       this.categories = data
-    },    
-    async getOrders (){
-      const { data } = await OrdersRepository.get()
-      this.orders = data
-    },    
-    async getCarts (){
-      const { data } = await CartsRepository.get()
-      this.carts = data
-    }
+    },
   }
 }
 </script>
+	

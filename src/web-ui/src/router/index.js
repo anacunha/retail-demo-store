@@ -5,19 +5,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Main from '@/public/Main.vue'
 import ProductDetail from '@/public/ProductDetail.vue'
-import CategoryDetail from '@/public/CategoryDetail.vue'
-import Live from '@/public/Live.vue'
-import Help from '@/public/Help.vue'
-import Cart from '@/public/Cart.vue'
 import AuthScreen from '@/public/Auth.vue'
-import Checkout from '@/public/Checkout.vue'
 import Welcome from '@/public/Welcome.vue'
-import Orders from '@/authenticated/Orders.vue'
-import Admin from '@/authenticated/Admin.vue'
 import ShopperSelectPage from '@/authenticated/ShopperSelectPage'
-
-import Location from "@/public/Location";
-import Collections from "@/public/Collections";
 
 import { AmplifyEventBus } from 'aws-amplify-vue';
 import { Auth, Logger, I18n, Analytics, Interactions } from 'aws-amplify';
@@ -205,50 +195,7 @@ const router = new Router({
       path: '/product/:id',
       name: 'ProductDetail',
       component: ProductDetail,
-      props: route => ({ discount: route.query.di === "true" || route.query.di === true}),
       meta: { requiresAuth: false}
-    },
-    {
-      path: '/category/:id',
-      name: 'CategoryDetail',
-      component: CategoryDetail,
-      meta: { requiresAuth: false}
-    },
-    {
-      path: '/live',
-      name: 'Live',
-      component: Live,
-      meta: { requiresAuth: false}
-    },
-    {
-      path: '/help',
-      name: 'Help',
-      component: Help,
-      meta: { requiresAuth: false}
-    },
-    {
-      path: '/orders',
-      name: 'Orders',
-      component: Orders,
-      meta: { requiresAuth: true}
-    },
-    {
-      path: '/cart',
-      name: 'Cart',
-      component: Cart,
-      meta: { requiresAuth: false}
-    },
-    {
-      path: '/checkout',
-      name: 'Checkout',
-      component: Checkout,
-      meta: { requiresAuth: false}
-    },
-    {
-      path: '/admin',
-      name: 'Admin',
-      component: Admin,
-      meta: { requiresAuth: true}
     },
     {
       path: '/auth',
@@ -261,18 +208,6 @@ const router = new Router({
       component: ShopperSelectPage,
       meta: { requiresAuth: true },
     },
-    {
-      path: '/location',
-      name: 'Location',
-      component: Location,
-      meta: { requiresAuth: true}
-    },
-    {
-      path: '/collections',
-      name: 'Collections',
-      component: Collections,
-      meta: { requiresAuth: true}
-    }
   ],
   scrollBehavior (_to, _from, savedPosition) {
     if (savedPosition) {

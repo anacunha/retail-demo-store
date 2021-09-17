@@ -2,10 +2,6 @@
   <section class="mb-5">
     <div class="mb-3 text-left">
       <h2 class="recommendations-heading"><slot name="heading"></slot></h2>
-      <div v-if="experiment" class="recommendation-explanation text-muted small">
-        <i class="fa fa-balance-scale px-1"></i>
-        {{ experiment }}
-      </div>
     </div>
 
     <div class="row">
@@ -14,7 +10,6 @@
       <ProductCarousel
         v-else
         :recommendedProducts="recommendedProducts"
-        :feature="feature"
         class="col"
       ></ProductCarousel>
     </div>
@@ -28,16 +23,8 @@ import ProductCarousel from './ProductCarousel/ProductCarousel';
 export default {
   name: 'RecommendedProductsSection',
   props: {
-    experiment: {
-      type: String,
-      required: false,
-    },
     recommendedProducts: {
       type: Array,
-      required: false,
-    },
-    feature: {
-      type: String,
       required: false,
     },
   },

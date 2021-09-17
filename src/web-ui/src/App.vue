@@ -5,19 +5,9 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 
 export default {
   name: 'app',
-  methods: {
-    ...mapActions(['getCategories','getCart',]),
-  },
-  created() {
-    this.getCategories();
-
-    this.getCart();
-
-  },
 };
 </script>
 <style>

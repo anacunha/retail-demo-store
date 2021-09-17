@@ -23,24 +23,19 @@ export const product = {
 
       return getProductImageUrl(this.product);
     },
+    recordProductViewed() {
+      AnalyticsHandler.productViewed(this.user, this.product);
+    },
     readableProductCategory() {
       if (!this.product) return null;
 
       return capitalize(this.product.category);
-    },
-    outOfStock() {
-      if (!this.product) return false;
-
-      return this.product.current_stock === 0;
     },
   },
   methods: {
     async getProductByID(product_id) {
       const { data } = await ProductsRepository.getProduct(product_id);
       this.product = data;
-    },
-    recordProductViewed(feature, exp, discount) {
-      AnalyticsHandler.productViewed(this.user, this.product, feature, exp, discount);
     },
   },
 };

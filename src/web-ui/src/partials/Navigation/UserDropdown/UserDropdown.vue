@@ -32,13 +32,6 @@
 
       <div class="dropdown-divider"></div>
 
-      <router-link to="/orders" class="dropdown-item">
-        <div class="dropdown-item-title">Orders</div>
-        <div>View orders placed by the current shopper profile</div>
-      </router-link>
-
-      <div class="dropdown-divider"></div>
-
       <button class="dropdown-item dropdown-item-title" @click="signOut">Sign Out</button>
     </div>
   </div>
