@@ -321,7 +321,7 @@ export const AnalyticsHandler = {
                 userId: user.id,
                 userAttributes: {
                     WebsiteCartURL : [process.env.VUE_APP_WEB_ROOT_URL + '#/cart'],
-                    WebsiteLogoImageURL : [process.env.VUE_APP_WEB_ROOT_URL + '/RDS_logo_white.svg'],
+                    WebsiteLogoImageURL : [process.env.VUE_APP_WEB_ROOT_URL + '/fmb-logo-white.svg'],
                     WebsitePinpointImageURL : [process.env.VUE_APP_WEB_ROOT_URL + '/icon_Pinpoint_orange.svg'],
                     ShoppingCartItemImageURL:  productImages,
                     ShoppingCartItemTitle :  productTitles,
