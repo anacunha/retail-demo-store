@@ -23,7 +23,7 @@
       </section>
 
       <RecommendedProductsSection :recommendedProducts="featuredProducts">
-        <template #heading>Featured products</template>
+        <template #heading>Featured beers</template>
       </RecommendedProductsSection>
     </div>
   </Layout>
@@ -103,8 +103,8 @@ export default {
 
         if (personalizeRecipe) {
           this.userRecommendationsTitle = this.personalizeRecommendationsForVisitor
-            ? 'Inspired by your shopping trends'
-            : 'Trending products';
+            ? 'Inspired by your beer reviews'
+            : 'Trending beers';
         }
       }
 
