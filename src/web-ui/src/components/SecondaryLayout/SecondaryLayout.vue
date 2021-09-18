@@ -2,7 +2,7 @@
   <div>
     <div class="banner mb-5 py-2">
       <div class="container d-flex align-items-center">
-        <img src="/RDS_logo_white.svg" alt="logo" class="logo" />
+        <div class='logo-container'><img src="/fmb-logo-white.svg" alt="logo" class="img-fluid" /></div>
         <PoweredByAWS class="powered-by-logo"></PoweredByAWS>
       </div>
     </div>
@@ -30,14 +30,14 @@ export default {
   background: var(--aws-deep-squid-ink);
 }
 
-.logo {
-  width: 120px;
-}
-
 .powered-by-logo {
   /* fine-tune spacing to make logo appear more centered */
   margin-top: 15px;
   height: 45px;
   fill: var(--white);
+}
+
+.logo-container {
+  width: 100px;
 }
 </style>
