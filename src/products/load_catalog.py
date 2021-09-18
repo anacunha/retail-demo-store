@@ -13,7 +13,7 @@ You can override the file location on the command-line.
 
 Usage:
 
-python load_catalog.py --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products_file PRODUCTS_FILE] [--truncate]
+python load_catalog.py --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products-file PRODUCTS_FILE] [--truncate]
 
 Where:
 CATEGORIES_TABLE_NAME is the DynamoDB table name for categories
@@ -68,27 +68,27 @@ if __name__=="__main__":
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'h', ['categories-table-name=', 'categories-file=', 'products-table-name=', 'products-file=', 'truncate'])
     except getopt.GetoptError:
-        print(f'Usage: {sys.argv[0]} --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products_file PRODUCTS_FILE] [--truncate]')
+        print(f'Usage: {sys.argv[0]} --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products-file PRODUCTS_FILE] [--truncate]')
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-h':
-            print(f'Usage: {sys.argv[0]} --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products_file PRODUCTS_FILE] [--truncate]')
+            print(f'Usage: {sys.argv[0]} --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products-file PRODUCTS_FILE] [--truncate]')
             sys.exit()
         elif opt in ('--categories-table-name'):
             categories_table_name = arg
-        elif opt in ('-categories-file-name'):
+        elif opt in ('--categories-file'):
             categories_file = arg
         elif opt in ('--products-table-name'):
             products_table_name = arg
-        elif opt in ('--products-file-name'):
+        elif opt in ('--products-file'):
             products_file = arg
         elif opt in ('--truncate'):
             truncate = True
 
     if not categories_table_name and not products_table_name:
         print('--categories-table-name and/or --products-table-name are required')
-        print(f'Usage: {sys.argv[0]} --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products_file PRODUCTS_FILE] [--truncate]')
+        print(f'Usage: {sys.argv[0]} --categories-table-name CATEGORIES_TABLE_NAME [--categories-file CATEGORIES_FILE] --products-table-name PRODUCTS_TABLE_NAME [--products-file PRODUCTS_FILE] [--truncate]')
         sys.exit(1)
 
     dynamodb = boto3.resource('dynamodb')
@@ -124,6 +124,7 @@ if __name__=="__main__":
 
         print(f'Updating products in table {products_table_name}')
         for product in products:
+            product['id'] = str(product['id'])
             if product.get('price'):
                 product['price'] = Decimal(str(product['price']))
             if product.get('featured'):
