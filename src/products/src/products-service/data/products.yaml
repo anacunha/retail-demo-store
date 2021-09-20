@@ -1,210 +1,280 @@
 - id: 1
   current_stock: 15
   name: Honey Dew
-  category: Golden Ale
+  category: ales
   description: Fullers Brewery
   price: 3.49
+  style:
+  gender_affinity:
 - id: 2
   current_stock: 15
   name: Big Daddy IPA
-  category: IPA - American
+  category: ipas
   description: IPA - American
   price: 3.49
+  style:
+  gender_affinity:
 - id: 3
   current_stock: 15
   name: Indica
-  category: IPA - English
+  category: ipas
   description: Cervejaria Colorado
   price: 3.49
+  style:
+  gender_affinity:
 - id: 4
   current_stock: 15
   name: 3 Lobos Pele Vermelha
-  category: IPA - American
+  category: ipas
   description: Cervejaria Backer
   price: 3.49
+  style:
+  gender_affinity:
 - id: 5
   current_stock: 15
   name: Waggle Dance
-  category: Honey Beer
+  category: wheats
   description: Eagle Brewery (formerly Charles Wells)
   price: 3.49
+  style:
+  gender_affinity:
 - id: 6
   current_stock: 15
   name: Trooper
-  category: Extra Special / Strong Bitter
+  category: ipas
   description: Robinsons Brewery
   price: 3.49
+  style:
+  gender_affinity:
 - id: 7
   current_stock: 15
   name: Cauim
-  category: Pilsner - Other
+  category: ales
   description: Cervejaria Colorado
   price: 3.49
+  style:
+  gender_affinity:
 - id: 8
   current_stock: 15
   name: Red Ale
-  category: Red Ale - Irish
+  category: ales
   description: Way Beer
   price: 3.49
+  style:
+  gender_affinity:
 - id: 9
   current_stock: 15
   name: Cream Porter
-  category: Porter - Other
+  category: porters
   description: Way Beer
   price: 3.49
+  style:
+  gender_affinity:
 - id: 10
   current_stock: 15
   name: Wild River
-  category: Pale Ale - American
+  category: ales
   description: Fullers Brewery
   price: 3.49
+  style:
+  gender_affinity:
 - id: 11
   current_stock: 15
   name: Cristal
-  category: Pilsner - Other
+  category: ales
   description: Baden Baden
   price: 3.49
+  style:
+  gender_affinity:
 - id: 12
   current_stock: 15
   name: Belgian Ale
-  category: Belgian Strong Golden Ale
+  category: wheats
   description: Dado Bier
   price: 3.49
+  style:
+  gender_affinity:
 - id: 13
   current_stock: 15
   name: 1000 IBU
-  category: IPA - Imperial / Double
+  category: ipas
   description: Cervejaria Invicta
   price: 3.49
+  style:
+  gender_affinity:
 - id: 14
   current_stock: 15
   name: Smoked Porter
-  category: Smoked Beer
+  category: ales
   description: Dama Bier
   price: 3.49
+  style:
+  gender_affinity:
 - id: 15
   current_stock: 15
   name: Vedett Extra White
-  category: Wheat Beer - Witbier
+  category: wheats
   description: Duvel Moortgat
   price: 3.49
+  style:
+  gender_affinity:
 - id: 16
   current_stock: 15
   name: Baca
-  category: Lager - American Amber / Red
+  category: lagers
   description: Cerveja Coruja
   price: 3.49
+  style:
+  gender_affinity:
 - id: 17
   current_stock: 15
   name: Frosty Bison
-  category: IPA - American
+  category: ipas
   description: Cervejaria Eisenbahn
   price: 3.49
+  style:
+  gender_affinity:
 - id: 18
   current_stock: 15
   name: Serramalte
-  category: Lager - Pale
+  category: lagers
   description: AmBev
   price: 3.49
+  style:
+  gender_affinity:
 - id: 19
   current_stock: 15
   name: Bohemian Pilsener
-  category: Pilsner - Other
+  category: ales
   description: Cerveza Patagonia
   price: 3.49
+  style:
+  gender_affinity:
 - id: 20
   current_stock: 15
   name: Appia
-  category: Hefeweizen
+  category: wheats
   description: Cervejaria Colorado
   price: 3.49
+  style:
+  gender_affinity:
 - id: 21
   current_stock: 15
   name: Escondido Weiss
-  category: Hefeweizen
+  category: wheats
   description: Boteco Colarinho
   price: 3.49
+  style:
+  gender_affinity:
 - id: 22
   current_stock: 15
   name: Red Rocks Red Ale
-  category: Red Ale - American Amber / Red
+  category: ales
   description: Rock Bottom Restaurant & Brewery
   price: 3.49
+  style:
+  gender_affinity:
 - id: 23
   current_stock: 15
   name: Summer Blonde Honey Ale
-  category: Blonde Ale
+  category: ales
   description: Rock Bottom Restaurant & Brewery
   price: 3.49
+  style:
+  gender_affinity:
 - id: 24
   current_stock: 15
   name: 60 Minute IPA
-  category: IPA - American
+  category: ipas
   description: Dogfish Head Craft Brewery
   price: 3.49
+  style:
+  gender_affinity:
 - id: 25
   current_stock: 15
   name: Big Eddy Imperial IPA
-  category: IPA - Imperial / Double
+  category: ipas
   description: Jacob Leinenkugel Brewing Company
   price: 3.49
+  style:
+  gender_affinity:
 - id: 26
   current_stock: 15
   name: Sour Bikini
-  category: Sour - Other
+  category: sours
   description: Evil Twin Brewing
   price: 3.49
+  style:
+  gender_affinity:
 - id: 27
   current_stock: 15
   name: Anchor Steam Beer
-  category: California Common
+  category: sours
   description: Anchor Brewing Company
   price: 3.49
+  style:
+  gender_affinity:
 - id: 28
   current_stock: 15
   name: Brooklyn Sorachi Ace
-  category: Farmhouse Ale - Saison
+  category: ales
   description: Brooklyn Brewery
   price: 3.49
+  style:
+  gender_affinity:
 - id: 29
   current_stock: 15
   name: Hugh Malone
-  category: IPA - Belgian
+  category: ipas
   description: Allagash Brewing Company
   price: 3.49
+  style:
+  gender_affinity:
 - id: 30
   current_stock: 15
   name: Raspberry
-  category: Hefeweizen
+  category: meads
   description: UFO Beer
   price: 3.49
+  style:
+  gender_affinity:
 - id: 31
   current_stock: 15
   name: Samuel Adams Black Harbor Stout
-  category: Stout - Imperial / Double
+  category: stouts
   description: Boston Beer Company
   price: 3.49
+  style:
+  gender_affinity:
 - id: 32
   current_stock: 15
   name: Tricerahops
-  category: IPA - Imperial / Double
+  category: ipas
   description: Ninkasi Brewing Company
   price: 3.49
+  style:
+  gender_affinity:
 - id: 33
   current_stock: 15
   name: Islander IPA
-  category: IPA - American
+  category: ipas
   description: Coronado Brewing Company
   price: 3.49
+  style:
+  gender_affinity:
 - id: 34
   current_stock: 15
   name: Green Bullet
-  category: IPA - Triple
+  category: ciders
   description: Green Flash Brewing Company
   price: 3.49
+  style:
+  gender_affinity:
 - id: 35
   current_stock: 15
   name: Harpoon Dark
-  category: Lager - Munich Dunkel
+  category: lagers
   description: Harpoon Brewery
   price: 3.49
+  style:
+  gender_affinity:
