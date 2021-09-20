@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="justify-content-center d-flex align-items-center">
-      <div class="rds">Retail Demo Store</div>
+      <div class="rds">Find My Brew</div>
       <div class="separator mx-2" aria-hidden></div>
       <PoweredByAWS class="img"></PoweredByAWS>
     </div>
