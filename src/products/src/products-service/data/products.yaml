@@ -1,210 +1,2275 @@
-- id: 1
-  current_stock: 15
-  name: Honey Dew
-  category: Golden Ale
-  description: Fullers Brewery
-  price: 3.49
-- id: 2
-  current_stock: 15
-  name: Big Daddy IPA
-  category: IPA - American
-  description: IPA - American
-  price: 3.49
-- id: 3
-  current_stock: 15
-  name: Indica
-  category: IPA - English
-  description: Cervejaria Colorado
-  price: 3.49
-- id: 4
-  current_stock: 15
-  name: 3 Lobos Pele Vermelha
-  category: IPA - American
-  description: Cervejaria Backer
-  price: 3.49
-- id: 5
-  current_stock: 15
-  name: Waggle Dance
-  category: Honey Beer
-  description: Eagle Brewery (formerly Charles Wells)
-  price: 3.49
-- id: 6
-  current_stock: 15
-  name: Trooper
-  category: Extra Special / Strong Bitter
-  description: Robinsons Brewery
-  price: 3.49
-- id: 7
-  current_stock: 15
-  name: Cauim
-  category: Pilsner - Other
-  description: Cervejaria Colorado
-  price: 3.49
-- id: 8
-  current_stock: 15
-  name: Red Ale
-  category: Red Ale - Irish
-  description: Way Beer
-  price: 3.49
-- id: 9
-  current_stock: 15
-  name: Cream Porter
-  category: Porter - Other
-  description: Way Beer
-  price: 3.49
-- id: 10
-  current_stock: 15
-  name: Wild River
-  category: Pale Ale - American
-  description: Fullers Brewery
-  price: 3.49
-- id: 11
-  current_stock: 15
-  name: Cristal
-  category: Pilsner - Other
-  description: Baden Baden
-  price: 3.49
-- id: 12
-  current_stock: 15
-  name: Belgian Ale
-  category: Belgian Strong Golden Ale
-  description: Dado Bier
-  price: 3.49
-- id: 13
-  current_stock: 15
-  name: 1000 IBU
-  category: IPA - Imperial / Double
-  description: Cervejaria Invicta
-  price: 3.49
-- id: 14
-  current_stock: 15
-  name: Smoked Porter
-  category: Smoked Beer
-  description: Dama Bier
-  price: 3.49
-- id: 15
-  current_stock: 15
-  name: Vedett Extra White
-  category: Wheat Beer - Witbier
-  description: Duvel Moortgat
-  price: 3.49
-- id: 16
-  current_stock: 15
-  name: Baca
-  category: Lager - American Amber / Red
-  description: Cerveja Coruja
-  price: 3.49
-- id: 17
-  current_stock: 15
-  name: Frosty Bison
-  category: IPA - American
-  description: Cervejaria Eisenbahn
-  price: 3.49
-- id: 18
-  current_stock: 15
-  name: Serramalte
-  category: Lager - Pale
-  description: AmBev
-  price: 3.49
-- id: 19
-  current_stock: 15
-  name: Bohemian Pilsener
-  category: Pilsner - Other
-  description: Cerveza Patagonia
-  price: 3.49
-- id: 20
-  current_stock: 15
-  name: Appia
-  category: Hefeweizen
-  description: Cervejaria Colorado
-  price: 3.49
-- id: 21
-  current_stock: 15
-  name: Escondido Weiss
-  category: Hefeweizen
-  description: Boteco Colarinho
-  price: 3.49
-- id: 22
-  current_stock: 15
-  name: Red Rocks Red Ale
-  category: Red Ale - American Amber / Red
-  description: Rock Bottom Restaurant & Brewery
-  price: 3.49
-- id: 23
-  current_stock: 15
-  name: Summer Blonde Honey Ale
-  category: Blonde Ale
-  description: Rock Bottom Restaurant & Brewery
-  price: 3.49
-- id: 24
-  current_stock: 15
-  name: 60 Minute IPA
-  category: IPA - American
-  description: Dogfish Head Craft Brewery
-  price: 3.49
-- id: 25
-  current_stock: 15
-  name: Big Eddy Imperial IPA
-  category: IPA - Imperial / Double
-  description: Jacob Leinenkugel Brewing Company
-  price: 3.49
-- id: 26
-  current_stock: 15
-  name: Sour Bikini
-  category: Sour - Other
-  description: Evil Twin Brewing
-  price: 3.49
-- id: 27
-  current_stock: 15
-  name: Anchor Steam Beer
-  category: California Common
-  description: Anchor Brewing Company
-  price: 3.49
-- id: 28
-  current_stock: 15
-  name: Brooklyn Sorachi Ace
-  category: Farmhouse Ale - Saison
-  description: Brooklyn Brewery
-  price: 3.49
-- id: 29
-  current_stock: 15
-  name: Hugh Malone
-  category: IPA - Belgian
-  description: Allagash Brewing Company
-  price: 3.49
-- id: 30
-  current_stock: 15
-  name: Raspberry
-  category: Hefeweizen
-  description: UFO Beer
-  price: 3.49
-- id: 31
-  current_stock: 15
-  name: Samuel Adams Black Harbor Stout
-  category: Stout - Imperial / Double
-  description: Boston Beer Company
-  price: 3.49
-- id: 32
-  current_stock: 15
-  name: Tricerahops
-  category: IPA - Imperial / Double
-  description: Ninkasi Brewing Company
-  price: 3.49
-- id: 33
-  current_stock: 15
-  name: Islander IPA
-  category: IPA - American
-  description: Coronado Brewing Company
-  price: 3.49
-- id: 34
-  current_stock: 15
-  name: Green Bullet
-  category: IPA - Triple
-  description: Green Flash Brewing Company
-  price: 3.49
-- id: 35
-  current_stock: 15
-  name: Harpoon Dark
-  category: Lager - Munich Dunkel
-  description: Harpoon Brewery
-  price: 3.49
+- id: 3e2c3c68-314c-4da8-a409-02909da91f60
+  name: Atomic Duck
+  brewery: Able Baker Brewing Company
+  category: ipa
+  style: IPA - American
+  description: Strong hop character backed up by a mild but noticeable malt backbone.
+    Dry hopped with a creative blend of hops designed to yield notes of citrus, tropical
+    fruit, and pine. This beer is named after our mascot and brand ambassador, THE
+    ATOMIC DUCK, and his mythology is the inspiration for this ale.
+  abv: 7.0
+  ibu: 88
+- id: 957312a2-a2a0-4f25-94d4-19bbc5559f0f
+  name: Two Hearted Ale
+  brewery: Bell's Brewery
+  category: ipa
+  style: IPA - American
+  description: Brewed with 100% Centennial hops from the Pacific Northwest and named
+    after the Two Hearted River in Michigan’s Upper Peninsula, our American IPA is
+    bursting with hop aromas ranging from pine to grapefruit from massive hop additions
+    in both the kettle and the fermenter. Perfectly balanced with a malt backbone
+    and combined with the signature fruity aromas of Bell's house yeast, Two Hearted®
+    is remarkably drinkable and well suited for adventures everywhere.
+  abv: 7.0
+  ibu: 60
+- id: 791dfa7d-5d14-4e58-8153-34403247b479
+  name: Workhorse IPA
+  brewery: Laurelwood Brewing Co.
+  category: ipa
+  style: IPA - American
+  description: Workhorse, our biggest seller in the pubs, is an extremely well balanced
+    and super flavorful IPA brewed in the West Coast style. The over-the-top hop aroma
+    comes from the heavy-handed dose of hops in the kettle, hop back and multiple
+    dry hop additions. A slightly sweet finish helps to balance the hop bitterness
+    and creates and ale that is big on flavor yet remains highly drinkable.
+  abv: 6.7
+  ibu: 80
+- id: 1fd0e98b-e116-4abb-98a7-dafb8869c36a
+  name: Disco Ninja
+  brewery: Revision Brewing Company
+  category: ipa
+  style: IPA - New England
+  description: It’s a simple universal fact that ninjas are badass. You know what
+    else is badass? Revision beer. Our buddies at Shoe Tree Brewing kicked around
+    ideas with us to develop this tasty, tantalizing, karate chop in your freaking
+    mouth. Kaleidoscopic nunchuck hits to the dome with Citra®, Galaxy®, Mosaic® and
+    Amarillo®. Stealthily slaying your taste buds, one sip at a time.
+  abv: 7.0
+  ibu: 40
+- id: c8ae25ae-3541-4e6b-a535-9e298034649c
+  name: Return of the Citra Rye
+  brewery: Astronomy Aleworks
+  category: ipa
+  style: IPA - Rye
+  description: A Rye Citra IPA that is dank and delicious.
+  abv: 6.7
+  ibu: 70
+- id: 3ac17f7a-64b9-4319-aa5c-23fb2b8e4abd
+  name: HopAtomic
+  brewery: ' Lovelady Brewing Company'
+  category: ipa
+  style: IPA - Double
+  description: Featuring aromas of tropical fruit (Citra and Cashmere) and a crisp,
+    balanced finish. A Taproom favorite!
+  abv: 8.2
+  ibu: 75
+- id: 4f032045-fca0-4349-9ad8-a8b3c4381cbf
+  name: Sublimely Self-Righteous Black IPA
+  brewery: Stone Brewing
+  category: ipa
+  style: Black IPA
+  description: Stone Sublimely Self-Righteous Black IPA graced our year-round lineup
+    for a few years before its retirement in 2015. Since then, nearly every single
+    day, we receive multiple emails, phone calls and social media comments from diehard
+    fans of this hoppy and dark delicacy, pleading, begging and sometimes demanding
+    us to bring it back. (Seriously, we tried to add them all up and it was easily
+    into the thousands.) Because you can't keep a great beer permanently retired,
+    it's made a few cameo appearances in our Stone Mixed Packs as well as on draft
+    at our Tap Rooms and Bistros over the years. But now it's back nationwide on its
+    own in all its glory. Original recipe. Original artwork.
+  abv: 8.7
+  ibu: 90
+- id: d59312b6-d13a-46d1-bdbd-18e748816d2e
+  name: Thirsty Thurtle
+  brewery: HUDL Brewing Company
+  category: pale-ale
+  style: Pale Ale - American
+  description: We are proud to participate in Ales for ALS™ this summer, a program
+    that raises money for ALS research at the ALS Therapy Development Institute (ALS
+    TDI) in Cambridge, MA. Peach, Apricot and Citrus notes lead you into subtle balanced
+    malt bill that provides a bit of biscuit character in the finish, Then we Double
+    Dry Hopped it, using a blend of hops donated by B.T. Loftus Ranches and YCH Hops
+    (HBC 630, Simcoe, Ekuanot, Citra, Mosaic, Ahtanum, Loral and Sabro). The Thirsty
+    Thurtle Pale Ale is Crisp, Clean and Refreshing. Come on in and help us put an
+    end to ALS. We are donating $1 from each pint the ALS TDI.
+  abv: 5.5
+  ibu: 25
+- id: f7a319cc-6ce4-46e6-9062-984a460a94c1
+  name: San Diego Pale Ale .394
+  brewery: AleSmith Brewing Company
+  category: pale-ale
+  style: Pale Ale - American
+  description: In early 2014, Tony Gwynn’s team approached AleSmith to create a distinctive
+    beer for the baseball legend. A meeting was called at the Gwynn household, which
+    included a sampling of AleSmith beers to identify Tony’s preferences. He wanted
+    the beer to be “light with a kick” which he elaborated further to mean full of
+    hop character and light in body and color. The result of the Gwynn family’s feedback
+    on test batches rendered a golden pale ale full of American hop flavor and aroma,
+    with a subdued bitterness and a malty sweet finish. AleSmith San Diego Pale Ale
+    .394 pays tribute to the city that Tony loved and the career-high batting average
+    that he achieved in ‘94. Discover what happens when a Hall of Fame perfectionist
+    crafts a beer with a world-class brewery. A portion of the proceeds will go to
+    the Tony and Alicia Gwynn Foundation (TAG).
+  abv: 6.0
+  ibu: 13
+- id: 72079edd-ef8e-44fa-964e-18a613409023
+  name: Mexico Surf Trip
+  brewery: Pizza Port Brewing Company
+  category: lager
+  style: Lager - Pale
+  description: Crisp and refreshing Mexican-style lager.
+  abv: 4.8
+  ibu: 10
+- id: 4582766c-b65b-4310-9906-35e5820027ae
+  name: Oskar's Lager
+  brewery: Oskar Blues Brewery
+  category: lager
+  style: Lager - Pale
+  description: Oskar’s Lager is the kind of beer Oskar Blues brewers always wanted
+    to drink but couldn’t find regularly on draft in our taprooms or available in
+    cans to take on weekend adventures. Using German lager techniques honed for the
+    Slow Chill Lager Series and a handful of collaborations with other craft breweries,
+    Oskar Blues brewers developed an ultra-crisp, smooth lager with depth of flavor
+    and low ABV, allowing for day-long sessioning.
+  abv: 4.2
+- id: a2207aa9-d36b-4e90-affb-f297f0be8ef1
+  name: Apricot Hefeweizen
+  brewery: Wasatch Brewery
+  category: wheat
+  style: Hefeweizen
+  description: This smooth and unfiltered fruited hefeweizen has a beautiful apricot
+    nose and a refreshing, slightly tart finish. The bounty of the orchard is now
+    portable.
+  abv: 4.8
+  ibu: 9
+- id: db2fc1be-a9a4-4e23-9ea7-fe85c473dbf0
+  name: Tailwagger Wheat
+  brewery: Big Dog's Brewing Company
+  category: wheat
+  style: Hefeweizen
+  description: Authentic Bavarian-style Hefeweizen, possessing strong banana & clove
+    aroma and flavor as a result of special German yeast.
+  abv: 4.9
+- id: 8eaf9fd5-8b6a-4b93-ae95-200bc77145ff
+  name: I Love NV
+  brewery: Bad Beat Brewing
+  category: lager
+  style: Lager - Amber
+  description: Nevada (Ne-va-duh…not Ne-vah-duh) is a special place and only special
+    beer will do it justice! We absolutely were not going to brew a macro industrial
+    lager knockoff and then expect you to be ok with that. We are a craft brewery.
+    We take that seriously. We love Nevada, and we take that seriously too! Nevada
+    is incredibly diverse… in lifestyle, people, weather, and overall culture. That
+    makes crafting a beer to embody it quite difficult. However, at Bad Beat, we do
+    not shy away from a challenge! Thus, we proudly present to you this gorgeous Amber
+    lager. It’s a little hoppy, a little malty, a lot crisp, and a lot more crushable!
+    Exquisitely balanced with biscuit and caramelized sugar malt flavors against floral
+    and citrus hops. Easy, flavorful, and elegantly nuanced. We love Nevada!
+  abv: 5.1
+- id: 6983a80e-dfa8-4d40-89e5-836229963da1
+  name: Maduro Brown Ale
+  brewery: Cigar City Brewing
+  category: brown-ale
+  style: Brown Ale - English
+  description: Among the darkest colored and most complex cigars made in Tampa’s Ybor
+    City is the maduro, made with an overripe wrapper and exhibiting chocolaty and
+    earthy flavors. We draw inspiration from these sophisticated cigars and from Tampa’s
+    cigar-making history with Maduro Brown Ale, a Northern English Brown Ale brewed
+    with flaked oats. Full in body and silky on the palate, Maduro Brown Ale’s chocolate
+    and espresso notes are rounded out by toffee-like qualities and a light, woody
+    hop presence. Enjoy Maduro Brown Ale with chicharrones, ropa vieja, or a fine
+    hand-rolled cigar.
+  abv: 5.5
+  ibu: 25
+- id: 9b62a3c0-d9d8-4717-b610-e35a05b6f5ab
+  name: Polygamy Nitro Porter
+  brewery: Wasatch Brewery
+  category: porter
+  style: Porter - American
+  description: She's on Nitro! Meet the sister-wife of our classic brew. This nitrogenated
+    version is as chocolatey and easy-drinkin' as the original but even softer and
+    creamier. It's ok to love them both.
+  abv: 6.0
+  ibu: 30
+- id: 35ae8bff-7408-4407-9e08-8a8424277bc8
+  name: ¡Viva La Beaver!
+  brewery: Belching Beaver Brewery
+  category: stout
+  style: Stout - Milk
+  description: Viva La Beaver is loaded with notes of creamy peanut butter, cinnamon
+    and coffee. This decadent milk stout is the perfect dessert beer to finish off
+    your meal, and is our highest rated beer, receiving numerous Gold and Silver medals.
+    Sink your teeth into this liquid chocolate treat.
+  abv: 7.5
+  ibu: 28
+- id: 7a04fede-83cc-456a-a919-dddf2c08ab7c
+  name: Tank 7
+  brewery: Boulevard Brewing Company
+  category: farmhouse-ale
+  style: Farmhouse Ale - Saison
+  description: When our brewers were experimenting with variations on a traditional
+    Belgian-style farmhouse ale, the perfect combination of elements came together
+    in fermenter number seven. You could call it fate, but they called it Tank 7,
+    and so it is. Beginning with a big surge of fruity aromatics and grapefruit-hoppy
+    notes, the flavor of this complex, straw-colored ale tapers off to a peppery,
+    dry finish. With its balance, carbonation, and complex flavor profile, Tank 7
+    is one of the ultimate food-pairing beers in existence.
+  abv: 8.5
+  ibu: 38
+- id: b3c5dc40-fdde-4b2d-a54d-1af104dd6de5
+  name: Oktoberfestbier
+  brewery: Bad Beat Brewing
+  category: seasonal
+  style: Lager - Märzen
+  description: Oktoberfestbier is an extremely crushable Marzen style beer brewed
+    with a medley of toasted malts! It goes down super smooth with a crisp finish.
+  abv: 5.6
+- id: 9c9ac166-3f89-496d-b31f-fd305d2eaebd
+  name: Black O' Lantern Pumpkin Stout
+  brewery: Wasatch Brewery
+  category: seasonal
+  style: Pumpkin Beer
+  description: What kind of madman would cross an imperial stout with a pumpkin ale?
+    Our brewers, as it turns out. This rich, chocolatey frankenbrew is dry-spiced
+    and scary good. Boo.
+  abv: 6.7
+  ibu: 31
+- id: b80ec53c-1efc-48a4-9430-5eb0c77a0964
+  name: Plum Fairy (Liquidious Meniscus)
+  brewery: The Mad Fermentist
+  category: sour
+  style: Sour - Plum
+  description: Kettle Sour Weisse made with Barke Pilz, White Wheat and Flaked Wheat
+    malts. Hopped with Tettnanger and sourced using Lactobacillus Plantarum. Fruited
+    with Plum Puree.
+  abv: 5.8
+  ibu: 19
+- id: 40a827e4-dc13-4202-8b5e-b92bdb7e6b20
+  name: Arnold Punker
+  brewery: ' Lovelady Brewing Company'
+  category: sour
+  style: Sour - Fruited
+  description: Arnold Punker Lipton Tea and Meyer Lemon sour! Tea upfront with a lemon
+    tartness and a hint of sweet on the finish.
+  abv: 6.2
+- id: ddf2d1dc-1310-4df9-84e1-9c735320fba6
+  name: Ace Pineapple Cider
+  brewery: Ace Cider
+  category: cider
+  style: Cider - Other Fruit
+  description: Inspired by the House Family’s annual visit to the beautiful Hawaiian
+    Islands our Pineapple cider is an ideal drink for tropical hot and humid climates.
+    Our signature drink the Hawaii 5-0 is a mix of Ace Pineapple cider, coconut rum,
+    ice and a garnish of fresh pineapple. This original cider is perfect for a backyard
+    BBQ, or Bacon dishes. First pineapple cider developed in the world
+  abv: 5.0
+- id: 6876296f-079e-4288-85b4-85e4c1459224
+  name: Ace Apple Cider
+  brewery: Ace Cider
+  category: cider
+  style: Cider - Dry
+  description: ACE Apple was first produced June of 1994. ACE Apple has an apple nose
+    and a clean finish. This cider pairs well with all pork dishes, and seafood as
+    it is a refreshing alternative to the high alcohol of wine and heaviness of a
+    beer. Made with 100% all natural apples
+  abv: 5.0
+- id: 63edc3f2-b584-4396-8f5c-1ccf687e8781
+  name: Silver State Blonde
+  brewery: CraftHaus Brewery
+  category: blonde-ale
+  style: Blond Ale - American
+  description: Silver State is a name that reflects Nevada’s pioneering spirit and
+    one that we have and forever will wear proudly. Round notes of caramel wash over
+    your pallet and finish clean.
+  abv: 4.8
+  ibu: 20
+- id: a9ebc362-6d7a-451e-9a0e-851a08509420
+  name: Evocation
+  brewery: CraftHaus Brewery
+  category: farmhouse-ale
+  style: Farmhouse Ale - Saison
+  description: Bright effervescent carbonation brings out the citrus and pepper notes.
+  abv: 6.4
+  ibu: 35
+- id: 27fcf837-6925-4dd8-b539-240344fdb24b
+  name: Zitrone
+  brewery: CraftHaus Brewery
+  category: sour
+  style: Sour - Gose
+  description: Gold Medal Winner "Best of Craft Beer Awards" Effervescent and bright
+    lemon character that finishes with a slight salinity. Traditional style German
+    sour beer that uses 50% malted wheat. Classic toasted coriander and lemon peel
+    for added dimension.
+  abv: 4.0
+  ibu: 10
+- id: aba2c8e3-6d8b-4f13-b6e7-7f21acf4c6f2
+  name: Razzle All Day
+  brewery: CraftHaus Brewery
+  category: sour
+  style: Sour - Fruited
+  description: Brewed in the spirit of camaraderie with Great Basin Brewing, this
+    collaboration beer unifies Nevada's craft community. Tart, fresh raspberries bursting
+    with brightness are then mellowed from the addition of smooth lactose. Cheers
+    to Nevada beers!“
+  abv: 8.1
+  ibu: 6
+- id: 7fdabf35-c35f-4e8f-9515-b4c017c93eb7
+  name: Resinate IPA
+  brewery: CraftHaus Brewery
+  category: ipa
+  style: IPA - American
+  description: We generously dry-hopped our IPA with classic combination of Cascade,
+    Centennial and Chinook hops. Pine and grapefruit characters resinate from within.
+  abv: 6.5
+  ibu: 58
+- id: 8bccac2a-2f85-4cf1-b203-1b05281b6041
+  name: Dry Heat
+  brewery: CraftHaus Brewery
+  category: ipa
+  style: IPA - New England
+  description: If you're a local... you know. This juicy, sexy, hazy IPA is double
+    dry hopped with with Citra, Mosaic and El Dorado hops for an excessive hop warning
+    of tropical and citrus aromas.
+  abv: 6.6
+- id: 97014c79-dea2-48b0-af4d-e040efe71838
+  name: Cuckoo
+  brewery: CraftHaus Brewery
+  category: lager
+  style: Lager - Munich Dunkel
+  description: Dunkel, meaning dark in German, pours a deep garnet and topped by a
+    white snow cap. First sip is full of toasted bread from 100% German malts. Then,
+    a clean finish from a lager yeast sourced at one of the oldest breweries in Prague.
+  abv: 5.4
+  ibu: 23
+- id: 9a291084-9fe7-489c-854b-db24b4f947d1
+  name: Rock the Haus 6th Anniversary BA Basil Hayden
+  brewery: CraftHaus Brewery
+  category: strong-ale
+  style: Strong Ale - American
+  description: Presented to our community in celebration of six triumphant years of
+    quality-driven beers. Sweet aromas of hops, honey and straw along with and a slight
+    cinnamon to peak your interests with this one time only specialty beer. Strong
+    characters of American hops bounce off of oak, molasses and rye spice play off
+    one another with this substantial and satisfying barrel aged beauty.
+  abv: 12.0
+- id: 401d7633-2bcf-4e41-9a34-f24a434a4a20
+  name: Czech Plz
+  brewery: CraftHaus Brewery
+  category: pilsner
+  style: Pilsner - Czech
+  description: Spicy hop aromas activate the and a slight golden haze fills your glass
+    with this snappy and quenching unfiltered Czech pilsner. The beer keeps flowing
+    like Kohl's Fountain until you utter the words, Czech Plz.
+  abv: 5.0
+  ibu: 40
+- id: d590706d-466d-48b4-8cb2-e04a942e6479
+  name: Michelada
+  brewery: CraftHaus Brewery
+  category: blonde-ale
+  style: Blond Ale - American
+  description: 'Tangy with lime juice and Clamato, Worcestershire for a savory bump
+    and Tapitio for spicy kick. Rimmed with that lip smacking Tajin. Pairs amazing
+    with Elote snacking nuts! Use Silver State Blonde or live it up with Zitrone,
+    Sour. Go big time and order it "Fully Loaded" with a decadent snack on a stick!
+    Weekly Favor: Tom Yum Miche'
+  abv: 4.8
+- id: 536aca9c-d293-49ea-bc85-353c905c1504
+  name: All the Plumcots
+  brewery: CraftHaus Brewery
+  category: sour
+  style: Sour - Fruited
+  description: Like a bite into a juicy stone fruit, this tart ale will leave you
+    confident you have enjoyed All The Plumcots.
+  abv: 4.5
+  ibu: 20
+- id: e9c828d5-e79c-4362-a2cc-eb179a73679e
+  name: Mangonada
+  brewery: CraftHaus Brewery
+  category: sour
+  style: Sour - Gose
+  description: Lip smacking, Haus made Mangonada made with Evocation. Mango nectar
+    and tangy Chamoy with a rim of Tajin for a kick. Top it off with a tamarind chili
+    straw. Pair it with Elote warm nuts.
+  abv: 4.0
+  ibu: 18
+- id: 3c79ae60-f52b-45eb-b5d1-fdc8820f216f
+  name: Hop Vegas
+  brewery: CraftHaus Brewery
+  category: ipa
+  style: IPA - American
+  description: Complex layers of hops from Cascade, Centennial, Columbus and Mosaic
+    which bring ripe citrus up front, followed by pine and then a slight tropical
+    finish. A snappy and dry malt body combined with bold hops come to crush it with
+    this West Coast IPA because no one hops it like Hop Vegas!
+  abv: 7.0
+  ibu: 78
+- id: 69facdfa-5b22-4936-9cf4-0fe38993c8f0
+  name: Giggle Juice
+  brewery: CraftHaus Brewery
+  category: ipa
+  style: IPA - Double
+  description: We can hear you giggling right now with glee! Giggle Juice hits you
+    like an Unflitered, Double IPA should with juicy citrus and tropical fruit notes.
+    We gave our DIPA heavy doses of Citra, Mosaic and CTZ hops.
+  abv: 10.2
+  ibu: 101
+- id: 3c2d0021-1e75-431d-84fd-511a2ba64746
+  name: Belgard
+  brewery: CraftHaus Brewery
+  category: stout
+  style: Stout - Coffee
+  description: A luscious dark chocolate malt backbone married with locally roasted
+    cold brew coffee from Vesta coffee Roasters.
+  abv: 5.2
+  ibu: 30
+- id: 2a93024c-1a69-4a5e-a5ea-bbeb6968baa7
+  name: HEXX Chocolate Tanzanian Cream Ale
+  brewery: HUDL Brewing Company
+  category: cream-ale
+  style: Cream Ale
+  description: In Collaboration with the HEXX Chocolate Company, we have been able
+    to create something very special. A crisp, clean and refreshing Cream Ale that
+    smells of wonderful HEXX 47% Milk Chocolate sourced from the village of Mbingu,
+    Near Ifakara, Tanzania. Then, your sense of taste is melted with an amazing 70%
+    Dark Chocolate, from the same Tanzania Cacoa Bean.
+  abv: 6.0
+  ibu: 5
+- id: 76102fdb-aa82-45f5-b12c-8ef500df7190
+  name: Vanilla Oak Barrel Aged On Chocolate
+  brewery: HUDL Brewing Company
+  category: cream-ale
+  style: Cream Ale
+  description: A crisp, clean and refreshing Cream Ale that was aged in whiskey barrels.
+    Then we added a wonderful HEXX 47% Milk Chocolate and 70% Dark Chocolate, from
+    the same Tanzania Cacoa Bean. Enjoy.
+  abv: 6.5
+  ibu: 11
+- id: 4f0df79b-80be-43f5-bda2-bbe789b472d6
+  name: Arts District IPA
+  brewery: HUDL Brewing Company
+  category: ipa
+  style: IPA - American
+  description: We start you with a sweet Carmel nose. Clean and crisp with a creative
+    range of hop character to shine through.
+  abv: 7.2
+  ibu: 48
+- id: 2dbcbf61-8469-4de6-afb1-0a14c6958de3
+  name: WATERMELON SOUR
+  brewery: HUDL Brewing Company
+  category: sour
+  style: Sour - Fruited
+  description: Coming in at 4.7% and 3.0PH...SIMPLY REFRESHING The watermelon is subtle
+    keeping this hand crafted sour beer fresh, crisp and clean. enjoy
+  abv: 4.7
+  ibu: 5
+- id: 0af4aca0-91f2-4da5-98b7-ded2e918cdab
+  name: Orange/Pomegranate Sour
+  brewery: HUDL Brewing Company
+  category: sour
+  style: Sour - Fruited
+  description: Weighing in at 4.7% and 3.0PH...The Orange comes thru with that hint
+    of Pomegranate at the fini
+  abv: 4.7
+  ibu: 5
+- id: 5d0d1ff8-49f5-4014-aeb5-341ebfb75214
+  name: Anodized Amber Ale Aged On Oak
+  brewery: HUDL Brewing Company
+  category: red-ale
+  style: Red Ale - American
+  description: This well crafted American Amber Ale, showcases a complex grain bill,
+    built around the highest quality crystal malts. Aged on Oak
+  abv: 5.8
+  ibu: 35
+- id: 17aac130-a63b-424d-9b62-a3c21571e3fe
+  name: JUST DO WIT
+  brewery: HUDL Brewing Company
+  category: wheat
+  style: Witbier
+  description: JUST DO WIT is a traditional Belgian Witbeir Ale, brewed by just a
+    few of the many amazing women in our industry. We are proud to be a small part
+    of celabrating women in the craft brewing world. 50/50 blend of unmalted Wheat
+    and 2row and the bold Jade Pacific Hop will stimulate your soul. A spectacularly
+    refreshing and crisp ale with hints of citrus, coriander and black pepper. The
+    perfect way to close out the summer.
+  abv: 4.8
+  ibu: 22
+- id: 1e2076b2-4c7f-4677-9351-0209aa2bb7a0
+  name: SHAGGY ASSASSIN - ROTATIONAL IPA HAZY
+  brewery: HUDL Brewing Company
+  category: ipa
+  style: IPA - American
+  description: We veered off course a little with our first rotational release of
+    the Shaggy Assassin. We started with a typical New England IPA grain build...Using
+    Citra, Mosaic, Mandarina Bavaria and Zythos hops. We then went full on west coast
+    with the Cal Ale yeast. The result is a pretty cool kinda hazy IPA....
+  abv: 6.8
+  ibu: 44
+- id: 454318b2-a369-4e69-ac8c-4b7c0d14ef65
+  name: Shaggy Assassin Guava IPA
+  brewery: HUDL Brewing Company
+  category: ipa
+  style: IPA - American
+  description: We would like to introduce our Shaggy Assassin ROTATIONAL IPA SERIES.
+    We will release one beer every 3 months in cans and draft. 1st is our Unfiltered
+    Guava IPA, the nose is a little woody with hints of grapfriut, the Munich Malt
+    creates the perfect platform for the subtleness of the Guava
+  abv: 5.7
+  ibu: 41
+- id: ea4973be-6688-4aaa-878d-4d4c2948164f
+  name: High Hatter Hefe On Pineapple
+  brewery: HUDL Brewing Company
+  category: wheat
+  style: Hefeweizen
+  description: A traditional German Hefeweizen, but instead you are transported to
+    the islands of Hawaii. We dropped 10 lbs/barrel of pineapple puree, resulting
+    in a wonderful nose with a perfect amount of sweetness from the pineapple.
+  abv: 5.5
+  ibu: 12
+- id: d63c735c-61e3-4134-b220-323ef3e0dbc6
+  name: SCORCHED MEADOWS - HAZY
+  brewery: HUDL Brewing Company
+  category: ipa
+  style: IPA - New England
+  description: A Las Vegas Style Hazy IPA with a floral and citrus nose with a solid
+    backbone that finishes crisp and a little drier (Vegas Style). Las Vegas translates
+    as "The Meadows"
+  abv: 6.3
+  ibu: 44
+- id: 2b460e21-1a6e-4232-8bb4-8af93c5cfeed
+  name: 115° Imperial Stout
+  brewery: HUDL Brewing Company
+  category: stout
+  style: Stout - Imperial
+  description: Beautiful dark chocolate and light roasted will be front and center.
+    Then the complexity of the grain bill will come thru and completely balance the
+    chocolate and roast, leaving you questioning the ABV due to the perfect balance.
+    OG 1.114 FG 1.020
+  abv: 12.3
+  ibu: 43
+- id: d3835177-7e5f-4223-adad-cedb2d196005
+  name: NAC NAC - Kumquat
+  brewery: HUDL Brewing Company
+  category: ipa
+  style: IPA - American
+  description: We put NAC NAC on Kumquats...The nose is a little more bright/citris
+    and the contrast juice and the rhine, allow for a softer finish. Enjoy. A top
+    of the podium West Coast IPA. Citrus, Melon and Pine dominate the nose. Clean
+    and crisp with the supporting malt building a creative range of hop character
+    to shine through. The NAC NAC is a time travel back to the 1990's when San Diego
+    created the west coast IPA and Jeremy McGrath was dominated Supercross Racing.
+    He changed the sport forever and San Diego changed beer forever. Thank You!
+  abv: 7.2
+- id: 16289017-205b-428d-9aef-24885aa66a7b
+  name: The Patio
+  brewery: HUDL Brewing Company
+  category: fruit
+  style: Shandy
+  description: Tangerine is what you get in the nose and the taste. 100% crushable
+    in the heat of las Vegas. So come on down the patio and enjoy this collaboration
+    with Nevada Brew Works
+  abv: 4.7
+  ibu: 10
+- id: ae87aef2-78cf-407f-8199-f3338dd0eab7
+  name: The Mosquito
+  brewery: HUDL Brewing Company
+  category: lager
+  style: Lager - American
+  description: This lager is smooth, delicate, crisp and thirst quenching. It is brewed
+    with the highest quality malts and perfect amount of flaked maize, along with
+    a true lager yeast from Mexico city. We respectfully celebrate the Mexican culture
+    and heritage.
+  abv: 4.6
+  ibu: 20
+- id: 47944c92-07e6-469b-baec-92a927b10aa5
+  name: Mosquito Bite
+  brewery: HUDL Brewing Company
+  category: lager
+  style: Lager - American
+  description: We took our perfectly brewed Mexican lager, and asked ourselves…what
+    could put this beer over the top? Serrano’s! We took fresh Serrano Peppers and
+    put them in a brick oven at 600°F and scorched them thru and thru. We then put
+    these gems in our aging tank and let time take its course. The aroma is bursting
+    of fresh roasted Serrano Peppers, and once you take a sip, the wonderful flavor
+    of the Serrano balances well with this crisp and refreshing lager.
+  abv: 4.6
+  ibu: 10
+- id: 5d49be70-3a14-4122-be4c-cc75e41c0926
+  name: VANILLA OAK
+  brewery: HUDL Brewing Company
+  category: cream-ale
+  style: Cream Ale
+  description: Not your normal cream ale, vanilla and the perfect amount of oak character
+    will quench your thirst.
+  abv: 6.0
+  ibu: 11
+- id: 9c50fdfa-dc29-45b4-9750-b0b56d1b2887
+  name: Vanilla Oak On NITRO
+  brewery: HUDL Brewing Company
+  category: cream-ale
+  style: Cream Ale
+  description: Not your normal cream ale, vanilla and the perfect amount of oak character
+    will quench your thirst.
+  abv: 6.0
+  ibu: 11
+- id: 5973a4dc-1a22-4fce-8762-c96bda84cdcd
+  name: WRATHFUL ROSE
+  brewery: HUDL Brewing Company
+  category: fruit
+  style: Fruit
+  description: 30 lbs of Hibiscus at whirlpool gives this unique ale its color. We
+    add honey and Red Berries to complete the flavor profile.
+  abv: 5.3
+- id: 5cfa5bcd-3a59-406e-b029-22958e13cba9
+  name: Super Mini
+  brewery: HUDL Brewing Company
+  category: lager
+  style: Lager - American
+  description: Crisp and Clean and light bodied, Single Hooped with Mosaic, gives
+    it a twist that is refreshing and slightly off center.
+  abv: 4.2
+  ibu: 14
+- id: 3493015c-9850-4dba-99e4-0abcdd744836
+  name: SALTY SWABBER
+  brewery: HUDL Brewing Company
+  category: ipa
+  style: IPA - Double
+  description: The Salty Swabber will punch you in the nose with amazing American
+    Hops. There is the perfect amount of body and backbone to balance it quite nicely.
+    leaving you with a slightly sweet warm finish.
+  abv: 9.4
+  ibu: 79
+- id: 5b838cde-cd14-47a1-81b9-8eb8d99a0adc
+  name: Big Foozy
+  brewery: HUDL Brewing Company
+  category: ipa
+  style: IPA - Triple
+  description: Every true IPA lovers dream! We brew this west coast style version
+    with nothing but love! All American grains and hops were used to showcase the
+    best of what we do in a 13.1% abv and 120 IBUs beer. Overloading your sense of
+    smell with Apricot, Dates and ripe Plums. Then the long boil Caramelize the beer
+    to bring out the complexity of our grain bill and a sweet character of brown sugar
+    and honey. Complimenting all our hop additions in boil and whirlpool…then we double
+    dry hopped it. Float like a butterfly and sting like a bee. Enjoy!
+  abv: 13.1
+  ibu: 120
+- id: 526bdb54-082e-41db-ba83-fd5284e46295
+  name: GP
+  brewery: HUDL Brewing Company
+  category: barleywine
+  style: Barleywine - American
+  description: An American style Barley Wine, showcases one of the best dual purpose
+    hops...Cashmere...Molasses, stone fruit and dark raisins leads you into tastes
+    of biscuit and toffee. The 120 minute boil creates the absolute perfect amount
+    of Caramelization which encapsulates the entire experience, both the mouth feel
+    and color.
+  abv: 10.0
+  ibu: 82
+- id: 7e940d6e-fff8-4cbd-abc8-2f87168f3929
+  name: Weird-as-Funk
+  brewery: HUDL Brewing Company
+  category: brett
+  style: Brett - American
+  description: A Brett-Pedio blend from our Wine Barrel Project. This beer is inspired
+    to compliment the light and subtle characteristics of brettanomyces and pediococcus.
+    The bacteria were added and had a secondary fermentation for 2 months in a medium
+    oak wine barrel. This is a one of a kind treat.
+  abv: 5.6
+  ibu: 7
+- id: bdc3bbef-e7f2-474a-9a87-eac7299e3d9c
+  name: Ruby Soho
+  brewery: Mojave Brewing Company
+  category: cider
+  style: Cider - Other Fruit
+  description: Grapefruit Cider
+  abv: 9.0
+- id: db93bf94-dad1-4e9c-98c8-b0cfe9bd15b4
+  name: 38 Special
+  brewery: Big Dog's Brewing Company
+  category: red-ale
+  style: Red Ale - Other
+  description: A blend of our Gold Medal winning brews! Peace, Love, & Hoppiness Pale
+    Ale and Red Hydrant Ale.
+  abv: 5.6
+- id: c75ab31c-6970-4368-8722-15eb0cebc088
+  name: 44 Magnum
+  brewery: Big Dog's Brewing Company
+  category: red-ale
+  style: Red Ale - Other
+  description: Dirty Dog/Red Hydrant Blend
+  abv: 6.4
+- id: 3c4b4b19-fc3e-4d7e-bf3c-44e0a6f9ed9d
+  name: 50 Caliber
+  brewery: Big Dog's Brewing Company
+  category: brown-ale
+  style: Brown Ale - Other
+  description: Delicious blend of our Underbite IPA and Red Hydrant Brown Ale.
+  abv: 7.5
+- id: d63d87a8-8930-47fb-b2c5-00b49eefde2f
+  name: Black Lab Stout
+  brewery: Big Dog's Brewing Company
+  category: stout
+  style: Stout - American
+  description: Delicious and satisfying anytime of year! A rich, dark ale brewed with
+    nine different malts along with roasted barley, with hints of coffee and cocoa.
+  abv: 5.9
+- id: 2896ec9b-6ce0-4512-83c5-b1d02e5b3daf
+  name: Dirty Dog IPA
+  brewery: Big Dog's Brewing Company
+  category: ipa
+  style: IPA - American
+  description: Dirty Dog IPA is a delicious west coast-style IPA, bursting with Northwest
+    hop flavor and aroma. With just a hint of toasty malt in the finish, you’re sure
+    to be reaching for another sip of this very tasty American IPA.
+  abv: 7.1
+  ibu: 70
+- id: 84c41be4-b1e3-4b38-9bc9-2074b32af283
+  name: Las Vegas Craft Lager
+  brewery: Big Dog's Brewing Company
+  category: lager
+  style: Lager - Pale
+  description: Las Vegas Craft Lager is a classic American-style lager. Lightly hopped,
+    crisp, and clean; this beer is designed for a town that is always on the go.
+  abv: 5.0
+- id: 394e9171-8e79-47e7-b7ae-d4f0d8789c04
+  name: Leglifter Light
+  brewery: Big Dog's Brewing Company
+  category: lager
+  style: Lager - Light
+  description: Light in color and mild in flavor, this beer is a refreshing alternative
+    to American-style light lagers. A perfect introduction to handcrafted beers!
+  abv: 3.9
+- id: 8fc7908f-2618-4041-8116-cccacbfaa4e5
+  name: Peace, Love & Hoppiness
+  brewery: Big Dog's Brewing Company
+  category: pale-ale
+  style: Pale Ale - American
+  description: Peace, Love & Hoppiness Pale Ale is a golden pale ale with notes of
+    tropical and stone fruit from the generous use of Mosaic and Amarillo hops. Now
+    available year-round on draft and in the coolest 12 oz. cans around!
+  abv: 6.0
+- id: e03d8162-a691-440a-a7a5-60d9f43b2962
+  name: Red Hydrant Brown Ale
+  brewery: Big Dog's Brewing Company
+  category: brown-ale
+  style: Brown Ale - English
+  description: Our 2006 and 2010 World Beer Cup Gold Medal winner (English-style Brown).
+    2012 GABF Silver Medalist. A deep mahogany brew, rich with caramel malts and a
+    hint of English hops with notes of toffee and toasted malt.
+  abv: 5.6
+- id: e58ddd3b-c52f-4f5c-9fdb-6b6041bd4746
+  name: Underbite IPA
+  brewery: Big Dog's Brewing Company
+  category: ipa
+  style: IPA - American
+  description: Hop dominant West Coast IPA! Is there malt in this beer? This a bitter
+    beer! The Chinook hops are the superstar of this IPA; complimented by a fair amount
+    of Amarillo and Citra. The beer has a very dry finish that makes you want to take
+    another sip until the glass is empty.
+  abv: 8.7
+  ibu: 115
+- id: ed864710-9a6d-4fde-adb1-59f10c48078c
+  name: A Dog Gose Woof
+  brewery: Big Dog's Brewing Company
+  category: sour
+  style: Sour - Gose
+  description: Jameson Barrel Aged Leipzig Gose
+  abv: 5.5
+- id: 333c1947-045b-4569-a180-97a423b247d3
+  name: Canis Minor
+  brewery: Big Dog's Brewing Company
+  category: ipa
+  style: IPA - American
+  description: West Coast IPA brewed with plentiful amounts of Mosiac, Amarillo, Galaxy,
+    and Nelson hops!
+  abv: 6.2
+- id: 4c9323ef-0203-46c5-8118-b28e86928fff
+  name: Dog Gone Saison
+  brewery: Big Dog's Brewing Company
+  category: farmhouse-ale
+  style: Farmhouse Ale - Saison
+  description: ''
+  abv: 6.2
+  ibu: 28
+- id: e1f3f04a-2c8f-4f96-a9f5-a1fcb831bb4b
+  name: My Dog's Plums
+  brewery: Big Dog's Brewing Company
+  category: belgian
+  style: Belgian Strong Dark Ale
+  description: This Belgian Dark Strong was aged in whiskey barrels for 6 months,
+    then blended with hundreds of pounds of plum puree.
+  abv: 8.2
+- id: 1ac4ecd4-09de-4a52-8560-a90fdba061ac
+  name: Release the Hounds
+  brewery: Big Dog's Brewing Company
+  category: ipa
+  style: IPA - Double
+  description: ''
+  abv: 8.5
+- id: 414eb6de-c76a-478a-b1db-7329019911e8
+  name: Sam-Rye
+  brewery: Big Dog's Brewing Company
+  category: ipa
+  style: IPA - American
+  description: ''
+  abv: 6.1
+- id: 528be503-3013-4fcd-92d6-443f121bd36d
+  name: Stay Motley DoPPElbock
+  brewery: Big Dog's Brewing Company
+  category: bock
+  style: Bock - Doppelbock
+  description: ''
+  abv: 8.8
+- id: 66be3dc0-8d56-43a1-8871-9df892e86f97
+  name: Viener Dog
+  brewery: Big Dog's Brewing Company
+  category: lager
+  style: Lager - Vienna
+  description: ''
+  abv: 5.5
+- id: 848d9dc0-768e-4ce8-b5c4-6f78c1b12cde
+  name: Illuminator
+  brewery: ' Lovelady Brewing Company'
+  category: bock
+  style: Bock - Doppelbock
+  description: Dark Golden strong lager with hints of rye, bread and caramel. Easy
+    drinking!
+  abv: 9.0
+  ibu: 45
+- id: 2d9da3c5-72c0-4547-a004-e774a5e15401
+  name: The Emigrant
+  brewery: The Depot Craft Brewery Distillery
+  category: sour
+  style: Sour - Other
+  description: White wheat sourced from Northern Nevada and premium Pilsner malt serve
+    as the base for this easy drinking sour ale. California orange peel and ground
+    coriander add a subtle complexity as the beer finishes with a slightly tart dryness.
+  abv: 4.2
+  ibu: 12
+- id: 63e3559f-e6ae-4c25-921f-b9386d9e40f6
+  name: Sunrise Mountain
+  brewery: Tenaya Creek Brewery
+  category: wheat
+  style: Witbier
+  description: Blood Orange White Ale
+  abv: 6.7
+- id: 079e55e7-348e-41b8-b0ef-28fe01491fba
+  name: Apple Soiree
+  brewery: Newtopia Cyder
+  category: cider
+  style: Cider - Traditional
+  description: Our apple Soirée is a party waiting to happen. Concocted with Fuji,
+    Gala, Honey Crisp, Red Delicious and Granny Smith all fermented with champagne
+    yeast to create a crisp, clean, off-dry cyder perfect for any moment to celebrate.
+  abv: 6.5
+- id: 46943d8b-4e91-4c4b-ad36-967ddd0c590c
+  name: Hoptical Telescope
+  brewery: Beachwood Brewing
+  category: ipa
+  style: IPA - Double
+  description: 'A cosmic array of hops are acutely focused in this West Coast-Style
+    Double India Pale Ale. Cheers to 10 years! Malts: American 2-row, Idaho Pilsner
+    Hops: Mosaic, Strata, Idaho 7, Sultana, Ekuanot'
+  abv: 10.0
+  ibu: 100
+- id: 2ed3a7d8-86c2-4d35-b240-56e430a83ecb
+  name: Our Share IPA
+  brewery: Wasatch Brewery
+  category: ipa
+  style: IPA - Session
+  description: This well-balanced, sessionable IPA brings notes of pine and berry,
+    with a smooth malt backbone that will have you sharing this beer all year long.
+  abv: 5.0
+  ibu: 35
+- id: f5265235-c00d-440c-ac71-99d3d5134369
+  name: Vertical Envelopment
+  brewery: Newtopia Cyder
+  category: cider
+  style: Mead - Cyser
+  description: Session Cyser with Marmeleiro Honey, Orange, Lime and Hibiscus.
+  abv: 7.0
+- id: 66ff83e3-bfe3-4124-b1c7-352ee0558e84
+  name: Hipster Latte
+  brewery: Wild Barrel Brewing
+  category: stout
+  style: Stout - Milk
+  description: Have your morning coffee with us! Featuring Hipster Latte Coffee Milk
+    Stout on nitro 6.6% w/ Mostra Coffee proprietary Brazilian bean blend. Cheers!
+  abv: 6.2
+  ibu: 36
+- id: 3f6fdb4a-e7d7-4686-a6af-e3d7be7ec801
+  name: Locals Only IPA
+  brewery: Pizza Port Brewing Company
+  category: ipa
+  style: IPA - American
+  description: This award winning West Coast style IPA boast of flavors and aromas
+    of fresh peach, grapefruit, and passion fruit. There is just enough light layered
+    malts that balance out the hops. The slight bitterness and dry finish will leave
+    your pallet craving another sip.
+  abv: 6.8
+- id: 0f9db0ff-af44-4d2f-9fd8-375104967fcb
+  name: Peanut Butter Latte Nitro Golden Stout
+  brewery: Belching Beaver Brewery
+  category: stout
+  style: Stout - Milk
+  description: People love our Peanut Butter Milk Stout, and this time we put a fun
+    twist on our classic. Thomas brewed up a milk stout that is golden in color, a
+    real sensory trip, and loaded it with coffee and chocolate. Then we kicked it
+    up a notch by peanut butterizing (is that a word?) the beer for a real treat.
+    Tom said, “A Peanut Butter Latte, that sounds great!” Perfect to sip on chilled
+    nights and early mornings.
+  abv: 5.0
+  ibu: 30
+- id: cf9f2837-2715-443f-9014-61f2cf822d0e
+  name: Wizard Nebula
+  brewery: Modern Times Beer
+  category: ipa
+  style: IPA - New England
+  description: Buckle up for an intergalactic exploration of space, time, & flavor
+    magic. We began this delectable hazy IPA with a malt bill of 2-row, golden naked
+    oats, wheat, and flaked oats. We then loaded it with Citra, Bru-1, and Riwaka
+    hops, making for a stunningly bright beverage swirling with all kinds of citrus,
+    which mingles beautifly with notes of melon and apricot. Each sip will have you
+    reveling in the splendor of this conversion of extremely tasty elements.
+  abv: 7.5
+  ibu: 70
+- id: 23e212bb-fa97-4415-a2d0-4177748df512
+  name: A Healthy Distrush
+  brewery: Bad Beat Brewing
+  category: blonde-ale
+  style: Blonde Ale - Coffee
+  description: You asked and we listened! We brought back this popular favorite and
+    added Madagascar vanilla beans. This balances perfectly with the Ethiopian coffee
+    blend we use from our local roasters at Mothership Coffee. This is a perfect breakfast
+    beer… or anytime of the day! Cheers
+  abv: 5.9
+- id: c92acafb-8b2e-4559-91b9-dbf710fe9807
+  name: Pillow War
+  brewery: Bad Beat Brewing
+  category: ipa
+  style: IPA - Triple Hazy
+  description: Pillow War returns!! A triple dry hopped NE IPA at 10.1% and 8.8lbs/bbl
+    of Citra! This beer is an incredibly soft and smooth, JUICE BOMB! No hop burn,
+    no alcohol burn, no apologies. Gigantic aromas and flavors of a wide array of
+    tropical fruits are just the beginning to all the complexity this beer offers.
+    It took a lot of time and care to tame this monster, but it was worth all the
+    effort. Come join us for a glass!
+  abv: 10.1
+- id: faa34614-188e-4587-837d-c58bc2cc60b6
+  name: Smoke Wheat Everyday
+  brewery: Bad Beat Brewing
+  category: wheat
+  style: Weizenbock - Smoked
+  description: Da da da da daaaa it’s our newest beer motha f@ckers… Bad Beat Brewing,
+    da da da da daaaa You know we’re mobbin’ with the Juxta Nomad!! That’s right we
+    have teamed up with Juxta Nomad Brewing for this collab and are stoked to introduce
+    you to “Smoke Wheat Everyday” a Smoked Weizenbock! This beauty packs a punch with
+    an 8.1% abv and is full of rich, smoky flavor! This beer has a massive aroma and
+    when it hits your palate you’ll get wonderful notes of malty, banana, and clove
+    goodness complemented by a smoky earthiness! Be sure to come grab a glass or pick
+    up a 4 pack while you can, Cheers!
+  abv: 8.1
+- id: 3e3c71bd-1d10-48b6-81ea-004ae3de24af
+  name: Sunday Fundau
+  brewery: Bad Beat Brewing
+  category: sour
+  style: Sour - Fruited Gose
+  description: Let me introduce you to our latest fruited gose… Sunday Funday!! For
+    this Gose we added just the right amounts of pineapple, orange and a splash of
+    cranberry puree to give you a delicious, refreshing and perfect for summer drink!
+    And it’s ok to enjoy this one ANY day of the week ????
+  abv: 5.6
+- id: a4af08e0-973b-4e2c-b8c5-d252f24d6a83
+  name: WoMango
+  brewery: Bad Beat Brewing
+  category: wheat
+  style: Hefeweizen
+  description: 'This tasty treat is a German style Hefeweizen that we added 125 lbs
+    of delicious mango puree to!! WoMango is super refreshing and perfect to beat
+    the summer heat with banana, clove and tropical mango notes! What really makes
+    this brew special though are the ladies we teamed up with to make it! Ashlie Randolph,
+    Las Vegas Pink Boots Chapter President & NAACP Executive Committee Member, and
+    Sarah Perez, Alaska Pink Boots State President and brewer at Bleeding Heart Brewery.
+    Each of these amazing women have made huge impacts on their local beer communities
+    and both will be speaking at this years Craft Brewers Conference about what it
+    means to be a woman of color in the craft beer world. These two are breaking boundaries,
+    slaying sterotypes and paving the way for all women which is why we were thrilled
+    to have them brewing with us! Empowering women in the craft industry is important
+    to us and if you would like to show your support, connect with other women, find
+    resources here are some links: @pinkbootssocietylv and @beerandbodynv'
+  abv: 5.4
+- id: 4b1b0077-3a91-492a-997d-83a1a14ef475
+  name: The Long Night
+  brewery: Bad Beat Brewing
+  category: stout
+  style: Stout - Milk Imperial
+  description: The Long Night returns! We brought back this chocolaty, decadent stout
+    and barrel aged it in Bourbon barrels giving it a robust, rich flavor. We also
+    added some lactose which creates a creamy, smooth finish! Enjoy!
+  abv: 10.5
+- id: 7e73af99-3f6d-4e13-817e-2ab502c1b448
+  name: Let's Get Lit
+  brewery: Bad Beat Brewing
+  category: sour
+  style: Sour - Fruited Gose
+  description: Say hello to this beauty! This Gose was inspired by the childhood treat,
+    Bombpops!! We took that same flavor profile and added those fruit purees to our
+    tart Gose. What we got was a bright, brillant purple hued beer bursting with awesome
+    fruit flavor and perfect for crushing in the Vegas summer heat!
+  abv: 4.7
+- id: 4a6fb15c-9d2b-4d40-8511-53fcd654c9b2
+  name: Beisbol
+  brewery: Bad Beat Brewing
+  category: lager
+  style: Lager - Vienna
+  description: As is tradition, we’ve released a baseball themed lager for our Anniversary!
+    This is a tribute to our love for the sport! This Mexican style lager is perfectly
+    balanced with a flavorful, light body and crisp finish. We also added actual Maize
+    to this beer for authenticity, Salud!
+  abv: 4.9
+- id: 4eb221a3-8a3f-4c87-9f5e-81f19f0083f4
+  name: Go For Broke
+  brewery: Bad Beat Brewing
+  category: ipa
+  style: IPA - Double
+  description: We decided to switch up our IPA game and brew one you don’t see very
+    often… especially not a double! Say hello to *Go For Broke* our newest Black Double
+    IPA!! For this beast, we combined some awesome dark malts with some of our favorite
+    powerhouse hops including Simcoe, Mosiac, Willamette, and Blanc! We love the interaction
+    and new unique flavors the dark malts bring out in these hops! This is definitely
+    a winning combo and we hope you enjoy it too!
+  abv: 8.2
+- id: 74ec8105-5846-4840-8a1f-31e7ad1ff49f
+  name: Pocket Pair
+  brewery: Bad Beat Brewing
+  category: pale-ale
+  style: Pale Ale - American
+  description: This beer packs a ton of citrus-forward hop flavor while being super
+    crushable! Pocket Pair is also part of our NEW *Rotating Beer Series*!!
+  abv: 5.6
+- id: f45db90b-bd3b-462f-b9e9-9a6c37ddd7ff
+  name: Bluffing Isn't Weisse
+  brewery: Bad Beat Brewing
+  category: wheat
+  style: Hefeweizen
+  description: The beer in your hand was our first seasonal, the first keg we ever
+    kicked and our original best seller! Its cloudy appearance isn’t transparent,
+    but we’d like to be. We don’t brew Hefeweizen for any other reason than this…
+    WE… LOVE… HEFEWEIZEN! We love the apricot our yeast strain presents alongside
+    it’s banana, clove, bubble gum and vanilla aromas. We love the rich and fresh
+    doughy malt character with ever so earthy and floral hop flavors. We love that
+    we can pack so much flavor and aroma into such a refreshing pint AND we think
+    you’ll love it too!
+  abv: 5.1
+- id: e058c485-dbd5-48fd-8750-45efb302e55b
+  name: Hoppy Times
+  brewery: Bad Beat Brewing
+  category: ipa
+  style: IPA - American
+  description: Hoppy Times is a classic West Coast IPA with some modern flare. We
+    don’t beat you over the head with giant bittering additions. Bone dry attenuation,
+    and water chemistry favoring sulfates helps deliver the balance we achieve. We
+    then pass those hop savings right back to you in the form of late kettle or dry
+    hop additions. Palisade, Citra, Cascade, and Chinook come together for an orange
+    and pine party with subtler aromas of lime, grapefruit rind, pineapple, and apricot.
+    If this beer isn’t hoppy enough, it’s you not us. This beer is ALWAYS 21 days
+    or younger in our taproom.
+  abv: 7.0
+- id: 56662123-44df-4a1a-a6b5-9aa703a91fde
+  name: Czech Pilsner
+  brewery: Bad Beat Brewing
+  category: pilsner
+  style: Pilsner - Czech
+  description: This delicious treat is super crisp and clean with subtle malty bread
+    notes and floral/earthy hop notes. It is 5.5% abv and the perfect easy-drinking
+    beer with lots of flavors!
+  abv: 5.5
+- id: dd11c87e-8861-41b0-b16a-425058c72dc3
+  name: The Ringer
+  brewery: Bad Beat Brewing
+  category: pilsner
+  style: Pilsner - German
+  description: What the hell is “craft lager” anyway? Why is it so frequently tied
+    to a bland and boring beer? Let’s stop mailing it in, and halfheartedly making
+    swill while trying to pass it off as “craft” beer. How about if we want to make
+    a “craft lager”, we actually CRAFT a LAGER! Rant over and wish granted! The Ringer
+    is our meticulously hand crafted, take on a traditional German style Pilsner.
+    All pilsner malt with a touch of Munich, to add a little bit of rich toastiness
+    to that crisp and snappy malt flavor that sits as an elegant & graceful backbone
+    for beautiful hop bouquet. Spalt Select & crystal are sprinkled through the boil
+    for the modern, yet familiar noble hop character. At the end of the boil, we bring
+    those two back and add a larger dose of Mandarina Bavaria for a touch tangerine.
+    Modern yet traditional. Crisp and effervescent. Easy and nuanced. One and another.
+    Cheers!
+  abv: 5.1
+- id: dc345578-8f55-43f9-a059-158849c24885
+  name: Hoptimistic
+  brewery: Bad Beat Brewing
+  category: ipa
+  style: IPA - West Coast
+  description: This west coast IPA was brewed with boatloads of Bravo, Amarillo, and
+    Wai-iti hops. Making it the perfect balanace of dank and crispy for a 7.0?v IPA.
+    Cheers and Happy IPA day!
+  abv: 7.0
+- id: 72dacc0b-9bed-483a-a5ac-04965cd05783
+  name: Weisse Choice
+  brewery: ' Lovelady Brewing Company'
+  category: wheat
+  style: Hefeweizen
+  description: Traditional German style wheat ale made with a unique yeast that contributes
+    flavors of bubble gum, banana and clove.
+  abv: 5.5
+  ibu: 12
+- id: d3b75084-350d-4312-a04e-35b7a7f84914
+  name: Love Juice
+  brewery: ' Lovelady Brewing Company'
+  category: ipa
+  style: IPA - New England
+  description: Our best seller! This hazy IPA features Mosaic, El Dorado and Idaho
+    7 hops along with barley, oats and wheat and a touch of lactose. Easy drinking!
+  abv: 5.5
+  ibu: 20
+- id: 4280a848-39c9-4492-a7b3-bf6b6a21e0d9
+  name: Paleo Porter
+  brewery: ' Lovelady Brewing Company'
+  category: porter
+  style: Porter - Chocolate
+  description: Dedicated to local Paleontologists, this mild Porter features Peanut
+    Butter, Chocolate and coffee from Dark Moon Roasters. A treat that you can have
+    more than one of!
+  abv: 5.0
+  ibu: 30
+- id: 8631d46b-e7b3-49f3-b631-1abfd80c6d2c
+  name: 9th Island Pineapple Sour
+  brewery: ' Lovelady Brewing Company'
+  category: sour
+  style: Sour - Fruited
+  description: Our best selling sour, 9th Island refers to our expat Hawaiian community.
+    Tart, a little sweet and finishing sour, the perfect poolside refreshment!
+  abv: 5.0
+  ibu: 7
+- id: fe6a5cf5-3dcd-4735-a8ab-d03bcdd1772e
+  name: State of Change WCIPA
+  brewery: ' Lovelady Brewing Company'
+  category: ipa
+  style: IPA - West Coast
+  description: 'Dank Version : Pale malts featuring Zappa, Centennial and Idaho 7
+    hops, this WCIPA is dank on the nose with a dry, bracing finish.'
+  abv: 6.9
+  ibu: 20
+- id: 069cac5d-d6f4-46ae-984d-2ddad0ebc8dc
+  name: Golden Nites
+  brewery: ' Lovelady Brewing Company'
+  category: lager
+  style: Lager - Mexican
+  description: Mexican style lager (made with Barley and Corn) that finishes crisp
+    and dry, but balanced. Refreshing!
+  abv: 5.0
+  ibu: 20
+- id: a3203d5c-eaab-49c1-9be1-93f22e68e525
+  name: Hendertucky Horror Show (Seasonal)
+  brewery: ' Lovelady Brewing Company'
+  category: ipa
+  style: IPA - Double
+  description: Double Hazy IPA with Dark Moon Coffee, pumpkin spice and vanilla. Hops
+    and spice combine with a coffee vanilla finish.
+  abv: 7.5
+  ibu: 28
+- id: 6d0fe3c2-4261-4e8d-a317-ea65e63b3b43
+  name: Love Triangle
+  brewery: ' Lovelady Brewing Company'
+  category: lager
+  style: Lager - American
+  description: Amber lager made with German malts and American hops. Smooth, balanced
+    with a slight hint of caramel on the finish.
+  abv: 5.7
+  ibu: 25
+- id: 47f8f404-63d2-4862-bb8c-2c1180571f8e
+  name: Marzipan Stout
+  brewery: ' Lovelady Brewing Company'
+  category: stout
+  style: Stout - American
+  description: A light bodied Stout aged with almonds. Almond on the nose with a hint
+    of chocolate, finishing slightly sweet.
+  abv: 7.8
+  ibu: 40
+- id: fcb2ba77-46aa-4de9-8e2d-6e4fe6a81d63
+  name: Curbside Party
+  brewery: ' Lovelady Brewing Company'
+  category: lager
+  style: Lager - Pale
+  description: Oktoberfest Lager! This bready, balanced and smooth lager is perfect
+    for the season.
+  abv: 5.5
+  ibu: 25
+- id: 9426fb37-0c51-40d0-8c03-915c63f7ed98
+  name: Lava Flow
+  brewery: ' Lovelady Brewing Company'
+  category: sour
+  style: Sour - Fruited
+  description: Our latest 9th Island Sour - Lava Flow! Packed with Strawberry, Pineapple
+    and a kiss of Coconut. The ultimate tropical combination!
+  abv: 5.0
+  ibu: 5
+- id: 293e2dc0-b721-4533-81b0-ba9940acb2c9
+  name: Gas Station Spread
+  brewery: ' Lovelady Brewing Company'
+  category: stout
+  style: Stout - Imperial
+  description: Imperial stout made with Strawberry and Peanut Butter. On Tap Now!
+  abv: 8.0
+  ibu: 35
+- id: 4c047181-f64b-4378-98e1-3448d758dddc
+  name: 'Gas Station Mexican Lager '
+  brewery: ' Lovelady Brewing Company'
+  category: lager
+  style: Lager - Mexican
+  description: Out latest Collab with Speedee Mart features a golden Mexican style
+    lager aged on roasted Hatch Chiles and Lime. Peppery, with a hint of spice and
+    lime.
+  abv: 5.0
+  ibu: 12
+- id: 018d919c-9290-4f11-80d4-2c776f45ff5c
+  name: Ariana Rye IPA
+  brewery: Nevada Brew Works
+  category: ipa
+  style: IPA - Rye
+  description: Well balanced lightly hopped rye with a portion of proceeds donated
+    to local charity on behalf of the Ariana Rye Foundation.
+  abv: 6.3
+- id: 9536406f-fa53-44ff-b188-6ba53b4de281
+  name: Lager
+  brewery: Nevada Brew Works
+  category: lager
+  style: Lager - American
+  description: Clean & crisp brew created w/ Hallertauer hops & dry hopped with Cascade
+    hops.
+  abv: 4.9
+- id: 1a446bf1-8406-4e65-b2fe-dffb37342e8d
+  name: Kolsch
+  brewery: Nevada Brew Works
+  category: kölsch
+  style: Kölsch
+  description: Refreshing like a lager, fruity character like an ale, this ight beer
+    is made for easy drinking on the patio in the summertime heat.
+  abv: 4.5
+- id: b79b1649-5ad1-4d7b-a507-5774f8a8e113
+  name: Hefeweizen
+  brewery: Nevada Brew Works
+  category: wheat
+  style: Hefeweizen
+  description: Aromas of banana and clove, brewed with Bavarian yeast, greater than
+    50% wheat and Tettnang hops makes for a mouthful of popping flavor.
+  abv: 5.6
+- id: e207da96-4bec-45bb-993e-8643ecf8611e
+  name: Lemondrop Saison
+  brewery: Nevada Brew Works
+  category: farmhouse-ale
+  style: Farmhouse Ale - Saison
+  description: Made w/ 5 lbs of lemondrop hops, this saison is very citrus forward
+    w/ spicy hints of coriander & a dry finish
+  abv: 7.1
+- id: 91aeec3f-3341-4c2a-8bc8-96b8c0438a5f
+  name: Red Lager
+  brewery: Nevada Brew Works
+  category: lager
+  style: Lager - Red
+  description: This step mashed beer is great for fall with its malty flavor & creamy
+    medium body. It’s surprisingly light with a crisp lager finish.
+  abv: 5.4
+- id: 64877874-ae4f-4898-bad8-2126726db275
+  name: Golden Blonde Ale
+  brewery: Nevada Brew Works
+  category: blonde-ale
+  style: Blonde Ale
+  description: This beer is refreshingly light & pairs well on the patio w/ the Vegas
+    sunshine. It’s lightly hopped, brewed with Melanoiden & malted rye.
+  abv: 4.5
+- id: 329ffe1b-0610-4a32-b57a-f59b49da3dd0
+  name: Vegas And Friends
+  brewery: Nevada Brew Works
+  category: ipa
+  style: IPA - American
+  description: Citra and Cascade hops bring forward a tropical, yet complex, hoppy
+    flavor.
+  abv: 6.3
+- id: c300237b-4435-4ee1-be1e-719ccc1e66e9
+  name: Schwartzbier Dark Lager
+  brewery: Nevada Brew Works
+  category: lager
+  style: Lager - Dark
+  description: Dark beer, light flavor, mild caramel malty sweetness, yet “simply”
+    light.
+  abv: 5.0
+- id: 59e114c2-6206-445d-8884-8eae065fb21f
+  name: Hazy! IPA
+  brewery: Nevada Brew Works
+  category: ipa
+  style: IPA - New England
+  description: Ekuanot Incognito hops added during the whirlpool & Mosaic hops added
+    during fermentation give this hazy beer maximum hop compound biotransformation
+    & hoppy aroma.
+  abv: 6.9
+- id: 8a9e77ba-0f10-4374-9373-f49847970c92
+  name: Campfire Stout
+  brewery: High Water Brewing
+  category: stout
+  style: Stout - American
+  description: Campfire Stout evokes fond memories of wilderness and camping adventures.
+    Notes of chocolate and graham cracker topped with a hint of marshmallow will leave
+    you wanting s’more. Like any campfire experience, this beer is best shared with
+    a warm circle of family and friends. Our newest full production release, available
+    year round. This beer was a blast to create and brew. We put over 4 lbs per bbl
+    of Graham crackers in the mash, we used chocolate malt and to top it off added
+    a natural toasted marshmallow flavor. Our number one selling beer!
+  abv: 6.5
+  ibu: 38
+- id: 8a1e4492-2bd7-48cd-b4f6-2d1ba0b5d21b
+  name: BOOMSTICK Blonde
+  brewery: Beer Zombies Brewing Co.
+  category: blonde-ale
+  style: Blonde Ale
+  description: Yeah. All right, you primitive screwheads, listen up. See this? This...
+    is my BOOMSTICK! It's 16oz Beer Zombies Brewing Co. Blonde Ale, BZ's top-of-the-line.
+    You can find this in the craft beer department. A.K.A - Shotgun Beer. Super crushable
+    beer with a perfect balance between hops & malt. Light body, with a bright golden
+    luster of color all wrapped up with an extremely smooth finish. The perfect beer
+    to sip and enjoy, chug or shotgun - BOOMSTICK!
+  abv: 5.5
+- id: 2172e624-a0f5-435a-bf74-d960c69fdf16
+  name: Evil Haze
+  brewery: Beer Zombies Brewing Co.
+  category: ipa
+  style: IPA - Imperial
+  description: A big DDH hazy DIPA with Citra, Mosaic & Galaxy 9.666% abv. Absolutely
+    stuffed full of hoppy, hazy deliciousness! Fresh pineapple, ripe mango & juicy
+    peaches blend together with a blueberry lemonade back end that comes cutting through
+    the can!
+  abv: 9.7
+- id: e90bf19a-751f-4ec0-9614-f485a9a4b165
+  name: 'Boba Bliss: Pink Guava'
+  brewery: Front Porch Brewing
+  category: sour
+  style: Sour - Fruited
+  description: Sour ale with Pink Guava and cream flavor! Second flavor inspired by
+    everyones favorite Boba Tea drink in collaboration with Sky Gazer Brewing!
+  abv: 5.0
+- id: fe4c0eec-9bf6-4bf6-a66a-15d88c58ac7d
+  name: Abnormalweiss
+  brewery: Abnormal Beer Co.
+  category: wheat
+  style: Hefeweizen
+  description: Traditional German style Wheat beer with classic notes of banana, clove
+    from the yeast, and light citrus from the hops. Creamy, yet still crisp and highly
+    drinkable which makes you want to put back more than just a single pint. Perfect
+    morning session beer or unlimited brunch option.
+  abv: 5.3
+  ibu: 12
+- id: b8d431de-d382-4fa2-956f-58b8c63cf0fc
+  name: Mama's Keys
+  brewery: Crowns & Hops
+  category: sour
+  style: Sour - Fruited Gose
+  description: Key Lime Pie Gose - A key lime gose brewed with key lime puree, cinnamon,
+    coriander, sea salt, vanilla, and graham crackers.
+  abv: 5.5
+- id: fbd010e6-092d-46f8-8281-468a92791a81
+  name: Vertical Envelopment
+  brewery: Newtopia Cyder
+  category: mead
+  style: Mead - Cyser
+  description: Session Cyser with Marmeleiro Honey, Orange, Lime and Hibiscus.
+  abv: 7.0
+- id: e3cdf221-e802-4c7e-8045-7568b7d34753
+  name: Ever Clever
+  brewery: Bearded Iris Brewing
+  category: ipa
+  style: IPA - Imperial
+  description: It's the cleverest of the ever-ests. Your favorite banter-slinging,
+    foxy DIPA now bursts with a wicked double dry hop that will keep your taste buds
+    as nimble as your wits.
+  abv: 8.5
+- id: 87d59598-f210-479b-9c7f-4a6379e242d8
+  name: Vice - Black Currant
+  brewery: Wild Barrel Brewing
+  category: sour
+  style: Sour - Fruited Berliner Weisse
+  description: Berliner Weisse style beer w/ Black Currants
+  abv: 5.6
+  ibu: 3
+- id: 6df377b5-a1b8-4d76-b1a2-eb7f5c2563de
+  name: Nueva Gloria
+  brewery: New Glory Craft Brewery
+  category: lager
+  style: Lager - Amber
+  description: 'Got cerveza? Four words that describe this beer: crisp, refreshing,
+    crushable, sabrosa (tasty). We brew it with Vienna malt and corn, along with Hallertau,
+    Tettnang, and Magnum hops. For authenticity, we added lime peel and lime juice.
+    You''ll enjoy flavors and aromas of light, malty biscuit with a hint of bright,
+    floral lime zest. Una mas cerveza, por favor!'
+  abv: 5.0
+- id: dfa3bab7-ed21-41ee-af87-e335073fe934
+  name: Circle of Crowns
+  brewery: Full Circle Brewing Company
+  category: sour
+  style: Sour - Fruited
+  description: Brewed with equal parts hip hop energy and fruit, Circle of Crowns
+    Sour Ale comes to you through our collaboration with Crowns & Hops! It hits the
+    palate with a tartness that melts into the perfect blend of subtle raspberry,
+    tangy pineapple, and smooth citrus. Inspired by a true classic frozen dessert,
+    rainbow sherbet, this beer delivers an unforgettable cool, crispness with a punch
+    of tangy, sweet fruit. Whether you enjoyed a bowl of rainbow sherbet as a kid
+    or even just yesterday, the flavors of this beer will bring you Full Circle.
+  abv: 6.6
+- id: 5231d3aa-303d-4faf-9bef-b8565b4e16d2
+  name: Trumer Pils
+  brewery: Trumer Brewery
+  category: pilsner
+  style: Pilsner - German
+  description: The sparkling mouth feel of each sip confirms the dedication to traditional
+    European craftsmanship. Every aspect of the brewing process of the family-owned
+    Trumer Brauerei in Salzburg has been recreated with exacting detail at the Trumer
+    Brauerei Berkeley. Trumer Pils is the wonderful result of a unique and special
+    brewing process, which sets it apart from other beers. Like champagne, the quality
+    of a great Pilsner can be seen in the density of its bubbles. Trumer Pils produces
+    small, tight bubbles that rise from the bottom of the glass, delivering a slightly
+    spicy aroma, with a hint of citrus. This perfect balance of flavors is achieved
+    by procuring the exact blend of malt and hops from Germany and Austria and fermenting
+    the brew with proprietary yeast. Its body is accentuated by using pure, soft water
+    and removing the malt husk prior to the mashing process. The signature of Trumer
+    Pils is its finish. The crisp, clean and well-rounded taste leaves just a subtle
+    touch of soft bitter flavor on the back of the palate. However, because the husk
+    is removed before mashing, the finish won’t linger. Trumer Pils is a testament
+    to the dedication of its Austrian and American brewmasters. The result? A true
+    European Pilsner without compare.
+  abv: 4.9
+  ibu: 26
+- id: a8df1610-dd53-4460-a32d-b368ccc1d7ea
+  name: Raspberry American Wild Ale
+  brewery: Unity Vibration Kombuch
+  category: kombucha
+  style: Kombucha
+  description: On summer eve you may catch a glimpse of the bramble fairies in the
+    hedgerows. Tart Raspberry is delicious, an otherworldly sour beer with a beautiful
+    color, hints of oak and strong sour raspberry flavor.
+  abv: 8.2
+- id: 0e9f5c85-69b5-4680-9764-7fc47a363f47
+  name: Willy Time
+  brewery: Mason Ale Works
+  category: wheat
+  style: Wheat - Witbier
+  description: 'Belgian Style White Ale: Brewed with Orange, Grapefruit Peel, and
+    Coriander, and for a crisp and refreshing brew.'
+  abv: 5.0
+- id: 02b0a4b6-667b-45ca-b451-563c4d27efc3
+  name: Valley Preserves
+  brewery: Alesong Brewing & Blending
+  category: sour
+  style: Sour - Fruited
+  description: Preserves is a refreshing and jammy ale aged with Oregon-grown blueberries,
+    boysenberries and cherries. The same juice that stains the tips of your fingers
+    purple adds a beautiful hue to this tart blend and evokes fond memories of sunny
+    summer days in the Valley.
+  abv: 7.3
+  ibu: 12
+- id: 57fc7053-73be-4d20-925e-6fc48ffcb159
+  name: Hipsters Love Dairy
+  brewery: Wild Barrel Brewing
+  category: stout
+  style: Stout - Milk
+  description: Ironic Milk Stout w/ Oatmeal & Milk Sugar giving it a soft silky mouthfeel
+  abv: 5.9
+- id: 00a0b654-8fb5-43e0-ab99-4064c6f64eea
+  name: Pink Pineapple
+  brewery: Evil Twin Brewing
+  category: ipa
+  style: IPA - Sour
+  description: A 7%, tart, slightly sweet, very refreshing sour IPA, with pineapple
+    of course.
+  abv: 7.0
+- id: 37a42a2f-d97f-4463-bc37-c2533ec0b8bf
+  name: Deftones Ceremony
+  brewery: Belching Beaver Brewery
+  category: ipa
+  style: IPA - New England
+  description: The latest in our collaboration series with Deftones, Ceremony takes
+    an easy drinking Hazy IPA and pushes the limits of our dry-hopping regiment -
+    doubling down on juicy and tropical hop varietals that merit commemoration. Sit
+    back with a can and enjoy the revelry of the Double Dry-Hopped initiated. Cheers!
+  abv: 6.5
+  ibu: 30
+- id: fa87ae6c-432e-4f8a-ae11-73c7a126bfd2
+  name: Respeto
+  brewery: Mason Ale Works
+  category: lager
+  style: Lager - American
+  description: 'Mexican Style Lager: Light and refreshing, notes of earthiness with
+    a clean finish. Gold Medal Winner at Ensenada Beer Fest 2018.'
+  abv: 4.5
+- id: 3d61d272-b5dc-44e2-b6fa-8ef402cee87e
+  name: Checkerboard Silver
+  brewery: Mason Ale Works
+  category: ipa
+  style: IPA - New England
+  description: The latest installment in our checkerboard series, this huge DDH Double
+    Hazy IPA smacks you right in the face with a thick body and juicy citrus. Double
+    Dry Hopped with Azacca, Motueka, Simcoe, and drinking much smoother than the 8%
+    it comes in at, this is a dangerous juice bomb of epic proportions.
+  abv: 8.0
+- id: c5093f88-eac5-4bd2-86b1-c124a9b8e6ba
+  name: Papillon
+  brewery: Moonraker Brewing Company
+  category: ipa
+  style: IPA - Imperial
+  description: New England Imperial/Double Strata/Citra/Simcoe
+  abv: 8.5
+  ibu: 60
+- id: 69a6efb3-689b-4161-b37a-970b6782b1ac
+  name: Porto Pils
+  brewery: El Segundo Brewing Company
+  category: pilsner
+  style: Pilsner
+  description: The perfect summertime crusher
+  abv: 4.8
+- id: 1163d007-1fea-40e0-b0c9-0f89b65bff99
+  name: Weird Coast White IPA
+  brewery: Juxta Nomad
+  category: ipa
+  style: IPA - White
+  description: Criminally crushable Belgian-inspired IPA made with Mosaic and Strata
+    hops, wheat, oats, Witbier yeast, sweet orange peel, and a sprinkle of coriander.
+  abv: 6.1
+  ibu: 70
+- id: 82a4481f-7365-44fa-b82c-b1df90dda871
+  name: Foggie Bear
+  brewery: Mason Ale Works
+  category: ipa
+  style: IPA - Imperial
+  description: You know what you don't see too often in San Diego? Fog. But that didn't
+    stop our dudes over at Humble Sea from bringing it with them from Santa Cruz for
+    this most excellent of collaborations. Clocking in at 9.2% and DDH with epic proportions
+    of Mosaic Incognito, Cryo Citra, Cryo Sabro, and MI Cashmere, the aromatics on
+    this beer are absolutely insane. Couple that with a smooth drinking body, and
+    killer citrus and tropical notes, this beer is an absolute crusher for foggy and
+    sunny days alike.
+  abv: 9.2
+- id: 41257bb5-7667-4089-b194-d98939a4279d
+  name: Blueberry Maple Stout
+  brewery: Saugatuck Brewing Company
+  category: stout
+  style: Stout - Milk
+  description: A rich, sweet stout with classic malt characteristics with a bold,
+    unique twist. This beer tastes like you crammed a fat stack of blueberry pancakes
+    into a pint glass and smothered it with maple syrup. Channel your inner lumberjack,
+    because it’s in for a real treat.
+  abv: 6.0
+  ibu: 26
+- id: 18167ea0-91e1-41ff-8b45-3b5fde19415a
+  name: LOVE Hazy IPA
+  brewery: Almanac Beer Company
+  category: ipa
+  style: IPA - New England
+  description: LOVE is bursting with hoppy tropical flavors. Built on a simple base
+    of Pilsner malt and rolled oats, this super dank IPA has a pillowy mouthfeel and
+    is double dry-hopped with Mosaic, Citra, and Sabro. Flavors of mango, cantaloupe,
+    and citrus will keep you infatuated.
+  abv: 6.1
+- id: 9049b0b6-ea2f-4763-8d9e-f4911b7ab2d9
+  name: Popfuji
+  brewery: Brouwerij West
+  category: pilsner
+  style: Pilsner
+  description: Our take on the historic Kellerbier, Popfuji Unfiltered Pilsner delivers
+    a delicate malt sweetness combined with a subtle fruit and spice character from
+    the use of German Noble Hops. Unlike the typical Pilsner, however, Popfuji's uniqueness
+    is in it's smooth, creamy texture, making it perfect for any occasion.
+  abv: 5.0
+- id: 64cf3a88-9464-4d77-908b-5203a3436fb6
+  name: Münch On This
+  brewery: New Glory Craft Brewery
+  category: seasonal
+  style: Lager - Märzen
+  description: Guten tag! This traditional Marzen is brewed with 100% German malts,
+    and fermented with our German lager yeast. You’ll enjoy rich, full aromas and
+    flavors of toasted caramel malts and biscuits. This here is a clean, easy drinker
+    with a snappy dryness and low bitterness level. Prost!
+  abv: 6.0
+- id: ae0d8709-a37f-402d-a79d-72c8d17229b4
+  name: Gummy Worms
+  brewery: New Glory Craft Brewery
+  category: pale-ale
+  style: Pale Ale - American
+  description: It’s hard to believe, but no confections were harmed in the making
+    of this delicious brew! So how do we do it? We make this juicy, candy-like beer
+    drinkable by using a careful balance of wheat, oats, and brewer’s 2-row barley.
+    It is then aggressively dry hopped with Citra and Amarillo hops for all of those
+    sweet candied pineapple and fruit notes reminiscent of our favorite gummy candies.
+  abv: 5.8
+- id: a366949e-bc10-4096-ad60-c375d4a2da31
+  name: Swan Song
+  brewery: Banger Brewing
+  category: kölsch
+  style: Kölsch
+  description: ''
+  abv: 5.1
+  ibu: 14
+- id: eeb200dd-acf0-4de0-b507-6b5808c10496
+  name: Sandia
+  brewery: Banger Brewing
+  category: wheat
+  style: Wheat - Fruit
+  description: This easy drinking beer has an explosion of watermelon on the finish.
+    It’s crisp and clean flavor is perfect to beat the Las Vegas heat. Hefeweizen
+    mixed with fresh watermelon make this beer light and approachable for the novice
+    and experienced beer drinker.
+  abv: 5.5
+- id: 2cae5064-83bd-4c35-a5a8-fecad50c7922
+  name: Morning Joe
+  brewery: Banger Brewing
+  category: kölsch
+  style: Kölsch - Coffee
+  description: Coffee flavored
+  abv: 5.9
+  ibu: 23
+- id: b607ac3f-3824-4daa-9047-9f9bf3747761
+  name: El Heffe
+  brewery: Banger Brewing
+  category: wheat
+  style: Wheat - Jalapeño
+  description: A Southwestern take on the classic American Hef with roasted jalapeños,
+    serranos and habañeros. Very mild heat, with a burst of pepper flavor and aroma.
+  abv: 5.6
+  ibu: 17
+- id: 5956f9fd-b01b-475b-91ca-3a7952fea066
+  name: Perfect 10
+  brewery: Banger Brewing
+  category: pale-ale
+  style: Pale Ale
+  description: This Dry Hopped American Ale is made with the finest grains, hops and
+    filtered water. Grains consist of pale malt, with hints of caramel and honey malt.
+    Aromatic Simcoe and Chinook hops round out this malty yet easy drinking American
+    Ale.
+  abv: 5.7
+  ibu: 25
+- id: 8241b499-f38a-4465-902e-df3a9ca37efd
+  name: A Hoppy Ending
+  brewery: Banger Brewing
+  category: ipa
+  style: IPA - American
+  description: ''
+  abv: 6.9
+  ibu: 67
+- id: 7c55c9b9-152c-4dea-9942-acd5199b56b1
+  name: Haze & Loathing
+  brewery: Banger Brewing
+  category: ipa
+  style: IPA - New England
+  description: Loaded up with a ridiculous amount of hops including Azacca, Simcoe,
+    Cashmere and Ekuanot, Haze & Loathing packs a huge punch of pineapple and mango.
+  abv: 6.7
+- id: 3ca36051-c841-4601-9fe3-47859148f88c
+  name: The Long Knight
+  brewery: Banger Brewing
+  category: stout
+  style: Stout - Oatmeal
+  description: ''
+  abv: 6.9
+- id: 40aa0c10-d0a1-44ff-8d3e-dd62c49df820
+  name: Belphegor
+  brewery: Banger Brewing
+  category: belgian
+  style: Belgian Strong Golden Ale
+  description: Complex fruity flavors quickly lead into a spicy, dry finish.
+  abv: 9.2
+- id: 263aadfd-bf52-41db-867b-2820757b5770
+  name: Beer Shot
+  brewery: Banger Brewing
+  category: strong-ale
+  style: Strong Ale - American
+  description: ''
+  abv: 15.0
+  ibu: 31
+- id: 05a84203-72b8-4c61-83ef-2d90d62c08ee
+  name: Dangerous By Default
+  brewery: Banger Brewing
+  category: barleywine
+  style: Barleywine - English
+  description: Dangerous by Default is a deceptively smooth English Barleywine aged
+    1 year in bourbon barrels. Rich, nutty flavors from the minimalist malt bill give
+    way to subtle coconut and vanilla, with lightly fruity top notes
+  abv: 10.0
+- id: 68c8e9e8-b02a-47dc-aa8a-f7ebeb5a1156
+  name: Rolling Blackout
+  brewery: Banger Brewing
+  category: stout
+  style: Stout - Imperial
+  description: ''
+  abv: 10.5
+- id: e9d84ce4-015d-4ce1-8d31-a97d7c6e24bf
+  name: Ace Pineapple Cider
+  brewery: Ace Cider
+  category: cider
+  style: Cider - Pineapple
+  description: Ace Pineapple is the world's original Pineapple cider. While on vacation
+    in Hawaii, we tried adding fresh pineapple juice to our apple cider and it resulted
+    in this delicious tropical libation!
+  abv: 5.0
+- id: c632cd6f-6ca6-49d1-bc1d-bd62dc74e67c
+  name: SpACE
+  brewery: Ace Cider
+  category: cider
+  style: Cider - Other Fruit
+  description: This unfiltered addition of ACE is to honor the owner, Jeffrey House’s
+    wife who played Brea Tonnika in the cantina scene in the original Star Wars. Her
+    picture is featured on the bottleneck. This cider comes in a clear bottle so you
+    can see the vivid orange hue. ACE SpACE Bloody Orange is out of this world!
+  abv: 6.9
+- id: c8f361a1-162d-4414-88ba-7f0539cfaa30
+  name: Moons of Uranus
+  brewery: Astronomy Aleworks
+  category: porter
+  style: Porter - Coffee
+  description: Porter with Mothership Coffee & coconut added
+  abv: 6.4
+- id: c366a934-600f-4d24-81f9-7d97b4333f35
+  name: Nueva Esperanza
+  brewery: Juxta Nomad
+  category: lager
+  style: Lager - Vienna
+  description: SerVehZah Las Vegas’ house-branded Mexican Lager made in collaboration
+    with Astronomy Aleworks
+  abv: 4.8
+  ibu: 25
+- id: 569d9ff2-3cdf-4227-8b63-4ffe7c9b3844
+  name: Hop Ride IPA with Kayon Coffee
+  brewery: Tenaya Creek Brewery
+  category: ipa
+  style: IPA - American
+  description: Our Hop Ride India Pale Ale is medium bodied and aggressively hopped
+    using a technique called 'dry-hopping' which adds a nice delicate citrus aroma.
+    Combine that with Magnum & Summit hops to kick up the bitterness, and Cascade
+    hops for a floral boquet. You get a well balanced and very drinkable American
+    IPA. We live in Las Vegas and enjoy the areas beyond the reach of the neon. Bootleg
+    Canyon MTB Park is one of those places. Be Warned, the rattlers have just as much
+    bite as this ale. If you want to ride there, its going to be a "hop ride.
+  abv: 7.2
+  ibu: 70
+- id: 3b69e35c-3c40-487f-986c-c468cf5b1035
+  name: Acoustic Sidepiece
+  brewery: New Glory Craft Brewery
+  category: ipa
+  style: IPA - New England
+  description: This chill beer was made to soothe, rejuvenate, and enlighten the soul.
+    Amarillo, Cashmere, and Cascade hops play together in harmony. The combination
+    creates a super citrus-forward composition. 2-row malts, wheat, and oats create
+    that beautiful, soft mouthfeel we all know and love. It's like music to your mouth!
+  abv: 7.0
+- id: 7b2a74ec-e792-402c-a1b2-1f69560ba8d7
+  name: Ace Mango Cider
+  brewery: Ace Cider
+  category: cider
+  style: Cider - Other Fruit
+  description: 'ACE Mango is the amalgamation of fresh Mango Juices and a tart, semi-sweet
+    apple cider. The best tasting Mangos are grown near the equator in hot and humid
+    climates, so we went straight to the source: Ecuador! You are tasting an important
+    piece of ACE''s Exotic Fruit Cider range, enjoy!'
+  abv: 5.0
+- id: 9fcb5e00-f6e1-46b3-bc6b-f4ba61e5b6b3
+  name: Ace Guava Cider
+  brewery: Ace Cider
+  category: cider
+  style: Cider - Other Fruit
+  description: ACE Guava blends Brazilian Pink Guava Juice with a tart, semi-sweet
+    apple cider blend. It was inspired by a trip to Brazil where the House Brothers
+    enjoyed a Guava Caipirinha on Ipanema Beach. This cider is bold, juicy, and unfiltered.
+  abv: 5.0
+- id: 56405d5a-87e9-4fe3-8df0-ad24edfdfccf
+  name: Tamarindo Lindo Cider
+  brewery: Mojave Brewing Company
+  category: cider
+  style: Cider - Dry
+  description: ''
+  abv: 5.5
+- id: 61262242-5d6e-4f42-90f1-75cd0846df41
+  name: Cave Rock Kolsch
+  brewery: Brasserie Saint James
+  category: kölsch
+  style: Kölsch
+  description: German style kolsch
+  abv: 4.9
+- id: 79539a00-a38b-494d-a7a8-cde9d9027a65
+  name: Attack Ships On Fire Margarita Flavour Key Lime
+  brewery: Astronomy Aleworks
+  category: sour
+  style: Sour - Fruited
+  description: Kettle sour with key lime and orange (margarita flavor)
+  abv: 4.0
+- id: b5d0e8f4-4835-47bb-a57f-3d26c5c351bd
+  name: Cherry Bomb!
+  brewery: Prairie Artisan Ales
+  category: stout
+  style: Stout - Imperial
+  description: Imperial Stout Aged on Cherries, Coffee, Cacao Nibs, Vanilla Beans,
+    and Chili Peppers
+  abv: 11.5
+- id: 75d54ef9-9094-42b7-85a1-30c14c86028f
+  name: Pampered Moose - Grapefruit Radler
+  brewery: Lead Dog Brewing
+  category: fruit
+  style: Shandy
+  description: ''
+  abv: 5.1
+  ibu: 21
+- id: 851f48bb-68f3-47bc-afff-201a83ca4b5f
+  name: Sippin' Pretty
+  brewery: Odell Brewing Co.
+  category: sour
+  style: Sour - Fruited
+  description: More of a mantra than a beer, Sippin’ Pretty is our Fruited Sour Ale.
+    Loaded with our unique blend of açai, guava, and elderberry, and balanced with
+    a delicate addition of Himalayan pink sea salt, this beer pops with a bright ruby
+    color and a refreshing tart finish. So sit back, relax, and sip on something pretty.
+  abv: 4.5
+- id: a6119dee-93f9-428d-b3eb-b8cc33d50d20
+  name: Sun Trap
+  brewery: Three Weavers Brewing Company
+  category: sour
+  style: Sour - Fruited Gose
+  description: As days grow warmer and longer, Sun Trap pulls the craft beer lover
+    into its powerfully refreshing orbit. Soured with lactobacillus and fermented
+    with passionfruit puree, Sun Trap’s tart and fruity flavors illuminate the palate.
+    This 4.5% ABV quencher is finished with Mendocino sea salt and lemon peel for
+    a lightly tart, bright, and refreshing sunsation with every sip. From poolside
+    hangouts, to cookouts, to porch sipping and hammock lounging, Sun Trap shines
+    at any summertime occasion.
+  abv: 4.5
+- id: a8f6b264-9034-4b8a-ab73-aa6f4b01715c
+  name: Our Cha Tah
+  brewery: Able Baker Brewing Company
+  category: cream-ale
+  style: Cream Ale
+  description: 'Horchata comes in many different styles and has been a part of culinary
+    cultures in a wide ranging spectrum of Latin and African countries since the 16th
+    Century. It, however, has been the Mexican influenced version of Horchata that
+    has exploded in popularity. Here we look to mimic the traditional flavors found
+    in that style of Horchata (cinnamon, vanilla, cream) with OUR CHA TAH over a beer
+    base. We partnered with our good friends at SerVehZah to help them celebrate their
+    two favorite things: great beer and their appreciation for their Latin roots.
+    A cream ale was a logical starting point, we then added cinnamon & vanilla for
+    flavor and lactose and oats to create some "creaminess". To continue the unique
+    & amusing nature of this beer, it will be served in a glass rimmed with cajeta
+    & a sugar/cinnamon blend. ¡Salud!'
+  abv: 5.7
+  ibu: 20
+- id: bb3028dd-1706-4b8a-bfad-9fa0202783a2
+  name: My Darling Clementine
+  brewery: Newtopia Cyder
+  category: cider
+  style: Cider - Traditional
+  description: This juicy Cyder is made from 100% West Coast Apples and fermented
+    with Clementines and Fresh Orange Peel.
+  abv: 6.5
+- id: a485e814-9833-4b33-b987-83f5f59ce015
+  name: Münchner Weisse
+  brewery: Staatliches Hofbräuhaus München
+  category: wheat
+  style: Hefeweizen
+  description: Once upon a time, Weissbier could only be brewed by ducal privilege.
+    Hofbräuhaus enjoyed this exclusive right for nearly 200 years, thus holding a
+    monopoly on Weissbier in Bavaria. But even without a monopoly, Münchner Weisse
+    is a really special kind of beer. What could be more pleasurable than quenching
+    your thirst with a deliciously yeasty Weissbier, and savouring the tingling, fizzy
+    sensation in your mouth? With an alcoholic content of around 5,1% volume, it's
+    pure, refreshing enjoyment.
+  abv: 5.4
+  ibu: 14
+- id: 4ad9b422-7e49-4f79-8d76-aa263cefd33b
+  name: Amalgamator
+  brewery: Beachwood Brewing
+  category: ipa
+  style: IPA - American
+  description: 'Amalgamator is a dynamic West Coast-style India Pale Ale that''s delightfully
+    light in body and bursting with unique aromas and flavors. A massive dry hop charge
+    of Mosaic hops lays down an aromatic amalgam of passion fruit, blueberry, dank
+    resin, and citrus notes. Malt: American 2-row, Honey Malt Hops: Mosaic, Warrior,
+    Columbus, Amarillo'
+  abv: 7.1
+  ibu: 70
+- id: ff220751-c3cc-46a0-8b87-63d814aac7b5
+  name: Fields of Anthem Ryde
+  brewery: Juxta Nomad
+  category: lager
+  style: Lager - Vienna
+  description: An Americanized version of a classic Austrian-style beer, named after
+    an old Irish folk song about a guy being deported to Australia? Sure, why not.
+    This not-so-traditional Vienna Lager was made with rich, bready malts and spicy
+    rye, along with Cascade and Amarillo aroma hops. The end result is a complex yet
+    balanced lager, as textured as the rolling hills of Ireland.
+  abv: 4.8
+  ibu: 35
+- id: d1b1f4a8-0aca-4ad4-8b11-11ee88d4d95e
+  name: Coconut Wireless
+  brewery: Maui Brewing Company
+  category: cream-ale
+  style: Cream Ale
+  description: 'Ale brewed with lactose and toasted coconut. Appearance: Bright golden'
+  abv: 5.5
+  ibu: 12
+- id: 4c36bc79-55e8-4ec6-a9c9-205bcada1412
+  name: Double Flash Dubbel
+  brewery: Able Baker Brewing Company
+  category: belgian
+  style: Belgian - Dubbel
+  description: All atmospheric nuclear explosions produce a unique and easy to detect
+    emission signature, consisting of an extremely brief and intense initial "flash"
+    followed by a 2nd much longer and less intense "flash" of light (the visible fireball).
+    These dual explosions of light are known as "double flashes". This phenomenon
+    is unique to nuclear explosions and impossible to recreate artificially, allowing
+    researchers, scientists, tracking satellites, and governments to confirm if and
+    where a nuclear explosion has taken place. While not emitting light, our "Double
+    Flash" Dubbel does explode into a deep amber color and tasteful fireball of classic
+    Belgian flavors. The term Dubbel is a Trappist beer naming convention originally
+    used to identify beers with a higher alcohol content. We match that required "emission
+    signature" here as we produce this 7% ABV, classically style Trappist ale. We
+    use a unique combination of Victory, Munich, Belgian Aromatic, and a touch of
+    Dark Crystal malt to create a complex but dry malt character. The Belgian yeast
+    strain produces fruity esters that give you a "Double Flash" of flavor, evoking
+    notes of plum and spice. This brew is easy to track, no satellites necessary,
+    just flash down to our taproom for a pour.
+  abv: 7.0
+- id: 9ef03f90-ce0b-41d4-9bf0-4cb5f419f440
+  name: Monique
+  brewery: Able Baker Brewing Company
+  category: belgian
+  style: Belgian - Quadrupel
+  description: Brewed in collaboration with Triple 777, Joseph James, and Big Dog's.
+    A great beer brewed for a great reason. Our head brewer, Matt Marino, was passionate
+    about brewing this beer and creating the proper remembrance for an old friend.
+    We gathered together talented brewers from our area and created this light, smooth,
+    Belgian Quadrupel. Subtle Belgian notes and a dry finish create an approachable
+    introduction to this style.
+  abv: 10.0
+- id: c35dacc1-db84-4c7b-b436-3ecc50688a7f
+  name: 4,200 Tons
+  brewery: Able Baker Brewing Company
+  category: belgian
+  style: Belgian - Strong Dark Ale
+  description: Belgium has a strange connection to the development of the atomic bomb.
+    Until 1960, the Belgium government controlled an area in Africa known, then, as
+    the Belgian Congo. In 1915, in the deep and dark recesses of a mine in Shinkolobwe,
+    Congo, the world's largest and richest deposit of Uranium was discovered. The
+    need for Uranium at the time was limited and the mine was mostly used to recover
+    Radium (another radioactive element) until nuclear fission was discovered in 1938.
+    The discovery of nuclear fission hinted at the "explosive" power of Uranium and
+    in 1942 the US Military, committed to launching The Manhattan Project, decided
+    to buy up all the Uranium they could get their hands on. The US government worked
+    a deal with the Belgian and British powers controlling the mine, securing 4,200
+    tons of Congolese Uranium. Those 4,200 tons would form the basis of material used
+    to research, develop, and create the explosive components of the atomic bomb.
+    While searching for a rich deposit of our own, we "dug" into the recesses of our
+    dark beer catalog and mined this 8.5% ABV Belgian Strong Dark Ale. You don't have
+    to dig too deep to discover that sweet malt and dark fruit flavors dominate this
+    Mahogany colored "ore", as prevalent spicy, yet fruity, aromas are expressed then
+    complemented by a rich caramel malt backbone.
+  abv: 8.5
+- id: ceee32d9-161b-4749-939f-8079965433cc
+  name: K-Ration with Coffee
+  brewery: Able Baker Brewing Company
+  category: stout
+  style: Stout - Coffee
+  description: During WW2 the US Army produced the K-Ration, an individual daily "combat
+    food pack" issued to mobile forces. These rations served as both a morale boost
+    and a high calorie, caffeinated meal. Here, the morale boost for our "troops"
+    comes in the form of this bold, roasty, Imperial Stout rested on whole bean coffee.
+  abv: 10.5
+  ibu: 50
+- id: 08483860-58c6-4b92-bd9e-7220948b30cf
+  name: K-Ration with Chocolate
+  brewery: Able Baker Brewing Company
+  category: stout
+  style: Stout - Imperial
+  description: Dark chocolate has long been known to have many positive benefits,
+    not the least of which is as an addition to craft beer. Over the course of time,
+    cacao nibs and chocolate have been touted as everything from a great source of
+    antioxidants to the world's most powerful aphrodisiac. During WW2 the US Army
+    found another use for chocolate and the K-Ration was born. The K-Ration was an
+    individual daily "combat food pack" and was issued to airborne troops and other
+    mobile forces. The addition of chocolate to these meals served a dual purpose
+    as it provided both a morale boost and a high calorie, caffeinated food source.
+    Here, the morale boost for our "troops" comes in the form of this big, bold, 10.5%
+    ABV Imperial Stout. Exhibiting all the traditional flavors you expect from a stout
+    (roast, coffee), with a noticeable mouthfeel, and "boosted" by our addition of
+    a chocolate ration.
+  abv: 10.5
+  ibu: 50
+- id: e0476f2e-24f2-42c7-aaf3-b913760956dc
+  name: Vertical Smoke Trails
+  brewery: Able Baker Brewing Company
+  category: smoked-beer
+  style: Smoked Beer
+  description: Vertical smoke trails, technically known as "atomic smoke trails",
+    are the thin rails of smoke often seen extending upward alongside the mushroom
+    cloud formed by an atomic test. Just prior to detonating an atomic test, rockets
+    were fired from specific locations to leave smoke trails near the explosion and
+    create a visual "grid" of smoke that could be used to register the strength and
+    movement of shock waves created by the blast. Here, we go "off the grid" and craft
+    an eccentric brew, influenced by the Scottish ale style, with hints of Cherrywood
+    and Mesquite smoked malts that help lend complexity and flavor to this slightly
+    fruity, rich, malt-forward ale. We completed our brewing "trail" by aging this
+    beer in Smoke Wagon bourbon barrels which impart a noticeable bourbon barrel character,
+    notes of vanilla and oak, and assist the beer in pouring a beautiful, dark mahogany
+    color.
+  abv: 8.0
+- id: 682d3da5-0a90-479a-b1bd-fea8eea99345
+  name: Chris Kael Impale'd Ale (2014-2021)
+  brewery: Able Baker Brewing Company
+  category: brown-ale
+  style: Brown Ale - Imperial
+  description: A deceptively smooth Imperial brown rye ale, brewed in honor of our
+    good friend Chris Kael. This high ABV beer is aged on oak and, to honor Chris'
+    Kentucky roots, designed to invoke bourbon flavors. Barrel aged enthusiasts and
+    music lovers alike will enjoy this collaborative effort.
+  abv: 10.0
+  ibu: 28
+- id: 85017fa9-20ca-4225-836e-ff43204fae0e
+  name: Honey Dip Stout
+  brewery: Able Baker Brewing Company
+  category: stout
+  style: Stout - Imperial
+  description: Honey Dip is an Imperial Stout brewed with honey and Madagascar vanilla
+    beans then aged on American oak. This process creates a well-balanced beer that
+    combines elements of dark malts, vanilla sweetness, and dryness from the oak,
+    to create a velvety smoothness uncommon in this style of beer.
+  abv: 11.1
+  ibu: 51
+- id: 22d97c98-ef44-4b90-bfa3-141ca0eef1f7
+  name: Waddle...
+  brewery: Able Baker Brewing Company
+  category: ipa
+  style: IPA - Session
+  description: Well behaved ducks rarely make history, so we continue to break all
+    the rules regarding style parameters. Here we craft a session ale on a light base
+    of wheat and 2-row malts. The simplified malt bill and low ABV allow the beauty
+    of Mosaic hops and fresh citrus to shine through. Light, crisp, and delicately
+    refreshing this brew allows you to "Waddle" away and forge your own footprint.
+  abv: 4.4
+  ibu: 27
+- id: a46ab37f-4a0c-4b72-b2df-bc00cbe5675b
+  name: Split Bill
+  brewery: Able Baker Brewing Company
+  category: ipa
+  style: IPA - American
+  description: Split Bill (yes, we love our duck puns) is designed to feature our
+    two favorite hops by "splitting" their use during the brewing process. We use
+    lots of Citra early on and lots of Mosaic late. This process pulls just enough
+    bitterness from the Citra while retaining it's floral characteristics and allowing
+    the soft fruitiness of Mosaic to pronounce late. Normally, this elusive brew is
+    a TAPROOM ONLY offering so you can share the experience with others and perhaps
+    "split the bill", however, we're currently offering a limited run in 16oz cans
+    so you can enjoy them at home during these unique times.
+  abv: 5.7
+  ibu: 57
+- id: ff67ff57-a310-441e-b860-a0756004deb5
+  name: Pitchblende Porter
+  brewery: Able Baker Brewing Company
+  category: porter
+  style: Porter - American
+  description: 'Pitchblende is a dark black radioactive mineral and ore, rich in uranium.
+    Pitchblende is notable in that THREE different radioactive chemicals were first
+    discovered via analysis of its makeup: uranium, polonium, and radium. A moderate
+    ABV and smooth, well-balanced flavor put this intricately layered porter at the
+    top of our discovery list!'
+  abv: 7.0
+  ibu: 45
+- id: bbc48549-0ffb-4572-b816-30942a6866cb
+  name: Calaveras Y Flores
+  brewery: Able Baker Brewing Company
+  category: farmhouse-ale
+  style: Farmhouse Ale - Saison
+  description: An unfiltered Saison brewed with fresh chamomile flowers, ginger, and
+    spices then aged in a bourbon barrel. Originally brewed to recognize the Dia de
+    los Muertos holiday, this "Skulls & Flowers" beer features mild ginger flavor
+    with notes of lemon zest while the barrel aging contributes color and balances
+    the complexity of this unique ale.
+  abv: 6.0
+  ibu: 25
+- id: 8cbe0dd1-eaa0-465b-b520-6b5a43007e4b
+  name: Calutron Girl
+  brewery: Able Baker Brewing Company
+  category: wheat
+  style: Hefeweizen
+  description: This Bavarian style Hefeweizen was brewed with a traditional approach,
+    combining Munich malt, lots of wheat, and Weihenstephan yeast. This malt bill,
+    combined with one of the world’s most perfect yeast strains, brings out all the
+    classic, traditional notes of clove and banana that you expect from this style.
+    While our brewing process values tradition, this name celebrates the exceptional……the
+    Calutron Girls. The Calutron Girls were a group of young women who, due to labor
+    shortages during WW2, were recruited to work at the top-secret Y-12 National Security
+    Complex in Oak Ridge, TN. These young girls, many of whom had barely graduated
+    high school, were tasked with monitoring and adjusting the dials and meters on
+    a mass spectrometer that produced the enriched uranium used in the first Atomic
+    bomb. They did all this with an extremely high level of efficiency, with ZERO
+    knowledge of their true job function or what the dials they were monitoring and
+    adjusting controlled. A manager at the Oak Ridge facility reportedly would tell
+    new Calutron girls, “We can train you how to do what is needed, but cannot tell
+    you what you are doing. I can only tell you that if our enemies beat us to it,
+    God have mercy on us!” This beer is dedicated to the many unsung and under-appreciated
+    contributions made by so many women during the war effort.
+  abv: 5.0
+  ibu: 18
+- id: d8546f22-4aa8-4d66-80d6-aebf82262085
+  name: Calutron Girl - Mango
+  brewery: Able Baker Brewing Company
+  category: wheat
+  style: Hefeweizen
+  description: This fruited Hefeweizen was brewed with some traditional approaches
+    (Munich malt, lots of wheat, and Weihenstephan yeast) and some non-traditional
+    ones (Mangoes). This malt bill, combined with one of the world’s most perfect
+    yeast strains, brings out the classic notes of clove and banana that you expect,
+    while mangoes provide the fruitiness and mild tartness that you don't. The Mango
+    addition makes this wheat beer standout and the name celebrates the exceptional……the
+    Calutron Girls. The Calutron Girls were a group of young women who, due to labor
+    shortages during WW2, were recruited to work at the top-secret Y-12 National Security
+    Complex in Oak Ridge, TN. These young girls, many of whom had barely graduated
+    high school, were tasked with monitoring and adjusting the dials and meters on
+    a mass spectrometer that produced the enriched uranium used in the first Atomic
+    bomb. They did all this with an extremely high level of efficiency, with ZERO
+    knowledge of their true job function or what the dials they were monitoring and
+    adjusting controlled. A manager at the Oak Ridge facility reportedly would tell
+    new Calutron girls, “We can train you how to do what is needed, but cannot tell
+    you what you are doing. I can only tell you that if our enemies beat us to it,
+    God have mercy on us!” This beer is dedicated to the many unsung and under-appreciated
+    contributions made by so many women during the war effort.
+  abv: 5.0
+  ibu: 18
+- id: 1c80453e-9fda-4a76-89cb-5e24a10ec98b
+  name: Ententanz Oktoberfest
+  brewery: Able Baker Brewing Company
+  category: seasonal
+  style: Lager - Festbier
+  description: Sometimes a story just tells itself. In the late 1950's Swiss accordion
+    player Werner Thomas penned a tune called "Der Ententanz" (The Duck Dance) because,
+    in addition to accordion playing, he also tended flocks of ducks and geese. Thomas
+    began playing the composition in local hotels and restaurants where guests created
+    a dance to the bouncy tune that, they believed, mimicked the movements of a duck.
+    The dance eventually grew to include beak, wing, and tail motions. By the late
+    70's, the tune had become a popular drinking song at Oktoberfest and Germans had
+    given the song a new name, "Vogerltanz" (Little Bird Dance). The dance made its
+    way to the United States in 1981 via an Oktoberfest celebration held in Tulsa,
+    Oklahoma. Founding members of that Oktoberfest celebration wanted to demonstrate
+    their love of the song through a dance performed in costume, but no duck costumes
+    were available. Luckily, a local TV Station had a chicken costume to donate and
+    the "Chicken Dance" was born (this is a true story). Our Oktoberfest style beer
+    is meant to mimic the fun and enthusiasm experienced by those who enjoy this,
+    now, ubiquitous Oktoberfest dance. Classic ingredients like Vienna and Munich
+    malts, Hallertau hops, and German Lager yeast pay tribute to Old-World elements
+    that will have you "flapping your wings" for tradition, while the 6% ABV provides
+    you with just enough liquid courage to "shake your tailfeather" and celebrate
+    the new. Crisp, clean, and malt driven with a beautifully dry finish, this copper
+    colored Festbier is our "Prost!" to you.
+  abv: 6.0
+  ibu: 14
+- id: 2e5353be-e564-457b-904a-8cee911ce5ca
+  name: Excited State
+  brewery: Able Baker Brewing Company
+  category: pilsner
+  style: Pilsner - German
+  description: In atomic terminology, when an atom or nucleus possesses more than
+    its normal energy it enters into an "excited state". That's both the name of our
+    German style Pilsner as well as the condition you'll achieve after tasting it.
+    We start with an elegantly traditional base and add just a touch of Vienna Malt
+    (for a bit more toasted malt character) then hop this crisp, easy drinking lager
+    with Hallertau Mittelfruh and Saphir for a distinctive yet smooth flavor and bitterness.
+    When excited state atoms decay the excess energy is released in the form of gamma
+    rays and fluorescence. While we promise that you won't "hulk out" after drinking
+    this brew, you may choose to sip and bask in the "glow" of the excess energy this
+    beer possesses.
+  abv: 5.0
+  ibu: 30
+- id: 6833fcf7-dd6f-43b0-a541-d236a15690df
+  name: Grim Reaver
+  brewery: 7Five Brewing Co
+  category: stout
+  style: Stout - Irish Dry
+  description: Light, fizzy stout, slightly sweet, malty
+  abv: 7.5
+- id: 6d746428-cf04-483e-9253-098a7fff03b8
+  name: Dawn Breaker
+  brewery: 7Five Brewing Co
+  category: lager
+  style: Lager - American
+  description: "They say half of success is just showing up. And as the underdog,\
+    \ we know the other half is showing up before everyone else does. Dawn Breaker\
+    \ is your cheerleader, championing you for earning your spot, every day. \nEarly\
+    \ mornings, and late nights."
+  abv: 4.8
+  ibu: 20
+- id: e6dae4a5-6746-4e75-a91b-fffb3b1ba8c9
+  name: Shiver Giver
+  brewery: 7Five Brewing Co
+  category: ipa
+  style: IPA - American
+  description: It’s not something you can see. It’s only something you can feel. A
+    sensation that sends tingles through your body, and lets you know you’ve just
+    witnessed something unique. Something incredible. It’s the culmination of everything
+    you’ve worked for.
+  abv: 6.8
+  ibu: 55
+- id: 2047c976-48ee-4d47-bd0f-d0f87c10f370
+  name: Training Day
+  brewery: 7Five Brewing Co
+  category: golden-ale
+  style: Golden Ale
+  description: "You can’t finish unless you start. And once you start, well, you’re\
+    \ halfway home. Training Day is your jumping off point. It’s your introduction\
+    \ to the world you’ll one day claim. \n It’s where your journey begins. "
+  abv: 5.8
+  ibu: 35
+- id: f9d28b5e-04da-4d0d-ae6c-41cfcf2939cc
+  name: 5 Pepper Porter
+  brewery: Able Baker Brewing Company
+  category: porter
+  style: Porter - American
+  description: From a brewery known for bold flavors this is probably our most ambitiously
+    flavored beer. This American Porter is brewed with fresh toasted coconut and then
+    dry hopped with a 5 pepper combination that includes jalapenos and habaneros.
+    A deeply layered beer that goes from an upfront coconut nose to chocolate/caramel
+    sweetness, and finishes with habanero heat.
+  abv: 6.5
+  ibu: 40
+- id: 45b0f655-875f-40d3-9a01-8a12e1f707f4
+  name: Gamma Ray Burst
+  brewery: Able Baker Brewing Company
+  category: belgian
+  style: Belgian - Tripel
+  description: 'The intersection of astronomy and atomic energy: Gamma Ray Burst.
+    In the 1960s the USA launched top-secret satellites to detect gamma radiation
+    from Soviet warhead testing. Scientists recorded numerous gamma bursts but they
+    emanated from an extraterrestrial origin! Declassified in the 1970s, astronomers
+    discovered the bursts were the result of supernovae and black hole collisions.
+    This Tripel won''t explode in your glass but it will "burst" with traditional
+    Belgian characteristics you love: fruity esters, spicy phenols, and noticeable
+    alcohol. This brew might take you to new worlds but won''t leave you stranded
+    because its recipe is "based on real science"!'
+  abv: 10.0
+- id: f337b45a-116d-47a7-8810-d1c3e6d5062a
+  name: Triple Jam
+  brewery: Blake's Hard Cider Co.
+  category: cider
+  style: Cider - Other Fruit
+  description: Inspired by the juicy berries we grow on our farm each summer, Triple
+    Jam is the perfect balance of ripe sweetness with bold fruit aromatics. Bursting
+    with strawberries, blackberries, and raspberries, this semi-sweet captivates the
+    nuance of our farm, in each and every taste.
+  abv: 6.5
+- id: 01bcbe70-840d-4517-a7e9-4a701a513bc0
+  name: Chris Kael's Root Beer'd
+  brewery: Able Baker Brewing Company
+  category: root-beer
+  style: Root Beer
+  description: Continuing our collaborative efforts with our favorite rock star, Chris
+    Kael, we're pleased to present our first non-alcoholic offering....Chris Kael's
+    Root Beer'd. This sweet, spicy, root beer, is dosed with an extra amount of vanilla
+    bean and then rested on oak to add an extra layer of rich decadence. Available
+    on it's on, in Crowlers to go, or as part of our super-sized root beer floats
+    this one's sure to get to the root of your thirst.
+  abv: 0.0
