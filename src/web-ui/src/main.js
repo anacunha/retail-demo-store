@@ -41,6 +41,23 @@ const amplifyConfig = {
         "region": process.env.VUE_APP_BOT_REGION,
       },
     }
+  },
+  geo: {
+    AmazonLocationServices: {
+      maps: {
+        items: {
+          [process.env.VUE_APP_LOCATION_RESOURCE_NAME] : { // REQUIRED - Amazon Location Service Map resource name
+            style: "VectorEsriStreets", // REQUIRED - String representing the style of map resource
+          },
+        },
+        default: process.env.VUE_APP_LOCATION_RESOURCE_NAME, // REQUIRED - Amazon Location Service Map resource name to set as default
+      },
+      // search_indices: {
+      //   items: ["XXXXXXXXX"], // REQUIRED - Amazon Location Service Place Index name
+      //   default: "XXXXXXXXX", // REQUIRED - Amazon Location Service Place Index name to set as default
+      // },
+      region: process.env.VUE_APP_AWS_REGION, // REQUIRED - Amazon Location Service Region
+    },
   }
 }
 
