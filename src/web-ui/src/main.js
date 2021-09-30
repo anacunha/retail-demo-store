@@ -13,6 +13,7 @@ import AmplifyStore from '@/store/store';
 import VueGtag from "vue-gtag";
 
 import './styles/tokens.css'
+import './styles/maps.css'
 
 // Base configuration for Amplify
 const amplifyConfig = {
