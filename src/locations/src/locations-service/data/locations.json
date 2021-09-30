@@ -6,7 +6,9 @@
     "Phone": "+1 (702) 912-0590",
     "Business Hours": ["Monday - Closed","Tuesday - Closed","Wednesday - 4pm - 11pm","Thursday 4pm - 11pm","Friday - 1pm - 12am","Saturday - 12pm - 12am","Sunday - 12pm - 7pm"],
     "Website": "http://www.threesheetsdtlv.com/",
-    "Beers": ["Atomic Duck","Two Hearted Ale","Workhorse IPA","Disco Ninja","Return of the Citra Rye","HopAtomic","Sublimely Self-Righteous Black IPA","Thirsty Thurtle","San Diego Pale Ale .394","Mexico Surf Trip","Oskar's Lager","Apricot Hefeweizen","Tailwagger Wheat","I Love NV","Maduro Brown Ale","Polygamy Nitro Porter","¡Viva La Beaver!","Tank 7","Oktoberfestbier","Black O' Lantern Pumpkin Stout","Plum Fairy (Liquidious Meniscus)","Arnold Punker","Ace Pineapple Cider","Ace Apple Cider"]
+    "Beers": ["Atomic Duck","Two Hearted Ale","Workhorse IPA","Disco Ninja","Return of the Citra Rye","HopAtomic","Sublimely Self-Righteous Black IPA","Thirsty Thurtle","San Diego Pale Ale .394","Mexico Surf Trip","Oskar's Lager","Apricot Hefeweizen","Tailwagger Wheat","I Love NV","Maduro Brown Ale","Polygamy Nitro Porter","¡Viva La Beaver!","Tank 7","Oktoberfestbier","Black O' Lantern Pumpkin Stout","Plum Fairy (Liquidious Meniscus)","Arnold Punker","Ace Pineapple Cider","Ace Apple Cider"],
+    "Latitude": "36.15808",
+    "Longitude":	"-115.15193"
   },
   {
     "Id": 2,
@@ -15,7 +17,9 @@
     "Phone": "+1 (702) 888-1026",
     "Business Hours": ["Monday - 12pm - 10pm","Tuesday - 12pm - 10pm","Wednesday - 12pm - 10pm","Thursday 12pm - 10pm","Friday - 12pm - 11pm","Saturday - 12pm - 11pm","Sunday - 12pm - 10pm"],
     "Website": "https://www.crafthausbrewery.com/",
-    "Beers": ["Silver State Blonde","Evocation","Zitrone","Razzle All Day","Resinate IPA","Dry Heat","Cuckoo","Rock the Haus 6th Anniversary BA Basil Hayden","Czech Plz","Michelada","All the Plumcots","Mangonada","Hop Vegas","Giggle Juice","Belgard"]
+    "Beers": ["Silver State Blonde","Evocation","Zitrone","Razzle All Day","Resinate IPA","Dry Heat","Cuckoo","Rock the Haus 6th Anniversary BA Basil Hayden","Czech Plz","Michelada","All the Plumcots","Mangonada","Hop Vegas","Giggle Juice","Belgard"],
+    "Latitude": "36.15716",
+    "Longitude":	"-115.15274"
   },
   {
     "Id": 3,
@@ -24,7 +28,9 @@
     "Phone": "+1 (702) 445-7100",
     "Business Hours": ["Monday - CLOSED"," Tuesday - 11am - 11pm"," Wednesday - 11am - 11pm"," Thursday - 11am - 11pm"," Friday - 11am - 11pm"," Saturday - 11am - 11pm"," Sunday - 11am - 11pm"],
     "Website": "https://hudlbrewing.com/",
-    "Beers": ["HEXX Chocolate Tanzanian Cream Ale","Vanilla Oak Barrel Aged On Chocolate","Arts District IPA","WATERMELON SOUR","Orange/Pomegranate Sour","Anodized Amber Ale Aged On Oak","JUST DO WIT","SHAGGY ASSASSIN - ROTATIONAL IPA HAZY","Shaggy Assassin Guava IPA","High Hatter Hefe On Pineapple","SCORCHED MEADOWS - HAZY","Thirsty Thurtle","115° Imperial Stout","NAC NAC - Kumquat","The Patio","The Mosquito","Mosquito Bite","VANILLA OAK","Vanilla Oak On NITRO","WRATHFUL ROSE","Super Mini","SALTY SWABBER","Big Foozy","GP","Weird-as-Funk","Ruby Soho"]
+    "Beers": ["HEXX Chocolate Tanzanian Cream Ale","Vanilla Oak Barrel Aged On Chocolate","Arts District IPA","WATERMELON SOUR","Orange/Pomegranate Sour","Anodized Amber Ale Aged On Oak","JUST DO WIT","SHAGGY ASSASSIN - ROTATIONAL IPA HAZY","Shaggy Assassin Guava IPA","High Hatter Hefe On Pineapple","SCORCHED MEADOWS - HAZY","Thirsty Thurtle","115° Imperial Stout","NAC NAC - Kumquat","The Patio","The Mosquito","Mosquito Bite","VANILLA OAK","Vanilla Oak On NITRO","WRATHFUL ROSE","Super Mini","SALTY SWABBER","Big Foozy","GP","Weird-as-Funk","Ruby Soho"],
+    "Latitude": "36.15787",
+    "Longitude":	"-115.14805"
   },
   {
     "Id": 4,
@@ -33,7 +39,9 @@
     "Phone": "+1 (702) 645-1404",
     "Business Hours": ["Open 24 hours"],
     "Website": "https://www.bigdogsbrews.com/",
-    "Beers": ["38 Special","44 Magnum","50 Caliber","Black Lab Stout","Dirty Dog IPA","Las Vegas Craft Lager","Leglifter Light","Peace, Love & Hoppiness","Red Hydrant Brown Ale","Underbite IPA","A Dog Gose Woof","Canis Minor","Dog Gone Saison","My Dog's Plums","Release the Hounds","Sam-Rye","Stay Motley DoPPElbock","Viener Dog","Illuminator","SALTY SWABBER","Tailwagger Wheat","The Emigrant","Razzle All Day","Sunrise Mountain","Apple Soiree","Hoptical Telescope","Our Share IPA","Vertical Envelopment","Hipster Latte","Locals Only IPA","Peanut Butter Latte Nitro Golden Stout","Wizard Nebula"]
+    "Beers": ["38 Special","44 Magnum","50 Caliber","Black Lab Stout","Dirty Dog IPA","Las Vegas Craft Lager","Leglifter Light","Peace, Love & Hoppiness","Red Hydrant Brown Ale","Underbite IPA","A Dog Gose Woof","Canis Minor","Dog Gone Saison","My Dog's Plums","Release the Hounds","Sam-Rye","Stay Motley DoPPElbock","Viener Dog","Illuminator","SALTY SWABBER","Tailwagger Wheat","The Emigrant","Razzle All Day","Sunrise Mountain","Apple Soiree","Hoptical Telescope","Our Share IPA","Vertical Envelopment","Hipster Latte","Locals Only IPA","Peanut Butter Latte Nitro Golden Stout","Wizard Nebula"],
+    "Latitude": "36.24223",
+    "Longitude":	"-115.23602"
   },
   {
     "Id": 5,
@@ -42,7 +50,9 @@
     "Phone": "+1 (702) 463-4199",
     "Business Hours": ["Monday - 3pm - 8pm"," Tuesday - 3pm - 8pm"," Wednesday - 3pm - 8pm"," Thursday - 4pm - 9pm"," Friday - 2pm - 8pm"," Saturday - 12pm - 10pm"," Sunday - 12pm - 8pm"],
     "Website": "https://badbeatbrewing.com/on-the-tap",
-    "Beers": ["A Healthy Distrush","Pillow War","Smoke Wheat Everyday","Sunday Fundau","WoMango","The Long Night","Let's Get Lit","Beisbol","Go For Broke","Pocket Pair","Bluffing Isn't Weisse","Hoppy Times","Czech Pilsner","The Ringer","Hoptimistic","I Love NV"]
+    "Beers": ["A Healthy Distrush","Pillow War","Smoke Wheat Everyday","Sunday Fundau","WoMango","The Long Night","Let's Get Lit","Beisbol","Go For Broke","Pocket Pair","Bluffing Isn't Weisse","Hoppy Times","Czech Pilsner","The Ringer","Hoptimistic","I Love NV"],
+    "Latitude": "36.05281",
+    "Longitude":	"-115.01906"
   },
   {
     "Id": 6,
@@ -51,7 +61,9 @@
     "Phone": "+1 (702) 564-3030",
     "Business Hours": ["Monday - 2pm - 8pm"," Tuesday - 2pm - 10pm"," Wednesday - 2pm - 10pm"," Thursday - 2pm - 10pm"," Friday - 12pm - 11pm"," Saturday - 12pm - 11pm"," Sunday - 12pm - 8pm"],
     "Website": "https://www.loveladybrewing.com/",
-    "Beers": ["HopAtomic","Arnold Punker","Illuminator","Weisse Choice","Love Juice","Paleo Porter","9th Island Pineapple Sour","State of Change WCIPA","Golden Nites","Hendertucky Horror Show (Seasonal)","Love Triangle","Marzipan Stout","Curbside Party","Lava Flow","Gas Station Spread","Gas Station Mexican Lager"]
+    "Beers": ["HopAtomic","Arnold Punker","Illuminator","Weisse Choice","Love Juice","Paleo Porter","9th Island Pineapple Sour","State of Change WCIPA","Golden Nites","Hendertucky Horror Show (Seasonal)","Love Triangle","Marzipan Stout","Curbside Party","Lava Flow","Gas Station Spread","Gas Station Mexican Lager"],
+    "Latitude": "36.02978",
+    "Longitude":	"-114.97998"
   },
   {
     "Id": 7,
@@ -60,7 +72,9 @@
     "Phone": "+1 (702) 664-1500",
     "Business Hours": ["Monday - 11am - 12am"," Tuesday - 11am - 12am"," Wednesday - 11am - 12am"," Thursday - 11am - 12am"," Friday - 11am - 1am"," Saturday - 11am - 1am"," Sunday - 11am - 12am"],
     "Website": "https://nevadabrewworks.com/",
-    "Beers": ["Ariana Rye IPA","Lager","Kolsch","Hefeweizen","Lemondrop Saison","Red Lager","Golden Blonde Ale","Vegas And Friends","Schwartzbier Dark Lager","Hazy! IPA"]
+    "Beers": ["Ariana Rye IPA","Lager","Kolsch","Hefeweizen","Lemondrop Saison","Red Lager","Golden Blonde Ale","Vegas And Friends","Schwartzbier Dark Lager","Hazy! IPA"],
+    "Latitude": "36.15787",
+    "Longitude":	"-115.14805"
   },
   {
     "Id": 8,
@@ -69,7 +83,9 @@
     "Phone": "+1 (702) 979-9797",
     "Business Hours": ["11AM – 9PM | 7 Days"],
     "Website": "https://beer-zombies.com/",
-    "Beers": ["Campfire Stout","BOOMSTICK Blonde","Evil Haze","Boba Bliss: Pink Guava","Abnormalweiss","Mama's Keys","Vertical Envelopment","Ever Clever","Vice - Black Currant","Nueva Gloria","Circle of Crowns","Trumer Pils","Raspberry American Wild Ale","JUST DO WIT"]
+    "Beers": ["Campfire Stout","BOOMSTICK Blonde","Evil Haze","Boba Bliss: Pink Guava","Abnormalweiss","Mama's Keys","Vertical Envelopment","Ever Clever","Vice - Black Currant","Nueva Gloria","Circle of Crowns","Trumer Pils","Raspberry American Wild Ale","JUST DO WIT"],
+    "Latitude": "36.09738",
+    "Longitude":	"-115.1811"
   },
   {
     "Id": 9,
@@ -78,7 +94,9 @@
     "Phone": "+1 (702) 979-9797",
     "Business Hours": ["11am-11pm | 7 Days"],
     "Website": "https://beer-zombies.com/",
-    "Beers": ["Willy Time","Valley Preserves","Hipsters Love Dairy","Pink Pineapple","Deftones Ceremony","Respeto","Checkerboard Silver","Papillon","Vertical Envelopment","BOOMSTICK Blonde"]
+    "Beers": ["Willy Time","Valley Preserves","Hipsters Love Dairy","Pink Pineapple","Deftones Ceremony","Respeto","Checkerboard Silver","Papillon","Vertical Envelopment","BOOMSTICK Blonde"],
+    "Latitude": "36.05608",
+    "Longitude":	"-115.28091"
   },
   {
     "Id": 10,
@@ -87,7 +105,9 @@
     "Phone": "+1 (702) 979-9797",
     "Business Hours": ["Monday – Saturday 11AM to 9PM"," Sunday 11AM to 8PM"],
     "Website": "https://beer-zombies.com/",
-    "Beers": ["Porto Pils","Weird Coast White IPA","Foggie Bear","Blueberry Maple Stout","LOVE Hazy IPA","Popfuji","Münch On This","Gummy Worms","BOOMSTICK Blonde","Deftones Ceremony","Respeto"]
+    "Beers": ["Porto Pils","Weird Coast White IPA","Foggie Bear","Blueberry Maple Stout","LOVE Hazy IPA","Popfuji","Münch On This","Gummy Worms","BOOMSTICK Blonde","Deftones Ceremony","Respeto"],
+    "Latitude": "36.15002",
+    "Longitude":	"-115.33317"
   },
   {
     "Id": 11,
@@ -96,7 +116,9 @@
     "Phone": "+1 (702) 456-2739",
     "Business Hours": ["Monday: noon – midnight","Tuesday: noon – midnight","Wednesday: noon – midnight","Thursday: noon – midnight","Friday: noon – midnight","Saturday: 11:00 am – midnight","Sunday: 11:00 am – midnight"],
     "Website": "http://bangerbrewing.com",
-    "Beers": ["Swan Song","Sandia","Morning Joe","El Heffe","Perfect 10","A Hoppy Ending","Haze & Loathing","The Long Knight","Belphegor","Beer Shot","Dangerous By Default","Rolling Blackout","Ace Pineapple Cider","SpACE"]
+    "Beers": ["Swan Song","Sandia","Morning Joe","El Heffe","Perfect 10","A Hoppy Ending","Haze & Loathing","The Long Knight","Belphegor","Beer Shot","Dangerous By Default","Rolling Blackout","Ace Pineapple Cider","SpACE"],
+    "Latitude": "36.16549",
+    "Longitude":	"-115.14237"
   },
   {
     "Id": 12,
@@ -105,7 +127,9 @@
     "Phone": "+1 (702) 779-3176",
     "Business Hours": ["Sun-Thurs: 12:00pm–11:00pm","Fri & Sat: 12:00pm–12:00am"],
     "Website": "https://servehzah.com/",
-    "Beers": ["Moons of Uranus","Nueva Esperanza","Hop Ride IPA with Kayon Coffee","Acoustic Sidepiece","Ace Mango Cider","Ace Guava Cider","Tamarindo Lindo Cider","Cave Rock Kolsch","Attack Ships On Fire Margarita Flavour Key Lime","Cherry Bomb!","Pampered Moose - Grapefruit Radler","Sippin' Pretty","Sun Trap","Our Cha Tah","My Darling Clementine","Münchner Weisse","Amalgamator","Fields of Anthem Ryde","Coconut Wireless","All the Plumcots","JUST DO WIT","Foggie Bear","Acoustic Sidepiece","Deftones Ceremony","Ace Pineapple Cider"]
+    "Beers": ["Moons of Uranus","Nueva Esperanza","Hop Ride IPA with Kayon Coffee","Acoustic Sidepiece","Ace Mango Cider","Ace Guava Cider","Tamarindo Lindo Cider","Cave Rock Kolsch","Attack Ships On Fire Margarita Flavour Key Lime","Cherry Bomb!","Pampered Moose - Grapefruit Radler","Sippin' Pretty","Sun Trap","Our Cha Tah","My Darling Clementine","Münchner Weisse","Amalgamator","Fields of Anthem Ryde","Coconut Wireless","All the Plumcots","JUST DO WIT","Foggie Bear","Acoustic Sidepiece","Deftones Ceremony","Ace Pineapple Cider"],
+    "Latitude": "36.14444",
+    "Longitude":	"-115.15901"
   },
   {
     "Id": 13,
@@ -114,6 +138,8 @@
     "Phone": "+1 (702) 479-6355",
     "Business Hours": ["Sunday - Thursday: 1130a – 11p","Friday - Saturday: 1130a - 12a"],
     "Website": "https://ablebakerbrewing.com",
-    "Beers": ["Double Flash Dubbel","Monique","4,200 Tons","K-Ration with Coffee","K-Ration with Chocolate","Vertical Smoke Trails","Chris Kael Impale'd Ale (2014-2021)","Honey Dip Stout","Waddle...","Split Bill","Pitchblende Porter","Calaveras Y Flores","Calutron Girl","Calutron Girl - Mango","Ententanz Oktoberfest","Excited State","Grim Reaver","Dawn Breaker","Shiver Giver","Training Day","5 Pepper Porter","Gamma Ray Burst","Triple Jam","Chris Kael's Root Beer'd","Atomic Duck","Our Cha Tah"]
+    "Beers": ["Double Flash Dubbel","Monique","4,200 Tons","K-Ration with Coffee","K-Ration with Chocolate","Vertical Smoke Trails","Chris Kael Impale'd Ale (2014-2021)","Honey Dip Stout","Waddle...","Split Bill","Pitchblende Porter","Calaveras Y Flores","Calutron Girl","Calutron Girl - Mango","Ententanz Oktoberfest","Excited State","Grim Reaver","Dawn Breaker","Shiver Giver","Training Day","5 Pepper Porter","Gamma Ray Burst","Triple Jam","Chris Kael's Root Beer'd","Atomic Duck","Our Cha Tah"],
+    "Latitude": "36.15787",
+    "Longitude":	"-115.14805"
   }
  ]
