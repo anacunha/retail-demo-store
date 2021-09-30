@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="container location-map-continer">
+    <div class="container">
       <div id="markmap" class="location-map"></div>
 
       <LocationList :locations="locations" :changeViewport="setViewport" />
@@ -72,12 +72,13 @@ export default {
         return { url: url || "" };
     },
     async getLocations() {
-      this.locations = await LocationsRepository.get();
+      let locationsResult = await LocationsRepository.get();
+      this.locations = locationsResult.data;
     },
     async initializeMap() {
       if (this.locations && this.locations.length != 0) {
-        this.center = new maplibregl.LngLat(this.locations[0].longitude, this.locations[0].latitude)
-        this.zoom = 12
+        this.center = new maplibregl.LngLat(this.locations[0].Longitude, this.locations[0].Latitude)
+        this.zoom = 9
       }
       else {
         // The Venetian Resort
@@ -107,9 +108,9 @@ export default {
         if (this.locations) {
           this.markers = [];
           for (let i = 0; i < this.locations.length; i++) {
-            const html = `<h3>${this.locations[i].name}</h3><p style="text-align:left;">${this.locations[i].address}</p><p style="text-align:left;">${this.locations[i].hours}</p>`
+            const html = `<h3>${this.locations[i].Name}</h3><p style="text-align:left;">${this.locations[i].Address}</p><p style="text-align:left;">${this.locations[i]["Business Hours"]}</p>`
             const marker = new maplibregl.Marker()
-              .setLngLat([this.locations[i].longitude, this.locations[i].latitude])
+              .setLngLat([this.locations[i].Longitude, this.locations[i].Latitude])
               .setPopup(new maplibregl.Popup().setHTML(html)) // add popup
               .addTo(this.map);
             this.markers.push(marker);
@@ -118,7 +119,7 @@ export default {
         }
     },
     setViewport (location) {
-      this.map.panTo([location.longitude, location.latitude], 5000);
+      this.map.panTo([location.Longitude, location.Latitude], 5000);
       location.marker.togglePopup();
     }
   },
@@ -131,20 +132,21 @@ export default {
 </script>
 
 <style scoped>
-
-@media (min-width: 768px) {
-  .recommendations-heading {
-    font-size: 1.4rem;
+@media (max-width: 768px) {
+  .layout--has-nav {
+    padding-top: 95px;
   }
 
-  .user-recommendations {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .container {
+    padding: 0;
+    margin: 0;
   }
 }
 
 .location-map {
   width: 100%;
-  height: 40vw;
+  height: 100vw;
 }
+
 
 </style>
