@@ -132,6 +132,11 @@ export default {
 </script>
 
 <style scoped>
+.location-map {
+  width: 100%;
+  height: 40vw;
+}
+
 @media (max-width: 768px) {
   .layout--has-nav {
     padding-top: 95px;
@@ -141,12 +146,11 @@ export default {
     padding: 0;
     margin: 0;
   }
-}
 
-.location-map {
-  width: 100%;
-  height: 100vw;
+  .location-map {
+    width: 100%;
+    height: 100vw;
+  }
 }
-
 
 </style>
