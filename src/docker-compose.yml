@@ -161,6 +161,24 @@ services:
     ports:
       - "8009:80"
 
+  locations:
+    container_name: locations
+    build:
+      context: locations
+    networks:
+      - dev-net
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AWS_SESSION_TOKEN
+      - RESOURCE_BUCKET
+      - AWS_PROFILE
+      - AWS_DEFAULT_REGION
+    volumes:
+      - ~/.aws/:/root/.aws:ro
+    ports:
+      - "8010:80"
+
   # This service has it's own .env file at src/web-ui/.env
   web-ui:
     container_name: web-ui
