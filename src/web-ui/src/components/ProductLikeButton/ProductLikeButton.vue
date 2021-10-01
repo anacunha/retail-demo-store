@@ -18,8 +18,6 @@ export default {
   computed: {
     ...mapState({
       isLiked(state) {
-        console.log(state);
-
         return state.likedProducts.likedProducts.includes(this.product.id);
       },
     }),
