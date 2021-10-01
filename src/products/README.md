@@ -34,8 +34,6 @@ Updates the product identified by `{productID}`.
 Deletes the product identified by `{productID}`.
 ### POST /products
 Creates a new product.
-### PUT /products/id/{productID}/inventory
-Updates the current inventory value for the product identified by `{productID}`.
 ### GET /categories/all
 Returns details on all categories.
 ### GET /categories/id/{categoryID}
