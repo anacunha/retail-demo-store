@@ -14,11 +14,11 @@ type Product struct {
 	Category       string  `json:"category" yaml:"category"`
 	Style          string  `json:"style" yaml:"style"`
 	Description    string  `json:"description" yaml:"description"`
-	Price          float32 `json:"price" yaml:"price"`
 	Image          string  `json:"image" yaml:"image"`
 	Featured       string  `json:"featured,omitempty" yaml:"featured,omitempty"`
-	GenderAffinity string  `json:"gender_affinity,omitempty" yaml:"gender_affinity,omitempty"`
-	CurrentStock   int     `json:"current_stock" yaml:"current_stock"`
+	Brewery        string  `json:"brewery" yaml:"brewery"`
+	ABV            float32 `json:"abv" yaml:"abv"`
+	IBU            int     `json:"ibu,omitempty" yaml:"ibu,omitempty"`
 }
 
 // Initialized - indicates if instance has been initialized or not
