@@ -1,5 +1,19 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+'''
+Utility script that can be run locally to convert the catalog data from a CSV file.
+
+Usage:
+
+python convert_catalog_data.py [-h] CATALOG_CSV_FILE
+
+Where:
+CATALOG_CSV_FILE is a CSV file with catalog data
+'''
+
+import argparse
 import csv
-import uuid
 import yaml
 
 def format_product(product):
@@ -19,13 +33,16 @@ def create_category(id, product):
         'image': product['image']
     }
 
-
 if __name__=="__main__":
-    beers_csv = open('beers.csv', 'r')
+
+    parser = argparse.ArgumentParser(description='Convert catalog data from CSV file.')
+    parser.add_argument('file', metavar='CATALOG_CSV_FILE', type=open, help='CSV file with catalog data')
+    args = parser.parse_args()
+    
     products_yaml = open('src/products-service/data/products.yaml', 'w')
     categories_yaml = open('src/products-service/data/categories.yaml', 'w')
 
-    reader = csv.DictReader(beers_csv)
+    reader = csv.DictReader(args.file)
     products = list(reader)
     categories = []
     category_names = set()
