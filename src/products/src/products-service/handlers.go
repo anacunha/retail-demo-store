@@ -185,12 +185,8 @@ func validateProduct(product *Product) error {
 		return errors.New("Product name is required")
 	}
 
-	if product.Price < 0 {
-		return errors.New("Product price cannot be a negative value")
-	}
-
-	if product.CurrentStock < 0 {
-		return errors.New("Product current stock cannot be a negative value")
+	if len(product.Brewery) == 0 {
+		return errors.New("Product brewery is required")
 	}
 
 	if len(product.Category) > 0 {
@@ -241,51 +237,6 @@ func UpdateProduct(w http.ResponseWriter, r *http.Request) {
 	if err := RepoUpdateProduct(&existingProduct, &product); err != nil {
 		http.Error(w, "Internal error updating product", http.StatusInternalServerError)
 		return
-	}
-
-	fullyQualifyProductImageURL(r, &product)
-
-	if err := json.NewEncoder(w).Encode(product); err != nil {
-		panic(err)
-	}
-}
-
-// UpdateInventory - updates stock quantity for one item
-func UpdateInventory(w http.ResponseWriter, r *http.Request) {
-	initResponse(&w)
-
-	vars := mux.Vars(r)
-
-	var inventory Inventory
-
-	body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048576))
-	if err != nil {
-		panic(err)
-	}
-	if err := r.Body.Close(); err != nil {
-		panic(err)
-	}
-	log.Println("UpdateInventory Body ", body)
-
-	if err := json.Unmarshal(body, &inventory); err != nil {
-		http.Error(w, "Invalid request payload", http.StatusUnprocessableEntity)
-		if err := json.NewEncoder(w).Encode(err); err != nil {
-			panic(err)
-		}
-	}
-
-	log.Println("UpdateInventory --> ", inventory)
-
-	// Get the current product
-	product := RepoFindProduct(vars["productID"])
-	if !product.Initialized() {
-		// Existing product does not exist
-		http.Error(w, "Product not found", http.StatusNotFound)
-		return
-	}
-
-	if err := RepoUpdateInventoryDelta(&product, inventory.StockDelta); err != nil {
-		panic(err)
 	}
 
 	fullyQualifyProductImageURL(r, &product)

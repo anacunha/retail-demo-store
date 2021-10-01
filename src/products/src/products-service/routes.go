@@ -66,12 +66,6 @@ var routes = Routes{
 		NewProduct,
 	},
 	Route{
-		"InventoryUpdate",
-		"PUT",
-		"/products/id/{productID}/inventory",
-		UpdateInventory,
-	},
-	Route{
 		"CategoryIndex",
 		"GET",
 		"/categories/all",
