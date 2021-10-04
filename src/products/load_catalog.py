@@ -125,8 +125,7 @@ if __name__=="__main__":
         print(f'Updating products in table {products_table_name}')
         for product in products:
             product['id'] = str(product['id'])
-            if product.get('price'):
-                product['price'] = Decimal(str(product['price']))
+            product['abv'] = Decimal(str(product['abv']))
             if product.get('featured'):
                 product['featured'] = str(product['featured']).lower()
             table.put_item(Item=product)
