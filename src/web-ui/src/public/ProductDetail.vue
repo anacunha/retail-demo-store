@@ -20,7 +20,7 @@
         </main>
 
         <RecommendedProductsSection :recommendedProducts="relatedProducts">
-          <template #heading>Compare similar items</template>
+          <template #heading>Compare similar beers</template>
         </RecommendedProductsSection>
       </div>
     </template>

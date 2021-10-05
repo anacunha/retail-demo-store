@@ -33,11 +33,11 @@ type Product struct {
 	Category       string  `json:"category" yaml:"category"`
 	Style          string  `json:"style" yaml:"style"`
 	Description    string  `json:"description" yaml:"description"`
-	Price          float32 `json:"price" yaml:"price"`
 	Image          string  `json:"image" yaml:"image"`
 	Featured       string  `json:"featured,omitempty" yaml:"featured,omitempty"`
-	GenderAffinity string  `json:"gender_affinity,omitempty" yaml:"gender_affinity,omitempty"`
-	CurrentStock   int     `json:"current_stock" yaml:"current_stock"`
+	Brewery        string  `json:"brewery" yaml:"brewery"`
+	ABV            float32 `json:"abv" yaml:"abv"`
+	IBU            int     `json:"ibu,omitempty" yaml:"ibu,omitempty"`
 }
 
 // Products Array
@@ -46,9 +46,9 @@ type Products []Product
 // Category Struct
 type Category struct {
 	ID                string `json:"id" yaml:"id"`
+	URL               string `json:"url" yaml:"url"`
 	Name              string `json:"name" yaml:"name"`
 	Image             string `json:"image" yaml:"image"`
-	HasGenderAffinity bool   `json:"has_gender_affinity" yaml:"has_gender_affinity"`
 }
 
 // Categories Array

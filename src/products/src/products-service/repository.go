@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strconv"
 	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -186,9 +185,9 @@ func RepoFindProductByCategory(category string) Products {
 		expression.Name("image"),
 		expression.Name("style"),
 		expression.Name("description"),
-		expression.Name("price"),
-		expression.Name("gender_affinity"),
-		expression.Name("current_stock"))
+		expression.Name("brewery"),
+		expression.Name("abv"),
+		expression.Name("ibu"))
 	expr, err := expression.NewBuilder().WithKeyCondition(keycond).WithProjection(proj).Build()
 
 	if err != nil {
@@ -407,51 +406,6 @@ func RepoUpdateProduct(existingProduct *Product, updatedProduct *Product) error 
 	}
 
 	setProductURL(updatedProduct)
-
-	return err
-}
-
-// RepoUpdateInventoryDelta - updates a product's current inventory
-func RepoUpdateInventoryDelta(product *Product, stockDelta int) error {
-
-	log.Printf("RepoUpdateInventoryDelta for product %#v, delta: %v", product, stockDelta)
-
-	if product.CurrentStock+stockDelta < 0 {
-		// ensuring we don't get negative stocks, just down to zero stock
-		// FUTURE: allow backorders via negative current stock?
-		stockDelta = -product.CurrentStock
-	}
-
-	input := &dynamodb.UpdateItemInput{
-		ExpressionAttributeValues: map[string]*dynamodb.AttributeValue{
-			":stock_delta": {
-				N: aws.String(strconv.Itoa(stockDelta)),
-			},
-			":currstock": {
-				N: aws.String(strconv.Itoa(product.CurrentStock)),
-			},
-		},
-		TableName: aws.String(ddbTableProducts),
-		Key: map[string]*dynamodb.AttributeValue{
-			"id": {
-				S: aws.String(product.ID),
-			},
-			"category": {
-				S: aws.String(product.Category),
-			},
-		},
-		ReturnValues:        aws.String("UPDATED_NEW"),
-		UpdateExpression:    aws.String("set current_stock = current_stock + :stock_delta"),
-		ConditionExpression: aws.String("current_stock = :currstock"),
-	}
-
-	_, err = dynamoClient.UpdateItem(input)
-	if err != nil {
-		fmt.Println("Got error calling UpdateItem:")
-		fmt.Println(err.Error())
-	} else {
-		product.CurrentStock = product.CurrentStock + stockDelta
-	}
 
 	return err
 }

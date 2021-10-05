@@ -1,206 +1,81 @@
 - id: 1
-  name: American Wild Ale
+  name: ipa
+  image: 3e2c3c68-314c-4da8-a409-02909da91f60.jpg
 - id: 2
-  name: Barleywine - American
+  name: pale-ale
+  image: d59312b6-d13a-46d1-bdbd-18e748816d2e.jpg
 - id: 3
-  name: Barleywine - English
+  name: lager
+  image: 72079edd-ef8e-44fa-964e-18a613409023.jpg
 - id: 4
-  name: Belgian Blonde
+  name: wheat
+  image: a2207aa9-d36b-4e90-affb-f297f0be8ef1.jpg
 - id: 5
-  name: Belgian Dubbel
+  name: brown-ale
+  image: 6983a80e-dfa8-4d40-89e5-836229963da1.jpg
 - id: 6
-  name: Belgian Quadrupel
+  name: porter
+  image: 9b62a3c0-d9d8-4717-b610-e35a05b6f5ab.jpg
 - id: 7
-  name: Belgian Strong Dark Ale
+  name: stout
+  image: 35ae8bff-7408-4407-9e08-8a8424277bc8.jpg
 - id: 8
-  name: Belgian Strong Golden Ale
+  name: farmhouse-ale
+  image: 7a04fede-83cc-456a-a919-dddf2c08ab7c.jpg
 - id: 9
-  name: Belgian Tripel
+  name: seasonal
+  image: b3c5dc40-fdde-4b2d-a54d-1af104dd6de5.jpg
 - id: 10
-  name: Blonde Ale
+  name: sour
+  image: b80ec53c-1efc-48a4-9430-5eb0c77a0964.jpg
 - id: 11
-  name: Bock - Doppelbock
+  name: cider
+  image: ddf2d1dc-1310-4df9-84e1-9c735320fba6.jpg
 - id: 12
-  name: Bock - Hell / Maibock / Lentebock
+  name: blonde-ale
+  image: 63edc3f2-b584-4396-8f5c-1ccf687e8781.jpg
 - id: 13
-  name: Bock - Single / Traditional
+  name: strong-ale
+  image: 9a291084-9fe7-489c-854b-db24b4f947d1.jpg
 - id: 14
-  name: Brown Ale - American
+  name: pilsner
+  image: 401d7633-2bcf-4e41-9a34-f24a434a4a20.jpg
 - id: 15
-  name: Brown Ale - English
+  name: cream-ale
+  image: 2a93024c-1a69-4a5e-a5ea-bbeb6968baa7.jpg
 - id: 16
-  name: Brown Ale - Other
+  name: red-ale
+  image: 5d0d1ff8-49f5-4014-aeb5-341ebfb75214.jpg
 - id: 17
-  name: California Common
+  name: fruit
+  image: 16289017-205b-428d-9aef-24885aa66a7b.jpg
 - id: 18
-  name: Chilli / Chile Beer
+  name: barleywine
+  image: 526bdb54-082e-41db-ba83-fd5284e46295.jpg
 - id: 19
-  name: Cider - Herbed / Spiced / Hopped
+  name: brett
+  image: 7e940d6e-fff8-4cbd-abc8-2f87168f3929.jpg
 - id: 20
-  name: Cider - Sweet
+  name: belgian
+  image: e1f3f04a-2c8f-4f96-a9f5-a1fcb831bb4b.jpg
 - id: 21
-  name: Cider - Traditional
+  name: bock
+  image: 528be503-3013-4fcd-92d6-443f121bd36d.jpg
 - id: 22
-  name: Cream Ale
+  name: kölsch
+  image: 1a446bf1-8406-4e65-b2fe-dffb37342e8d.jpg
 - id: 23
-  name: Dark Ale
+  name: mead
+  image: fbd010e6-092d-46f8-8281-468a92791a81.jpg
 - id: 24
-  name: English Bitter
+  name: kombucha
+  image: a8df1610-dd53-4460-a32d-b368ccc1d7ea.jpg
 - id: 25
-  name: Extra Special / Strong Bitter
+  name: smoked-beer
+  image: e0476f2e-24f2-42c7-aaf3-b913760956dc.jpg
 - id: 26
-  name: Farmhouse Ale - Saison
+  name: golden-ale
+  image: 2047c976-48ee-4d47-bd0f-d0f87c10f370.jpg
 - id: 27
-  name: Festbier
-- id: 28
-  name: Fruit Beer
-- id: 29
-  name: Gluten-Free
-- id: 30
-  name: Golden Ale
-- id: 31
-  name: Hefeweizen
-- id: 32
-  name: Honey Beer
-- id: 33
-  name: IPA - American
-- id: 34
-  name: IPA - Belgian
-- id: 35
-  name: IPA - Black / Cascadian Dark Ale
-- id: 36
-  name: IPA - Brett
-- id: 37
-  name: IPA - English
-- id: 38
-  name: IPA - Imperial / Double
-- id: 39
-  name: IPA - Imperial / Double New England
-- id: 40
-  name: IPA - International
-- id: 41
-  name: IPA - Milkshake
-- id: 42
-  name: IPA - New England
-- id: 43
-  name: IPA - Red
-- id: 44
-  name: IPA - Rye
-- id: 45
-  name: IPA - Session / India Session Ale
-- id: 46
-  name: IPA - Triple
-- id: 47
-  name: IPA - Triple New England
-- id: 48
-  name: IPA - White
-- id: 49
-  name: Koelsch
-- id: 50
-  name: Kellerbier / Zwickelbier
-- id: 51
-  name: Kristallweizen
-- id: 52
-  name: Lager - American
-- id: 53
-  name: Lager - American Amber / Red
-- id: 54
-  name: Lager - American Light
-- id: 55
-  name: Lager - Dark
-- id: 56
-  name: Lager - Dortmunder / Export
-- id: 57
-  name: Lager - Euro Pale
-- id: 58
-  name: Lager - Helles
-- id: 59
-  name: Lager - IPL (India Pale Lager)
-- id: 60
-  name: Lager - Munich Dunkel
-- id: 61
-  name: Lager - Pale
-- id: 62
-  name: Lager - Red
-- id: 63
-  name: Lager - Vienna
-- id: 64
-  name: Lager - Winter
-- id: 65
-  name: Maerzen
-- id: 66
-  name: Non-Alcoholic Beer
-- id: 67
-  name: Pale Ale - American
-- id: 68
-  name: Pale Ale - Australian
-- id: 69
-  name: Pale Ale - Belgian
-- id: 70
-  name: Pale Ale - English
-- id: 71
-  name: Pale Ale - International
-- id: 72
-  name: Pale Ale - New England
-- id: 73
-  name: Patersbier
-- id: 74
-  name: Pilsner - Czech
-- id: 75
-  name: Pilsner - German
-- id: 76
-  name: Pilsner - Imperial / Double
-- id: 77
-  name: Pilsner - Other
-- id: 78
-  name: Porter - Coffee
-- id: 79
-  name: Porter - English
-- id: 80
-  name: Porter - Imperial / Double Coffee
-- id: 81
-  name: Porter - Other
-- id: 82
-  name: Pumpkin / Yam Beer
-- id: 83
-  name: Red Ale - American Amber / Red
-- id: 84
-  name: Red Ale - Imperial / Double
-- id: 85
-  name: Red Ale - Irish
-- id: 86
-  name: Red Ale - Other
-- id: 87
-  name: Root Beer
-- id: 88
-  name: Rye Beer
-- id: 89
-  name: Smoked Beer
-- id: 90
-  name: Sour - Other
-- id: 91
-  name: Specialty Grain
-- id: 92
-  name: Spiced / Herbed Beer
-- id: 93
-  name: Stout - Foreign / Export
-- id: 94
-  name: Stout - Imperial / Double
-- id: 95
-  name: Stout - Imperial / Double Coffee
-- id: 96
-  name: Stout - Milk / Sweet
-- id: 97
-  name: Stout - Russian Imperial
-- id: 98
-  name: Strong Ale - American
-- id: 99
-  name: Table Beer
-- id: 100
-  name: Wheat Beer - American Pale Wheat
-- id: 101
-  name: Wheat Beer - Other
-- id: 102
-  name: Wheat Beer - Witbier
-- id: 103
-  name: Winter Ale
+  name: root-beer
+  image: 01bcbe70-840d-4517-a7e9-4a701a513bc0.jpg
