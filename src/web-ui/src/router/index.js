@@ -4,6 +4,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Main from '@/public/Main.vue'
+import Locations from '@/public/Locations.vue'
 import ProductDetail from '@/public/ProductDetail.vue'
 import AuthScreen from '@/public/Auth.vue'
 import Welcome from '@/public/Welcome.vue'
@@ -189,6 +190,12 @@ const router = new Router({
       path: '/',
       name: 'Main',
       component: Main,
+      meta: { requiresAuth: false}
+    },
+    {
+      path: '/locations',
+      name: 'Locations',
+      component: Locations,
       meta: { requiresAuth: false}
     },
     {

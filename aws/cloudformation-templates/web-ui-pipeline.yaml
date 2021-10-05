@@ -99,6 +99,10 @@ Parameters:
     Type: String
     Default: none
 
+  LocationsServiceExternalUrl:
+    Type: String
+    Default: none
+
   SearchServiceExternalUrl:
     Type: String
     Default: none
@@ -385,6 +389,8 @@ Resources:
             Value: !Sub ${RecommendationsServiceExternalUrl}
           - Name: LOCATION_SERVICE_URL
             Value: !Sub ${LocationServiceExternalUrl}
+          - Name: LOCATIONS_SERVICE_URL
+            Value: !Sub ${LocationsServiceExternalUrl}
           - Name: SEARCH_SERVICE_URL
             Value: !Sub ${SearchServiceExternalUrl}
           - Name: VIDEOS_SERVICE_URL

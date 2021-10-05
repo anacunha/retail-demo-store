@@ -31,14 +31,20 @@ age_dist = truncnorm((age_min - age_mean) / age_sd, (age_max - age_mean) / age_s
 
 # Persona combinations ordered from strongest affinity to latent interest.
 category_preference_personas = [
-    'furniture_homedecor_housewares', 'apparel_footwear_accessories',
-    'instruments_books_electronics', 'floral_beauty_jewelry',
-    'groceries_seasonal_tools', 'outdoors_instruments_groceries',
-    'housewares_floral_seasonal', 'tools_housewares_apparel',
-    'electronics_outdoors_footwear', 'seasonal_furniture_floral',
-    'homedecor_electronics_outdoors', 'accessories_groceries_books',
-    'footwear_jewelry_furniture', 'books_apparel_homedecor',
-    'beauty_accessories_instruments', 'housewares_tools_beauty'
+    'barleywine_mead_sour', 'belgian_farmhouse-ale_stout',
+    'blonde-ale_golden-ale_wheat', 'bock_cream-ale_pale-ale',
+    'brett_seasonal_smoked-beer', 'brown-ale_stout_red-ale',
+    'cider_fruit_barleywine', 'cream-ale_root-beer_fruit',
+    'farmhouse-ale_sour_golden-ale', 'fruit_pilsner_brett',
+    'golden-ale_ipa_root-beer', 'ipa_pale-ale_farmhouse-ale',
+    'kölsch_kombucha_brown-ale', 'kombucha_wheat_cider',
+    'lager_cider_ipa', 'mead_smoked-beer_porter',
+    'pale-ale_lager_blonde-ale', 'pilsner_kölsch_lager',
+    'porter_red-ale_strong-ale', 'red-ale_bock_mead',
+    'root-beer_blonde-ale_seasonal', 'seasonal_barleywine_kombucha',
+    'smoked-beer_strong-ale_bock', 'sour_brett_kölsch',
+    'stout_porter_cream-ale', 'strong-ale_brown-ale_belgian',
+    'wheat_belgian_pilsner'
 ]
 
 discount_personas = [
@@ -65,7 +71,7 @@ class UserPool:
       self.last_id += 1
       user = User(str(self.last_id))
       self.users.append(user)
-  
+
   def user(self, select_active=False):
     if len(self.users) == 0:
       self.grow_pool(1000)
@@ -152,11 +158,11 @@ class User:
         "anonymous_id": str(fake.uuid4()),
         "advertising_id": str(fake.uuid4()),
         "user_agent": android_token,
-        "version": android_identifiers[1] 
+        "version": android_identifiers[1]
       },
       "web": {
         "anonymous_id": str(fake.uuid4()),
-        "user_agent": fake.user_agent() 
+        "user_agent": fake.user_agent()
       }
     }
 
@@ -173,12 +179,12 @@ class User:
         'default': True
       }
     ]
-    
+
   def set_traits(self, traits):
     if traits != None:
       for (k,v) in traits.items():
         self.traits[k] = random.choice(v)
-  
+
   def get_platform_data(self, platform):
     return self.platforms[platform]
 
@@ -192,5 +198,5 @@ class User:
   def from_file(cls, user_dict):
     user = cls()
     for (k,v) in user_dict.items():
-      setattr(user,k, v)  # Danger, Will Robinson 
+      setattr(user,k, v)  # Danger, Will Robinson
     return user

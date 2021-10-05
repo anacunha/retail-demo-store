@@ -55,6 +55,10 @@ Parameters:
     Type: String
     Default: none
 
+  LocationsServiceExternalUrl:
+    Type: String
+    Default: none
+
   UsersServiceExternalUrl:
     Type: String
     Default: none
@@ -290,6 +294,8 @@ Resources:
             Value: !Sub ${IdentityPoolId}
           - Name: PRODUCTS_SERVICE_URL
             Value: !Sub ${ProductsServiceExternalUrl}
+          - Name: LOCATIONS_SERVICE_URL
+            Value: !Sub ${LocationsServiceExternalUrl}
           - Name: USERS_SERVICE_URL
             Value: !Sub ${UsersServiceExternalUrl}
           - Name: CARTS_SERVICE_URL
