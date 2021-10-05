@@ -10,24 +10,25 @@
       aria-haspopup="true"
       aria-expanded="false"
     >
-      <template v-if="user.persona">
-        <div class="shopper">Shopper:</div>
+      <div class="shopper">My Account</div>
+    </button>
 
+    <div v-if="user" class="dropdown-menu px-3" aria-labelledby="navbarDropdown">
+      <template v-if="user.persona">
         <div>
           <div>{{ username }} - {{ user.age }} years - {{ gender }}</div>
           <div>{{ formattedPreferences }}</div>
+          <div class="dropdown-divider"></div>
         </div>
       </template>
 
       <template v-else>{{ username }}</template>
-    </button>
 
-    <div v-if="user" class="dropdown-menu px-3" aria-labelledby="navbarDropdown">
       <a href="#" @click="switchShopper" class="dropdown-item">
         <div class="dropdown-item-title">
-          Switch shoppers
+          Switch user
         </div>
-        <div>Select another shopper with different shopping preferences</div>
+        <div>Select another user with different beer preferences</div>
       </a>
 
       <div class="dropdown-divider"></div>
