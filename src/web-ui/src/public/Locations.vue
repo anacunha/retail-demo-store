@@ -108,7 +108,7 @@ export default {
         if (this.locations) {
           this.markers = [];
           for (let i = 0; i < this.locations.length; i++) {
-            const html = `<h1>${this.locations[i].Name}</h1><p>${this.locations[i].Address}</p><i class="fas fa-phone"></i><i class="fas fa-directions"></i>`
+            const html = `<h1>${this.locations[i].Name}</h1><p>${this.locations[i].Address}</p><a href="tel:${this.locations[i].Phone}"><i class="fas fa-phone"></a></i><i class="fas fa-directions"></i>`
             const marker = new maplibregl.Marker()
               .setLngLat([this.locations[i].Longitude, this.locations[i].Latitude])
               .setPopup(new maplibregl.Popup().setHTML(html)) // add popup
