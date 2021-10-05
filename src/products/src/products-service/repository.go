@@ -185,6 +185,7 @@ func RepoFindProductByCategory(category string) Products {
 		expression.Name("image"),
 		expression.Name("style"),
 		expression.Name("description"),
+		expression.Name("price"),
 		expression.Name("brewery"),
 		expression.Name("abv"),
 		expression.Name("ibu"))

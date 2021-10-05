@@ -185,6 +185,10 @@ func validateProduct(product *Product) error {
 		return errors.New("Product name is required")
 	}
 
+	if product.Price < 0 {
+		return errors.New("Product price cannot be a negative value")
+	}
+
 	if len(product.Brewery) == 0 {
 		return errors.New("Product brewery is required")
 	}
