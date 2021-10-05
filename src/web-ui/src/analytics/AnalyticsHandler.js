@@ -461,7 +461,7 @@ export const AnalyticsHandler = {
                     experimentCorrelationId: experimentCorrelationId
                 },
                 metrics: {
-                    price: +product.price.toFixed(2)
+                    price: +product.price?.toFixed(2)
                 }
             })
         }
@@ -489,7 +489,7 @@ export const AnalyticsHandler = {
             image: product.image,
             feature: feature,
             experimentCorrelationId: experimentCorrelationId,
-            price: +product.price.toFixed(2)
+            price: +product.price?.toFixed(2)
         };
 
         if (this.segmentEnabled()) {
@@ -512,7 +512,7 @@ export const AnalyticsHandler = {
         if (this.googleAnalyticsEnabled()) {
             Vue.prototype.$gtag.event('view_item', {
                 "currency": "USD",
-                "value": +product.price.toFixed(2),
+                "value": +product.price?.toFixed(2),
                 "items": [
                   {
                     "item_id": product.id,
@@ -520,7 +520,7 @@ export const AnalyticsHandler = {
                     "item_category": product.category,
                     "quantity": 1,
                     "currency": "USD",
-                    "price": +product.price.toFixed(2)
+                    "price": +product.price?.toFixed(2)
                   }
                 ]
             });
