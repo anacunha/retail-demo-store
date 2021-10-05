@@ -863,7 +863,9 @@
   brewery: Big Dog's Brewing Company
   category: farmhouse-ale
   style: Farmhouse Ale - Saison
-  description: ''
+  description: What is DOG GONE SAISON? A rustic Belgian-style farmhouse ale with
+    complex earthy notes and a refreshingly tart finish. Brewed with an American twist
+    of Liberty hops! 6.2% ABV.
   abv: 6.2
   ibu: 28
   image: 4c9323ef-0203-46c5-8118-b28e86928fff.jpg
@@ -881,7 +883,8 @@
   brewery: Big Dog's Brewing Company
   category: ipa
   style: IPA - Double
-  description: ''
+  description: Beer fests are back!  Release the Hounds!  See you tomorrow!  We’re
+    tapping an all-new West Coast-style Double IPA!
   abv: 8.5
   image: 1ac4ecd4-09de-4a52-8560-a90fdba061ac.jpg
 - id: 414eb6de-c76a-478a-b1db-7329019911e8
@@ -889,7 +892,13 @@
   brewery: Big Dog's Brewing Company
   category: ipa
   style: IPA - American
-  description: ''
+  description: Inspired by one of our long time Brewers Sam McKinney, who has recently
+    went on to new adventures. We will miss you Sam! We wish you all the best! Cheers!
+    This west coast IPA was brewed with a collection of pale malts and a decent amount
+    of rye. We used a variety of hops in the brew and dry hop including Centennial,
+    Columbus, Simcoe, Amarillo and Summit hops. Aromas of citrus, pine and spiciness
+    from the rye will shine. Available on Draft and in 16oz. 4 pack cans. Get yours
+    now!
   abv: 6.1
   image: 414eb6de-c76a-478a-b1db-7329019911e8.jpg
 - id: 528be503-3013-4fcd-92d6-443f121bd36d
@@ -897,7 +906,8 @@
   brewery: Big Dog's Brewing Company
   category: bock
   style: Bock - Doppelbock
-  description: ''
+  description: We've paired up with our friends at Motley Brews and have brewed a
+    delicious Doppelbock that is being served up as part of a "DoPPElbock Day" celebration.
   abv: 8.8
   image: 528be503-3013-4fcd-92d6-443f121bd36d.jpg
 - id: 66be3dc0-8d56-43a1-8871-9df892e86f97
@@ -905,7 +915,9 @@
   brewery: Big Dog's Brewing Company
   category: lager
   style: Lager - Vienna
-  description: ''
+  description: '"Viener Dog" Unleashed Series Vienna Lager. Come try this refreshing
+    Big Dog''s Brew! Available in Draft and in 16oz. 4 packs! Drawn by Local Artist
+    Sofia Meza!'
   abv: 5.5
   image: 66be3dc0-8d56-43a1-8871-9df892e86f97.jpg
 - id: 848d9dc0-768e-4ce8-b5c4-6f78c1b12cde
@@ -1769,7 +1781,8 @@
   brewery: Banger Brewing
   category: kölsch
   style: Kölsch
-  description: ''
+  description: New beer alert! Swan Song, kolsch is on tap! Perfect for these hot
+    summer days! C'mon in and drink up this light refreshing brew before it's gone!
   abv: 5.1
   ibu: 14
   image: a366949e-bc10-4096-ad60-c375d4a2da31.jpg
@@ -1820,7 +1833,7 @@
   brewery: Banger Brewing
   category: ipa
   style: IPA - American
-  description: ''
+  description: A Hoppy Ending - American IPA
   abv: 6.9
   ibu: 67
   image: 8241b499-f38a-4465-902e-df3a9ca37efd.jpg
@@ -1838,7 +1851,9 @@
   brewery: Banger Brewing
   category: stout
   style: Stout - Oatmeal
-  description: ''
+  description: The Long Knight has a full-bodied, roasty richness that can get you
+    through even the longest of winters. Finishing smooth with a hint of milk chocolate
+    and coffee this is just the thing to fill your ale horn before battle.
   abv: 6.9
   image: 3ca36051-c841-4601-9fe3-47859148f88c.jpg
 - id: 40aa0c10-d0a1-44ff-8d3e-dd62c49df820
@@ -1854,7 +1869,8 @@
   brewery: Banger Brewing
   category: strong-ale
   style: Strong Ale - American
-  description: ''
+  description: Unique, high gravity beer served as a shot. It has slightly sweet molasses
+    flavor and goes down smooth.
   abv: 15.0
   ibu: 31
   image: 263aadfd-bf52-41db-867b-2820757b5770.jpg
@@ -1873,7 +1889,8 @@
   brewery: Banger Brewing
   category: stout
   style: Stout - Imperial
-  description: ''
+  description: Aged 13 months in Heaven Hill barrels this delicious dark treat sits
+    at 10.5%!
   abv: 10.5
   image: 68c8e9e8-b02a-47dc-aa8a-f7ebeb5a1156.jpg
 - id: e9d84ce4-015d-4ce1-8d31-a97d7c6e24bf
@@ -1967,7 +1984,11 @@
   brewery: Mojave Brewing Company
   category: cider
   style: Cider - Dry
-  description: ''
+  description: 'We’re excited to introduce to you our newest cider: “Tamarindo Lindo”.
+    We collaborated with @mojavebrewingcompany to create this new delicious tamarind
+    flavor cider which is topped off with a rim full of sweet & sour Tajín that will
+    make your mouth water! It is officially available for purchase starting today,
+    so make sure you give it a try!'
   abv: 5.5
   image: 56405d5a-87e9-4fe3-8df0-ad24edfdfccf.jpg
 - id: 61262242-5d6e-4f42-90f1-75cd0846df41
@@ -2000,7 +2021,9 @@
   brewery: Lead Dog Brewing
   category: fruit
   style: Shandy
-  description: ''
+  description: 'We are happy to bring your our first radler! This refreshing shady
+    like brew is just the thing to cool you down on these hot Reno summer days. Come
+    into either one of our taproom locations to try it today. '
   abv: 5.1
   ibu: 21
   image: 75d54ef9-9094-42b7-85a1-30c14c86028f.jpg
