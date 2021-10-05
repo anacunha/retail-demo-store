@@ -14,81 +14,25 @@
     </button>
 
     <div v-if="user" class="dropdown-menu px-3" aria-labelledby="navbarDropdown">
-      <template v-if="user.persona">
-        <div>
-          <div>{{ username }} - {{ user.age }} years - {{ gender }}</div>
-          <div>{{ formattedPreferences }}</div>
-          <div class="dropdown-divider"></div>
-        </div>
-      </template>
-
-      <template v-else>{{ username }}</template>
-
-      <a href="#" @click="switchShopper" class="dropdown-item">
-        <div class="dropdown-item-title">
-          Switch user
-        </div>
-        <div>Select another user with different beer preferences</div>
-      </a>
-
-      <div class="dropdown-divider"></div>
-
       <button class="dropdown-item dropdown-item-title" @click="signOut">Sign Out</button>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 import { AmplifyEventBus } from 'aws-amplify-vue';
 import { Auth } from 'aws-amplify';
 import swal from 'sweetalert';
-
-import { Modals } from '@/partials/AppModal/config';
 
 export default {
   name: 'UserDropdown',
   computed: {
     ...mapState({
       user: (state) => state.user,
-      username() {
-        // first_name can be an empty string - should be validated against in the future
-        if (!this.user) return null;
-        if (!this.user.first_name) return this.user.username;
-        return this.user.first_name;
-      },
-      gender() {
-        if (!this.user || !this.user.gender) return null;
-
-        switch (this.user.gender) {
-          case 'M':
-            return 'Male';
-          case 'F':
-            return 'Female';
-        }
-
-        throw new Error('Gender not accounted for');
-      },
-      formattedPreferences() {
-        if (!this.user || !this.user.persona) return null;
-
-        return this.user.persona
-          .split('_')
-          .map((pref) =>
-            pref
-              .split(' ')
-              .map((word) => [word[0].toUpperCase(), ...word.slice(1)].join(''))
-              .join(' '),
-          )
-          .join(', ');
-      },
     }),
   },
   methods: {
-    ...mapActions(['openModal']),
-    switchShopper() {
-      this.openModal(Modals.ShopperSelect);
-    },
     signOut() {
       Auth.signOut({ global: true })
         .then(() => {
