@@ -1,6 +1,9 @@
 <template>
   <div class="card-container">
+    <LoadingFallback v-if="!products"></LoadingFallback>
+
     <div
+      v-else
       class="swipable-card-container"
       v-for="(product, i) in products"
       :key="product.id"
@@ -18,26 +21,42 @@
 
 <script>
 import SwipeCard from './SwipeCard.vue';
+import { mapState } from 'vuex';
+import { RepositoryFactory } from '@/repositories/RepositoryFactory';
+import { AnalyticsHandler } from '@/analytics/AnalyticsHandler';
+import LoadingFallback from '@/components/LoadingFallback/LoadingFallback';
 
-const PRODUCTS = [
-  { id: 1, name: 'Test Product 1', image: '003e4953-d6cb-400c-90f6-9b0216b4603e.jpg', category: 'floral' },
-  { id: 2, name: 'Test Product 2', image: '045324c6-7df9-4ce7-9688-d352a6d73e02.jpg', category: 'floral' },
-  { id: 3, name: 'Test Product 3', image: '0712d739-d058-414e-b905-703eaaa3d3ca.jpg', category: 'floral' },
-  { id: 4, name: 'Test Product 4', image: '08501583-c08b-411b-9ae7-06582e2d8c26.jpg', category: 'floral' },
-  { id: 5, name: 'Test Product 5', image: '0c4744e2-b989-4509-a7e2-7d8dc43ff404.jpg', category: 'floral' },
-  { id: 6, name: 'Test Product 6', image: '110f2a06-e151-4f79-9acb-8b8ce97ca449.jpg', category: 'floral' },
-  { id: 7, name: 'Test Product 7', image: '11b36e89-6771-4cd0-9a3b-e6bb9025b825.jpg', category: 'floral' },
-  { id: 8, name: 'Test Product 8', image: '128c6bfd-533a-478e-8e63-bb25deabe186.jpg', category: 'floral' },
+const ProductsRepository = RepositoryFactory.get('products');
+
+const PRODUCT_IDS = [
+  '66be3dc0-8d56-43a1-8871-9df892e86f97',
+  '8bccac2a-2f85-4cf1-b203-1b05281b6041',
+  '85017fa9-20ca-4225-836e-ff43204fae0e',
+  '05a84203-72b8-4c61-83ef-2d90d62c08ee',
+  '68c8e9e8-b02a-47dc-aa8a-f7ebeb5a1156',
+  'a3203d5c-eaab-49c1-9be1-93f22e68e525',
+  '414eb6de-c76a-478a-b1db-7329019911e8',
+  '3c2d0021-1e75-431d-84fd-511a2ba64746',
+  'ceee32d9-161b-4749-939f-8079965433cc',
+  '4a6fb15c-9d2b-4d40-8511-53fcd654c9b2',
 ];
 
 export default {
   name: 'SwipeCards',
-  components: { SwipeCard },
+  components: { LoadingFallback, SwipeCard },
   data() {
     return {
-      products: PRODUCTS,
+      products: null,
       likedProducts: [],
     };
+  },
+  async mounted() {
+    this.products = await Promise.all(
+      PRODUCT_IDS.map((id) => ProductsRepository.getProduct(id).then(({ data }) => data)),
+    );
+  },
+  computed: {
+    ...mapState(['user']),
   },
   methods: {
     onSwipeLeft(i) {
@@ -49,9 +68,12 @@ export default {
       this.likedProducts.push(likedProduct);
     },
     onCompletion() {
-      console.log(this.likedProducts)
+      this.recordLikedProductViews();
 
       this.$emit('complete');
+    },
+    recordLikedProductViews() {
+      this.likedProducts.forEach((product) => AnalyticsHandler.productViewed(this.user, product));
     },
   },
   watch: {
