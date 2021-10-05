@@ -6,7 +6,7 @@
         <div>
           <p v-for="item in location.Address" :key="item">{{ item }}</p>
         </div>
-        <i class="fas fa-phone"></i>
+        <a :href="`tel:${location.Phone}`"><i class="fas fa-phone"></i></a>
         <i class="fas fa-directions"></i>
         <h2 @click="toggleHours()">Hours</h2>
         <div class="hours" :class="{ 'show-hours': isShowHours }">
@@ -62,6 +62,10 @@ h2 {
 p {
   font-size: .9em;
   margin-bottom: 0;
+}
+
+a {
+  color: inherit;
 }
 
 .hours, .beer-list {
