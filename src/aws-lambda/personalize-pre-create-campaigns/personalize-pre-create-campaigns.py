@@ -157,6 +157,17 @@ items_schema = {
             "name": "DESCRIPTION",
             "type": "string",
             "textual": True
+        },
+        {
+            "name": "ABV",
+            "type": "float",
+        },
+        {
+            "name": "IBU",
+            "type": [
+                "null",
+                "int"
+            ]
         }
     ],
     "version": "1.0"

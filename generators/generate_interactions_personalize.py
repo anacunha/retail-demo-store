@@ -70,15 +70,8 @@ out_interactions_filename = f"{GENERATED_DATA_ROOT}/interactions.csv"
 # The meaning of the below constants is described in the relevant notebook.
 
 # Minimum number of interactions to generate
-min_interactions = 675000
-# min_interactions = 50000
-
-# Percentages of each event type to generate
-product_added_percent = .08
-cart_viewed_percent = .05
-checkout_started_percent = .02
-order_completed_percent = .01
-
+# min_interactions = 675000
+min_interactions = 50000
 
 def generate_user_items(out_users_filename, out_items_filename, in_users_filename, in_products_filename):
 
@@ -97,11 +90,13 @@ def generate_user_items(out_users_filename, out_items_filename, in_users_filenam
 
     users_df = pd.DataFrame(users)
 
-    products_dataset_df = products_df[['id', 'category', 'style', 'description']]
+    products_dataset_df = products_df[['id', 'category', 'style', 'description', 'abv', 'ibu']]
     products_dataset_df = products_dataset_df.rename(columns={'id': 'ITEM_ID',
                                                               'category': 'CATEGORY',
                                                               'style': 'STYLE',
-                                                              'description': 'DESCRIPTION'})
+                                                              'description': 'DESCRIPTION',
+                                                              'abv': 'ABV',
+                                                              'ibu': 'IBU'})
     products_dataset_df.to_csv(out_items_filename, index=False)
 
     users_dataset_df = users_df[['id', 'age', 'gender']]
@@ -121,14 +116,6 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
     # Count of interactions generated for each event type
     product_viewed_count = 0
     discounted_product_viewed_count = 0
-    product_added_count = 0
-    discounted_product_added_count = 0
-    cart_viewed_count = 0
-    discounted_cart_viewed_count = 0
-    checkout_started_count = 0
-    discounted_checkout_started_count = 0
-    order_completed_count = 0
-    discounted_order_completed_count = 0
 
     Path(out_interactions_filename).parents[0].mkdir(parents=True, exist_ok=True)
 
@@ -304,62 +291,9 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
                 if discounted:
                     discounted_product_viewed_count += 1
 
-                if product_added_count < int(product_viewed_count * product_added_percent):
-                    this_timestamp += random.randint(0, int(seconds_increment / 2))
-                    f.writerow([product['id'],
-                                user['id'],
-                                'ProductAdded',
-                                this_timestamp,
-                                discount_context])
-                    interactions += 1
-                    product_added_count += 1
-
-                    if discounted:
-                        discounted_product_added_count += 1
-
-                if cart_viewed_count < int(product_viewed_count * cart_viewed_percent):
-                    this_timestamp += random.randint(0, int(seconds_increment / 2))
-                    f.writerow([product['id'],
-                                user['id'],
-                                'CartViewed',
-                                this_timestamp,
-                                discount_context])
-                    interactions += 1
-                    cart_viewed_count += 1
-                    if discounted:
-                        discounted_cart_viewed_count += 1
-
-                if checkout_started_count < int(product_viewed_count * checkout_started_percent):
-                    this_timestamp += random.randint(0, int(seconds_increment / 2))
-                    f.writerow([product['id'],
-                                user['id'],
-                                'CheckoutStarted',
-                                this_timestamp,
-                                discount_context])
-                    interactions += 1
-                    checkout_started_count += 1
-                    if discounted:
-                           discounted_checkout_started_count += 1
-
-                if order_completed_count < int(product_viewed_count * order_completed_percent):
-                    this_timestamp += random.randint(0, int(seconds_increment / 2))
-                    f.writerow([product['id'],
-                                user['id'],
-                                'OrderCompleted',
-                                this_timestamp,
-                                discount_context])
-                    interactions += 1
-                    order_completed_count += 1
-                    if discounted:
-                        discounted_order_completed_count += 1
-
     print("Interactions generation done.")
     print(f"Total interactions: {interactions}")
     print(f"Total product viewed: {product_viewed_count} ({discounted_product_viewed_count})")
-    print(f"Total product added: {product_added_count} ({discounted_product_added_count})")
-    print(f"Total cart viewed: {cart_viewed_count} ({discounted_cart_viewed_count})")
-    print(f"Total checkout started: {checkout_started_count} ({discounted_checkout_started_count})")
-    print(f"Total order completed: {order_completed_count} ({discounted_order_completed_count})")
 
     globals().update(locals())   # This can be used for inspecting in console after script ran or if run with ipython.
     print('Generation script finished')
