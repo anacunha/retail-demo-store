@@ -2,7 +2,8 @@
   <nav class="navigation fixed-top pt-2 pb-3 p-lg-1">
     <div class="nav-contents container d-lg-flex align-items-center">
       <HomeLink class="logo"></HomeLink>
-      <UserDropdown></UserDropdown>
+      <router-link to="/locations" class="locations btn">Locations</router-link>
+      <UserDropdown class="user-dropdown"></UserDropdown>
     </div>
   </nav>
 </template>
@@ -30,6 +31,11 @@ export default {
 .logo {
   grid-area: Logo;
   width: 80px;
+}
+
+.user-dropdown {
+  flex-grow: 4;
+  text-align: right;
 }
 
 .nav-contents {
