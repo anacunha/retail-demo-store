@@ -4,11 +4,13 @@
 import ProductsRepository from "./productsRepository.js"
 import UsersRepository from "./usersRepository.js"
 import RecommendationsRepository from "./recommendationsRepository.js"
+import LocationsRepository from "./locationsRepository.js"
 
 const repositories = {
     products: ProductsRepository,
     users: UsersRepository,
     recommendations: RecommendationsRepository,
+    locations: LocationsRepository
 }
 
 export const RepositoryFactory = {
