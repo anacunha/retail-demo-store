@@ -91,10 +91,6 @@ Parameters:
     Type: String
     Default: none
 
-  LocationsServiceExternalUrl:
-    Type: String
-    Default: none
-
   UsersServiceExternalUrl:
     Type: String
     Default: none
@@ -244,7 +240,6 @@ Resources:
         StackBucketName: !Ref StackBucketName
         FargateServiceName: !GetAtt Service.Outputs.FargateServiceName
         ProductsServiceExternalUrl: !Ref ProductsServiceExternalUrl
-        LocationsServiceExternalUrl: !Ref LocationsServiceExternalUrl
         UsersServiceExternalUrl: !Ref UsersServiceExternalUrl
         CartsServiceExternalUrl: !Ref CartsServiceExternalUrl
         VideosServiceExternalUrl: !Ref VideosServiceExternalUrl

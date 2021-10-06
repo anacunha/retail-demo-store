@@ -406,7 +406,6 @@ Resources:
         SearchServiceExternalUrl: !GetAtt Services.Outputs.SearchServiceUrl
         VideosServiceExternalUrl: !GetAtt Services.Outputs.VideosServiceUrl
         LocationServiceExternalUrl: !GetAtt Services.Outputs.LocationServiceUrl
-        LocationsServiceExternalUrl: !GetAtt Services.Outputs.LocationsServiceUrl
         OffersServiceExternalUrl: !GetAtt Services.Outputs.OffersServiceUrl
         PinpointAppId: !GetAtt Base.Outputs.PinpointAppId
         ParameterPersonalizeEventTrackerId: !GetAtt Base.Outputs.ParameterPersonalizeEventTrackerId
