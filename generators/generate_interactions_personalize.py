@@ -158,33 +158,30 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
 
         interaction_product_counts = defaultdict(int)
 
-        # Here we build up a list for each category/gender, of product
+        # Here we build up a list for each category, of product
         # affinities. The product affinity is keyed by one product,
         # so we do not end up with exactly PRODUCT_AFFINITY_N sized
         # cliques. They overlap a little over multiple users
         # - that is why PRODUCT_AFFINITY_N
         # can be a little bit lower than a desired clique size.
         all_categories = products_df.category.unique()
-        product_affinities_bycatgender = {}
+        product_affinities_bycat = {}
         for category in all_categories:
-            for gender in ['M', 'F']:
-                products_cat = products_df.loc[products_df.category==category]
-                products_cat = products_cat.loc[
-                    products_cat.gender_affinity.isnull()|(products_cat.gender_affinity==gender)].id.values
-                # We ensure that all products have PRODUCT_AFFINITY_N products that lead into it
-                # and PRODUCT_AFFINITY_N products it leads to
-                affinity_matrix = sum([np.roll(np.identity(len(products_cat)), [0, i], [0, 1])
-                                       for i in range(PRODUCT_AFFINITY_N)])
-                np.random.shuffle(affinity_matrix)
-                affinity_matrix = affinity_matrix.T
-                np.random.shuffle(affinity_matrix)
-                affinity_matrix = affinity_matrix.astype(bool)  # use as boolean index
-                affinity_matrix = affinity_matrix | np.identity(len(products_cat), dtype=bool)
+            products_cat = products_df.loc[products_df.category==category].id.values
+            # We ensure that all products have PRODUCT_AFFINITY_N products that lead into it
+            # and PRODUCT_AFFINITY_N products it leads to
+            affinity_matrix = sum([np.roll(np.identity(len(products_cat)), [0, i], [0, 1])
+                                    for i in range(PRODUCT_AFFINITY_N)])
+            np.random.shuffle(affinity_matrix)
+            affinity_matrix = affinity_matrix.T
+            np.random.shuffle(affinity_matrix)
+            affinity_matrix = affinity_matrix.astype(bool)  # use as boolean index
+            affinity_matrix = affinity_matrix | np.identity(len(products_cat), dtype=bool)
 
-                product_infinities = [products_cat[row] for row in affinity_matrix]
-                product_affinities_bycatgender[(category, gender)] = {
-                    products_cat[i]: products_df.loc[products_df.id.isin(product_infinities[i])]
-                    for i in range(len(products_cat))}
+            product_infinities = [products_cat[row] for row in affinity_matrix]
+            product_affinities_bycat[category] = {
+                products_cat[i]: products_df.loc[products_df.id.isin(product_infinities[i])]
+                for i in range(len(products_cat))}
 
         user_category_to_first_prod = {}
 
@@ -210,33 +207,31 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
             category = np.random.choice(preferred_categories, 1, p=p)[0]
             discount_persona = user['discount_persona']
 
-            gender = user['gender']
 
             # Here, in order to keep the number of products that are related to a product,
             # we restrict the size of the set of products that are recommended to an individual
-            # user - in effect, the available subset for a particular category/gender
+            # user - in effect, the available subset for a particular category
             # depends on the first product selected, which is selected as per previous logic
-            # (looking at category affinities and gender)
+            # (looking at category affinities)
             usercat_key = (user['id'], category)  # has this user already selected a "first" product?
             if usercat_key in user_category_to_first_prod:
                 # If a first product is already selected, we use the product affinities for that product
                 # To provide the list of products to select from
                 first_prod = user_category_to_first_prod[usercat_key]
-                prods_subset_df = product_affinities_bycatgender[(category, gender)][first_prod]
+                prods_subset_df = product_affinities_bycat[category][first_prod]
 
             if not usercat_key in user_category_to_first_prod:
                 # If the user has not yet selected a first product for this category
-                # we do it according to the old logic of choosing between all products for gender
-                # Check if subset data frame is already cached for category & gender
-                prods_subset_df = subsets_cache.get(category + gender)
+                # we do it according to the old logic of choosing between all products
+                # Check if subset data frame is already cached for category
+                prods_subset_df = subsets_cache.get(category)
                 if prods_subset_df is None:
-                    # Select products from selected category without gender affinity or that match user's gender
-                    prods_subset_df = products_df.loc[(products_df['category'] == category) & (
-                                (products_df['gender_affinity'] == gender) | (products_df['gender_affinity'].isnull()))]
+                    # Select products from selected category
+                    prods_subset_df = products_df.loc[(products_df['category'] == category)]
                     # Update cache
-                    subsets_cache[category + gender] = prods_subset_df
+                    subsets_cache[category] = prods_subset_df
 
-            # Pick a random product from gender filtered subset
+            # Pick a random product from filtered subset
             product = prods_subset_df.sample().iloc[0]
 
             interaction_product_counts[product.id] += 1
