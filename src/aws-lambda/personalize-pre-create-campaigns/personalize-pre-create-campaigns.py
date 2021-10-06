@@ -111,9 +111,9 @@ all_campaign_types_products = ['retaildemostore-related-products',
 all_campaign_types_offers = ['retaildemostore-personalized-offers']
 
 campaign_type_to_event_type = {
-    "retaildemostore-related-products": "ProductViewed",
-    "retaildemostore-product-personalization": "ProductViewed",
-    "retaildemostore-personalized-ranking": "ProductViewed",
+    "retaildemostore-related-products": "ProductLiked",
+    "retaildemostore-product-personalization": "ProductLiked",
+    "retaildemostore-personalized-ranking": "ProductLiked",
     "retaildemostore-personalized-offers": "OfferConverted",
 }
 

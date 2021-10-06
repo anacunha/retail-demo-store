@@ -447,10 +447,10 @@ export const AnalyticsHandler = {
             Amplitude.getInstance().logEvent('ProductQuantityUpdated', eventProperties);
         }
     },
-    productViewed(user, product, feature, experimentCorrelationId, discount) {
+    productLiked(user, product, feature, experimentCorrelationId, discount) {
         if (user) {
             AmplifyAnalytics.record({
-                name: 'ProductViewed',
+                name: 'ProductLiked',
                 attributes: {
                     userId: user.id,
                     productId: product.id,
@@ -468,7 +468,7 @@ export const AnalyticsHandler = {
 
         if (this.personalizeEventTrackerEnabled()) {
             AmplifyAnalytics.record({
-                eventType: 'ProductViewed',
+                eventType: 'ProductLiked',
                 userId: user ? user.id : AmplifyStore.state.provisionalUserID,
                 properties: {
                     itemId: product.id,
@@ -493,11 +493,11 @@ export const AnalyticsHandler = {
         };
 
         if (this.segmentEnabled()) {
-            window.analytics.track('ProductViewed', eventProperties);
+            window.analytics.track('ProductLiked', eventProperties);
         }
 
         if (this.amplitudeEnabled()) {
-            Amplitude.getInstance().logEvent('ProductViewed', eventProperties);
+            Amplitude.getInstance().logEvent('ProductLiked', eventProperties);
         }
 
         if (user && this.optimizelyEnabled()) {
@@ -505,7 +505,7 @@ export const AnalyticsHandler = {
             const expectedRevisionNumber = optimizelyClientInstance.configObj.revision;
             if (this.isOptimizelyDatafileSynced(expectedRevisionNumber)) {
                 const userId = user.id.toString();
-                optimizelyClientInstance.track('ProductViewed', userId);
+                optimizelyClientInstance.track('ProductLiked', userId);
             }
         }
 

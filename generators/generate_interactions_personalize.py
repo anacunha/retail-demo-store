@@ -276,7 +276,7 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
 
                 f.writerow([product['id'],
                             user['id'],
-                            'ProductViewed',
+                            'ProductLiked',
                             this_timestamp,
                             discount_context])
                 next_timestamp += seconds_increment
