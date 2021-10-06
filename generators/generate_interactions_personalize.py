@@ -83,6 +83,7 @@ def generate_user_items(out_users_filename, out_items_filename, in_users_filenam
         products = yaml.safe_load(f)
 
     products_df = pd.DataFrame(products)
+    products_df['category'] = products_df['category'].str.replace(' ', '-').str.lower()
     products_df['style'] = products_df['style'].str.replace(' - ', '|').str.replace(' ', '-').str.lower()
 
     # User info is stored in the repository - it was automatically generated
