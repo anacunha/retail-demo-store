@@ -19,7 +19,6 @@ import yaml
 def format_product(product):
     product['abv'] = float(product['abv'])
     product['category'] = product['category'].replace(' ', '-').lower()
-    product['style'] = product['style'].replace(' - ', '|').replace(' ', '-').lower()
     product['price'] = float(product['price'])
     if product['ibu'] == 'N/A':
         product.pop('ibu')
