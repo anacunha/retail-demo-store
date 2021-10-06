@@ -2,30 +2,23 @@
 # SPDX-License-Identifier: MIT-0
 
 from flask import Flask
-from flask import abort, jsonify, request
+from flask import jsonify
 from flask_cors import CORS
 
-import boto3
 import json
 import os
 import pprint
 
 RESOURCE_BUCKET = os.environ.get('RESOURCE_BUCKET')
 
-s3 = boto3.resource('s3')
-
-store_location = {}
-customer_route = {}
+locations = {}
 
 
-def load_s3_data():
-    global customer_route
-    route_file_obj = s3.Object(RESOURCE_BUCKET, 'location_services/customer_route.json')
-    customer_route = json.loads(route_file_obj.get()['Body'].read().decode('utf-8'))
-
-    global store_location
-    location_file_obj = s3.Object(RESOURCE_BUCKET, 'location_services/store_location.json')
-    store_location = json.loads(location_file_obj.get()['Body'].read().decode('utf-8'))
+def load_data():
+    global locations_data, locations
+    with open("data/locations.json") as location_file_obj:
+        locations_data = location_file_obj.read()
+    locations = json.loads(locations_data)
 
 
 # -- Logging
@@ -52,21 +45,16 @@ corps = CORS(app)
 
 @app.route('/')
 def index():
-    return 'Location Service Service'
+    return 'Locations Service is running'
 
 
-@app.route('/store_location')
-def get_store_location():
-    return jsonify(store_location)
-
-
-@app.route('/customer_route')
-def get_customer_route():
-    return jsonify(customer_route)
+@app.route('/locations/all')
+def get_locations():
+    return jsonify(locations)
 
 
 if __name__ == '__main__':
     app.wsgi_app = LoggingMiddleware(app.wsgi_app)
-    load_s3_data()
+    load_data()
 
     app.run(debug=True, host='0.0.0.0', port=80)

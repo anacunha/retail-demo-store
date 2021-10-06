@@ -286,7 +286,6 @@ Resources:
         ImageRootUrl: !Ref ImageRootUrl
         Uid: !Sub ${ParentStackName}-${AWS::Region}
 
-  # The old *store* location service
   LocationService:
     Type: AWS::CloudFormation::Stack
     Properties:
@@ -294,39 +293,6 @@ Resources:
       Parameters:
         ServiceName: location
         ServicePath: src/location
-        ResourceBucket: !Ref ResourceBucket
-        ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
-        SourceDeploymentType: !Ref SourceDeploymentType
-        GitHubRepo: !Ref GitHubRepo
-        GitHubBranch: !Ref GitHubBranch
-        GitHubToken: !Ref GitHubToken
-        GitHubUser: !Ref GitHubUser
-        UserPoolId: !Ref UserPoolId
-        UserPoolClientId: !Ref UserPoolClientId
-        IdentityPoolId: !Ref IdentityPoolId
-        StackBucketName: !Ref StackBucketName
-        Subnets: !Ref Subnets
-        VpcId: !Ref VpcId
-        ClusterName: !Ref ClusterName
-        ServiceDiscoveryNamespace: !Ref ServiceDiscoveryNamespace
-        EnvElasticsearchDomainEndpoint: !Ref EnvElasticsearchDomainEndpoint
-        ParameterPersonalizeEventTrackerId: !Ref ParameterPersonalizeEventTrackerId
-        ParameterAmplitudeApiKey: !Ref ParameterAmplitudeApiKey
-        ParameterOptimizelySdkKey: !Ref ParameterOptimizelySdkKey
-        CleanupBucketLambdaArn: !Ref CleanupBucketLambdaArn
-        DeleteRepositoryLambdaArn: !GetAtt DeleteRepositoryLambdaFunction.Arn
-        WebRootUrl: !Ref WebRootUrl
-        ImageRootUrl: !Ref ImageRootUrl
-        Uid: !Sub ${ParentStackName}-${AWS::Region}
-
-  # The new *brewery/bar* locations service
-  LocationsService:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL: !Sub https://s3.amazonaws.com/${ResourceBucket}/${ResourceBucketRelativePath}cloudformation-templates/services/service/_template.yaml
-      Parameters:
-        ServiceName: locations
-        ServicePath: src/locations
         ResourceBucket: !Ref ResourceBucket
         ResourceBucketRelativePath: !Ref ResourceBucketRelativePath
         SourceDeploymentType: !Ref SourceDeploymentType
@@ -572,10 +538,6 @@ Outputs:
   LocationServiceUrl:
     Description: Location load balancer URL.
     Value: !GetAtt LocationService.Outputs.ServiceUrl
-
-  LocationsServiceUrl:
-    Description: Locations load balancer URL.
-    Value: !GetAtt LocationsService.Outputs.ServiceUrl
 
   RecommendationsServiceUrl:
     Description: Recommendations load balancer URL.

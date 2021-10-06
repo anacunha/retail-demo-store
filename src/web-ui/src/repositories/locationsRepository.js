@@ -3,8 +3,8 @@
 
 import axios from "axios";
 
-const serviceDomain = process.env.VUE_APP_LOCATIONS_SERVICE_DOMAIN;
-const servicePort = process.env.VUE_APP_LOCATIONS_SERVICE_PORT;
+const serviceDomain = process.env.VUE_APP_LOCATION_SERVICE_DOMAIN;
+const servicePort = process.env.VUE_APP_LOCATION_SERVICE_PORT;
 
 const baseURL = `${serviceDomain}:${servicePort}`;
 
