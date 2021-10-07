@@ -27,11 +27,11 @@ def load_data():
             if key == "Beers":
                 for beer in value:
                     if beer in locationsByBeer:
-                        locations = locationsByBeer[beer]
+                        beer_locations = locationsByBeer[beer]
                     else:
-                        locations = []
-                    locations.append(location)
-                    locationsByBeer[beer] = locations
+                        beer_locations = []
+                    beer_locations.append(location)
+                    locationsByBeer[beer] = beer_locations
 
 # -- Logging
 class LoggingMiddleware(object):
