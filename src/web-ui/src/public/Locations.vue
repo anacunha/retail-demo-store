@@ -11,9 +11,9 @@
 
 <script>
 import Layout from '@/components/Layout/Layout';
-import MapContext from '@/components/Map/MapContext';
-import LocationMap from '@/components/Map/LocationMap';
-import LocationList from '@/components/Map/LocationList';
+import MapContext from '@/components/Locations/MapContext';
+import LocationMap from '@/components/Locations/LocationMap';
+import LocationList from '@/components/Locations/LocationList';
 
 export default {
   name: 'Locations',
