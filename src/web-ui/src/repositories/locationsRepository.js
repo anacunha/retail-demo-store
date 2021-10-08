@@ -16,5 +16,9 @@ const resource = "/locations";
 export default {
     get() {
         return connection.get(`${resource}/all`)
+    },
+
+    getLocationsByBeer(beerName) {
+        return connection.get(`${resource}?beerName=${beerName}`)
     }
 }
