@@ -23,15 +23,11 @@ def load_data():
     locations = json.loads(locations_data)
 
     for location in locations:
-        for key, value in location.items():
-            if key == "Beers":
-                for beer in value:
-                    if beer in locationsByBeer:
-                        beer_locations = locationsByBeer[beer]
-                    else:
-                        beer_locations = []
-                    beer_locations.append(location)
-                    locationsByBeer[beer] = beer_locations
+        for beer in location['Beers']:
+            if beer in locationsByBeer:
+                locationsByBeer[beer].append(location)
+            else:
+                locationsByBeer[beer] = [location]
 
 # -- Logging
 class LoggingMiddleware(object):
