@@ -35,7 +35,7 @@ To provide a more compelling and intuitive demo experience, each fictitious user
 
 For example, a user assigned with a persona of "footwear_jewelry_furniture" indicates that the user, at least historically, has been primarily interested in products from the Footwear category and to decreasing degrees of interest in products from the Jewelry and Furniture categories. That initial weighted interest is codified in the generation of the historical interaction dataset which is used to train Solutions in Amazon Personalize. So, for our "footwear_jewelry_furniture" user, interaction events are generated across products in all three of those categories to create a synthetic history of engaging in products matching that persona. Additionally, some products are tagged with an gender affinity. This is used when generating historical events to filter products against the gender of each user to further add realism to the recommendations.
 
-Events for multiple event types are generated to mimic shopping behavior. For example, most generated event types are 'ProductViewed' to mimic users browsing the site. Occasional checkouts are simulated with 'ProductAdded' followed by 'CartViewed', 'CheckoutStarted', and 'OrderCompleted' events. The Personalize solutions/models are trained on the 'ProductViewed' event type.
+Events for multiple event types are generated to mimic shopping behavior. For example, most generated event types are 'ProductLiked' to mimic users browsing the site. The Personalize solutions/models are trained on the 'ProductLiked' event type.
 
 ## Emulating Shopper Profiles
 
@@ -90,13 +90,7 @@ You can also see personalized ranking in product search results. That is, if you
 The following semantic interaction event types are instrumented in the Retail Demo Store web user interface. Each time a user (anonymous or known) performs one the following actions, an [event is sent](https://github.com/aws-samples/retail-demo-store/blob/master/src/web-ui/src/analytics/AnalyticsHandler.js) to both Amazon Pinpoint (signed in only) and an Amazon Personalize Event Tracker (if configured).
 
 * ProductSearched – the user performed a product search
-* ProductViewed – the user viewed details for a product
-* ProductAdded – the user added a product to their shopping cart
-* ProductRemoved – the user removed a product from their shopping cart
-* ProductQuantityUpdated – the user changed the quantity of a product in their shopping cart
-* CartViewed – the user viewed their shopping cart
-* CheckoutStarted – the user initiated the checkout process
-* OrderCompleted – the user completed an order by completing the checkout process
+* ProductLiked – the user viewed details for a product
 
 To assess the impact of real-time event tracking in recommendations made by the user recommendations on the home page, follow these steps.
 

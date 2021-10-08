@@ -23,8 +23,8 @@ export const product = {
 
       return getProductImageUrl(this.product);
     },
-    recordProductViewed() {
-      AnalyticsHandler.productViewed(this.user, this.product);
+    recordProductLiked() {
+      AnalyticsHandler.productLiked(this.user, this.product);
     },
     readableProductCategory() {
       if (!this.product) return null;
