@@ -22,7 +22,6 @@
         <h2>Where to find this beer</h2>
         <MapContext :locations="locations">
           <LocationMap></LocationMap>
-          <LocationList></LocationList>
         </MapContext>
 
         <RecommendedProductsSection :recommendedProducts="relatedProducts">
@@ -46,7 +45,6 @@ import FiveStars from '@/components/FiveStars/FiveStars';
 import RecommendedProductsSection from '@/components/RecommendedProductsSection/RecommendedProductsSection';
 import MapContext from '@/components/Locations/MapContext';
 import LocationMap from '@/components/Locations/LocationMap';
-import LocationList from '@/components/Locations/LocationList';
 
 const LocationsRepository = RepositoryFactory.get('locations');
 const RecommendationsRepository = RepositoryFactory.get('recommendations');
@@ -60,8 +58,7 @@ export default {
     FiveStars,
     RecommendedProductsSection,
     MapContext,
-    LocationMap,
-    LocationList
+    LocationMap
   },
   mixins: [product],
   data() {
