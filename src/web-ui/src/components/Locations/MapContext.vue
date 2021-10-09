@@ -147,6 +147,14 @@ export default {
       }
     },
     setViewport(location) {
+      this.locations.forEach(({marker}) => {
+        const popup = marker.getPopup();
+
+        if (popup.isOpen()) {
+          popup.remove();
+        }
+      });
+
       this.map.panTo([location.Longitude, location.Latitude], 5000);
       location.marker.togglePopup();
     },
