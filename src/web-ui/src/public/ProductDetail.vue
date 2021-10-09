@@ -19,6 +19,12 @@
           </div>
         </main>
 
+        <h2>Where to find this beer</h2>
+        <MapContext :locations="locations">
+          <LocationMap></LocationMap>
+          <LocationList></LocationList>
+        </MapContext>
+
         <RecommendedProductsSection :recommendedProducts="relatedProducts">
           <template #heading>Compare similar beers</template>
         </RecommendedProductsSection>
@@ -38,7 +44,11 @@ import Layout from '@/components/Layout/Layout';
 import ProductPrice from '@/components/ProductPrice/ProductPrice';
 import FiveStars from '@/components/FiveStars/FiveStars';
 import RecommendedProductsSection from '@/components/RecommendedProductsSection/RecommendedProductsSection';
+import MapContext from '@/components/Locations/MapContext';
+import LocationMap from '@/components/Locations/LocationMap';
+import LocationList from '@/components/Locations/LocationList';
 
+const LocationsRepository = RepositoryFactory.get('locations');
 const RecommendationsRepository = RepositoryFactory.get('recommendations');
 const MAX_RECOMMENDATIONS = 6;
 
@@ -49,11 +59,15 @@ export default {
     ProductPrice,
     FiveStars,
     RecommendedProductsSection,
+    MapContext,
+    LocationMap,
+    LocationList
   },
   mixins: [product],
   data() {
     return {
       relatedProducts: null,
+      locations: null
     };
   },
   computed: {
@@ -78,6 +92,7 @@ export default {
       await this.getProductByID(this.$route.params.id);
 
       this.getRelatedProducts();
+      this.getLocations();
     },
     async getRelatedProducts() {
       // reset in order to trigger recalculation in carousel - carousel UI breaks without this
@@ -90,6 +105,11 @@ export default {
       );
 
       this.relatedProducts = response.data;
+    },
+     async getLocations() {
+      let locationsResult = await LocationsRepository.getLocationsByBeer(this.product.name);
+
+      this.locations = locationsResult.data;
     },
   },
 };

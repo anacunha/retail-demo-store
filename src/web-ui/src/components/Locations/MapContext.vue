@@ -5,23 +5,28 @@
 </template>
 
 <script>
-import { RepositoryFactory } from '@/repositories/RepositoryFactory';
+// import { RepositoryFactory } from '@/repositories/RepositoryFactory';
 
 import maplibregl from 'maplibre-gl';
 import { Auth } from 'aws-amplify';
 import location from 'aws-sdk/clients/location';
 import { Signer } from '@aws-amplify/core';
 
-const LocationsRepository = RepositoryFactory.get('locations');
+// const LocationsRepository = RepositoryFactory.get('locations');
 
 export default {
   name: 'MapContext',
+  props: {
+    locations: {
+      required: true,
+    },
+  },
   data() {
     return {
       container: null,
       credentials: null,
       service: null,
-      locations: [],
+      // locations: [],
       center: null,
       zoom: null,
       markers: [],
@@ -34,21 +39,13 @@ export default {
       immediate: true,
       async handler(newContainer) {
         if (newContainer) {
-          this.credentials = await Auth.currentCredentials();
-
-          this.service = new location({
-            credentials: this.credentials,
-            region: process.env.VUE_APP_AWS_REGION,
-          });
-
-          await this.getLocations();
-
-          this.initializeMap();
+          this.loadCredentialsAndMap();
         }
       },
     },
     locations(newLocations) {
       this.locationCallbacks.forEach((callback) => callback(newLocations));
+      this.loadCredentialsAndMap();
     },
   },
   provide() {
@@ -73,6 +70,15 @@ export default {
 
       this.locationCallbacks.push(callback);
     },
+    async loadCredentialsAndMap() {
+      this.credentials = await Auth.currentCredentials();
+
+      this.service = new location({
+        credentials: this.credentials,
+        region: process.env.VUE_APP_AWS_REGION,
+      });
+      this.initializeMap();
+    },
     transformRequest(url, resourceType) {
       if (resourceType === 'Style' && !url.includes('://')) {
         // resolve to an AWS URL
@@ -96,11 +102,11 @@ export default {
       // Don't sign
       return { url: url || '' };
     },
-    async getLocations() {
-      let locationsResult = await LocationsRepository.get();
+    // async getLocations() {
+    //   let locationsResult = await LocationsRepository.get();
 
-      this.locations = locationsResult.data;
-    },
+    //   this.locations = locationsResult.data;
+    // },
     async initializeMap() {
       if (this.locations && this.locations.length != 0) {
         this.center = new maplibregl.LngLat(this.locations[0].Longitude, this.locations[0].Latitude);
@@ -147,7 +153,6 @@ export default {
       }
     },
     setViewport(locationToToggle) {
-
       this.locations.forEach((location) => {
         if (locationToToggle !== location) {
           const popup = location.marker.getPopup();
