@@ -23,7 +23,7 @@ phases:
       - go get gopkg.in/yaml.v2
   build:
     commands:
-      - git clone https://github.com/aws-samples/retail-demo-store
+      - git clone https://github.com/anacunha/retail-demo-store
       - cd retail-demo-store/
       - pip install -r generators/requirements.txt
       - ./stage.sh find-my-brew-staging-us-west-2
