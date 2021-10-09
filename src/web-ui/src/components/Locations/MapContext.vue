@@ -146,17 +146,19 @@ export default {
         }
       }
     },
-    setViewport(location) {
-      this.locations.forEach(({marker}) => {
-        const popup = marker.getPopup();
+    setViewport(locationToToggle) {
 
-        if (popup.isOpen()) {
-          popup.remove();
+      this.locations.forEach((location) => {
+        if (locationToToggle !== location) {
+          const popup = location.marker.getPopup();
+          if (popup.isOpen()) {
+            popup.remove();
+          }
         }
       });
 
-      this.map.panTo([location.Longitude, location.Latitude], 5000);
-      location.marker.togglePopup();
+      locationToToggle.marker.togglePopup();
+      this.map.panTo([locationToToggle.Longitude, locationToToggle.Latitude], 5000);
     },
   },
 };
