@@ -5,13 +5,14 @@
 </template>
 
 <script>
-import maplibregl from 'maplibre-gl';
-import { Auth } from 'aws-amplify';
-import location from 'aws-sdk/clients/location';
-import { Signer } from '@aws-amplify/core';
+import * as turf from "@turf/turf";
+import maplibregl from "maplibre-gl";
+import { Auth } from "aws-amplify";
+import location from "aws-sdk/clients/location";
+import { Signer } from "@aws-amplify/core";
 
 export default {
-  name: 'MapContext',
+  name: "MapContext",
   props: {
     locations: {
       required: true,
@@ -27,6 +28,11 @@ export default {
       markers: [],
       map: null,
       locationCallbacks: [],
+      // features: []
+      geojson: {
+        'type': 'FeatureCollection',
+        'features': []
+      }
     };
   },
   watch: {
@@ -75,16 +81,16 @@ export default {
       this.initializeMap();
     },
     transformRequest(url, resourceType) {
-      if (resourceType === 'Style' && !url.includes('://')) {
+      if (resourceType === "Style" && !url.includes("://")) {
         // resolve to an AWS URL
         url =
-          'https://maps.geo.' +
+          "https://maps.geo." +
           process.env.VUE_APP_AWS_REGION +
-          '.amazonaws.com/maps/v0/maps/' +
+          ".amazonaws.com/maps/v0/maps/" +
           url +
-          '/style-descriptor';
+          "/style-descriptor";
       }
-      if (url.includes('amazonaws.com')) {
+      if (url.includes("amazonaws.com")) {
         // only sign AWS requests (with the signature as part of the query string)
         return {
           url: Signer.signUrl(url, {
@@ -95,11 +101,14 @@ export default {
         };
       }
       // Don't sign
-      return { url: url || '' };
+      return { url: url || "" };
     },
     async initializeMap() {
       if (this.locations && this.locations.length != 0) {
-        this.center = new maplibregl.LngLat(this.locations[0].Longitude, this.locations[0].Latitude);
+        this.center = new maplibregl.LngLat(
+          this.locations[0].Longitude,
+          this.locations[0].Latitude
+        );
         this.zoom = 9;
       } else {
         // The Venetian Resort
@@ -117,7 +126,7 @@ export default {
       });
 
       //Zoom in and out button
-      this.map.addControl(new maplibregl.NavigationControl(), 'top-left');
+      this.map.addControl(new maplibregl.NavigationControl(), "top-left");
 
       //A button that allows the map to fly to user’s current location when pressed
       this.map.addControl(
@@ -126,7 +135,7 @@ export default {
             enableHighAccuracy: true,
           },
           trackUserLocation: true,
-        }),
+        })
       );
 
       if (this.locations) {
@@ -134,15 +143,69 @@ export default {
         for (let i = 0; i < this.locations.length; i++) {
           const html = `<h1>${this.locations[i].Name}</h1><p>${this.locations[i].Address}</p><a href="tel:${this.locations[i].Phone}"><i class="fas fa-phone"></a></i><i class="fas fa-directions"></i>`;
           const marker = new maplibregl.Marker()
-            .setLngLat([this.locations[i].Longitude, this.locations[i].Latitude])
+            .setLngLat([
+              this.locations[i].Longitude,
+              this.locations[i].Latitude,
+            ])
             .setPopup(new maplibregl.Popup().setHTML(html)) // add popup
             .addTo(this.map);
           this.markers.push(marker);
           this.locations[i].marker = marker;
         }
       }
+
+      // GeoJSON object to hold our measurement features
+      // var geojson = {
+      //   'type': 'FeatureCollection',
+      //   'features': this.features
+      // };
+
+      // // Used to draw a line between points
+      // var linestring = {
+      //   'type': 'Feature',
+      //   'geometry': {
+      //     'type': 'LineString',
+      //     'coordinates': []
+      //   }
+      // };
+
+      const theMap = this.map;
+      const theGeojson = this.geojson;
+
+      this.map.on("load", function () {
+        theMap.addSource("geojson", {
+          type: "geojson",
+          data: theGeojson,
+        });
+
+        // Add styles to the map
+        theMap.addLayer({
+          id: "measure-points",
+          type: "circle",
+          source: "geojson",
+          paint: {
+            "circle-radius": 5,
+            "circle-color": "#000",
+          },
+          filter: ["in", "$type", "Point"],
+        });
+        theMap.addLayer({
+          id: "measure-lines",
+          type: "line",
+          source: "geojson",
+          layout: {
+            "line-cap": "round",
+            "line-join": "round",
+          },
+          paint: {
+            "line-color": "#000",
+            "line-width": 2.5,
+          },
+          filter: ["in", "$type", "LineString"],
+        });
+      });
     },
-    setViewport(locationToToggle) {
+    async setViewport(locationToToggle) {
       this.locations.forEach((location) => {
         if (locationToToggle !== location) {
           const popup = location.marker.getPopup();
@@ -153,7 +216,72 @@ export default {
       });
 
       locationToToggle.marker.togglePopup();
-      this.map.panTo([locationToToggle.Longitude, locationToToggle.Latitude], 5000);
+      this.map.panTo(
+        [locationToToggle.Longitude, locationToToggle.Latitude],
+        5000
+      );
+
+      const routeData = await this.calculateRoute(locationToToggle);
+      console.log("Legs", routeData.Legs);
+      const route = await this.makeLegFeatures(routeData.Legs);
+
+      console.log("route", route);
+
+      this.geojson = {
+        'type': 'FeatureCollection',
+        'features': route
+      };
+
+      this.map.getSource('geojson').setData(
+        this.geojson
+      );
+
+      // this.features = route;
+      // Used to draw a line between points
+      var linestring = {
+        'type': 'Feature',
+        'geometry': {
+          'type': 'LineString',
+          'coordinates': []
+        }
+      };
+      linestring.geometry.coordinates = route.map(function (
+        point
+      ) {
+        return point.geometry.coordinates;
+      });
+    },
+    async calculateRoute(to) {
+      const params = {
+        CalculatorName: "FindMyBrewRouteCalculator",
+        // DeparturePosition: [from.longitude, from.latitude],
+        DeparturePosition: [-115.170227, 36.121159],
+        DestinationPosition: [to.Longitude, to.Latitude],
+        IncludeLegGeometry: true,
+        DistanceUnit: 'Miles'
+      };
+
+      console.log(params);
+
+      const data = await this.service.calculateRoute(params).promise();
+
+      return data;
+    },
+    makeLegFeatures(legs) {
+      return legs.map((leg) => {
+        console.log("leg", leg);
+        const geom = leg.Geometry;
+
+        const { ...properties } = leg;
+
+        return turf.feature(
+          {
+            type: Object.keys(geom)[0],
+            coordinates: Object.values(geom)[0],
+          },
+          properties
+        );
+      });
     },
   },
 };
