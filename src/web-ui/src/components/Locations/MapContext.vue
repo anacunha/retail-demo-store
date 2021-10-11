@@ -5,14 +5,10 @@
 </template>
 
 <script>
-// import { RepositoryFactory } from '@/repositories/RepositoryFactory';
-
 import maplibregl from 'maplibre-gl';
 import { Auth } from 'aws-amplify';
 import location from 'aws-sdk/clients/location';
 import { Signer } from '@aws-amplify/core';
-
-// const LocationsRepository = RepositoryFactory.get('locations');
 
 export default {
   name: 'MapContext',
@@ -26,7 +22,6 @@ export default {
       container: null,
       credentials: null,
       service: null,
-      // locations: [],
       center: null,
       zoom: null,
       markers: [],
@@ -102,11 +97,6 @@ export default {
       // Don't sign
       return { url: url || '' };
     },
-    // async getLocations() {
-    //   let locationsResult = await LocationsRepository.get();
-
-    //   this.locations = locationsResult.data;
-    // },
     async initializeMap() {
       if (this.locations && this.locations.length != 0) {
         this.center = new maplibregl.LngLat(this.locations[0].Longitude, this.locations[0].Latitude);
