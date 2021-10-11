@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="container">
-      <MapContext>
+      <MapContext :locations="locations">
         <LocationMap></LocationMap>
         <LocationList></LocationList>
       </MapContext>
@@ -15,6 +15,9 @@ import MapContext from '@/components/Locations/MapContext';
 import LocationMap from '@/components/Locations/LocationMap';
 import LocationList from '@/components/Locations/LocationList';
 
+import { RepositoryFactory } from '@/repositories/RepositoryFactory';
+const LocationsRepository = RepositoryFactory.get('locations');
+
 export default {
   name: 'Locations',
   components: {
@@ -23,6 +26,19 @@ export default {
     LocationMap,
     LocationList,
   },
+  data() {
+    return { locations: null };
+  },
+  async mounted() {
+    await this.getLocations();
+  },
+  methods: {
+    async getLocations() {
+      let locationsResult = await LocationsRepository.get();
+
+      this.locations = locationsResult.data;
+    },
+  }
 };
 </script>
 
