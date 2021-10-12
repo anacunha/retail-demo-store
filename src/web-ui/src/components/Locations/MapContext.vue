@@ -144,19 +144,25 @@ export default {
       );
 
       if (this.locations) {
-        this.markers = [];
-        for (let i = 0; i < this.locations.length; i++) {
-          const html = `<h1>${this.locations[i].Name}</h1><p>${this.locations[i].Address}</p><a href="tel:${this.locations[i].Phone}"><i class="fas fa-phone"></a></i><i class="fas fa-directions"></i>`;
-          const marker = new maplibregl.Marker()
-            .setLngLat([
-              this.locations[i].Longitude,
-              this.locations[i].Latitude,
-            ])
-            .setPopup(new maplibregl.Popup().setHTML(html)) // add popup
-            .addTo(this.map);
-          this.markers.push(marker);
+        this.markers = this.locations.map((location) => {
+          const marker = new maplibregl.Marker().setLngLat([location.Longitude, location.Latitude]);
+          const domContentContainer = document.createElement('div');
+          domContentContainer.innerHTML = `
+            <h1>${location.Name}</h1>
+            <p>${location.Address}</p>
+            <a href="tel:${location.Phone}"><i class="fas fa-phone"></i></a>
+          `;
+          const directionsButton = document.createElement('button');
+          directionsButton.classList.add('directions-button');
+          directionsButton.innerHTML = `<i class="fas fa-directions"></i>`;
+          directionsButton.addEventListener('click', () => this.showDirections(location));
+          domContentContainer.appendChild(directionsButton);
+          return marker.setPopup(new maplibregl.Popup().setDOMContent(domContentContainer));
+        });
+        this.markers.forEach((marker, i) => {
+          marker.addTo(this.map);
           this.locations[i].marker = marker;
-        }
+        });
       }
 
       const theMap = this.map;

@@ -14,3 +14,8 @@
 a {
   color: inherit;
 }
+
+.directions-button {
+  background: none;
+  border: none;
+}
