@@ -7,7 +7,7 @@
           <p v-for="item in location.Address" :key="item">{{ item }}</p>
         </div>
         <a :href="`tel:${location.Phone}`"><i class="fas fa-phone"></i></a>
-        <i class="fas fa-directions"></i>
+        <i @click="onClickDirections(location)" class="fas fa-directions"></i>
         <h2 @click="toggleHours()">Hours</h2>
         <div class="hours" :class="{ 'show-hours': isShowHours }">
           <p v-for='item in location["Business Hours"]' :key="item">{{ item }}</p>
@@ -29,6 +29,7 @@ export default {
       required: false,
     },
     changeViewport: null,
+    showDirections: null
   },
   data() {
     return {
@@ -39,6 +40,9 @@ export default {
   methods: {
     onClickLocation(location) {
       this.changeViewport(location);
+    },
+    onClickDirections(location) {
+      this.showDirections(location);
     },
     toggleHours() {
       this.isShowHours = !this.isShowHours;

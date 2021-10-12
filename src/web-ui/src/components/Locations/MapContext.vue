@@ -55,6 +55,7 @@ export default {
         registerMapContainer: this.registerContainer,
         onLocationsChange: this.onLocationsChange,
         changeViewport: this.setViewport,
+        showDirections: this.showDirections
       },
     };
   },
@@ -154,21 +155,6 @@ export default {
         }
       }
 
-      // GeoJSON object to hold our measurement features
-      // var geojson = {
-      //   'type': 'FeatureCollection',
-      //   'features': this.features
-      // };
-
-      // // Used to draw a line between points
-      // var linestring = {
-      //   'type': 'Feature',
-      //   'geometry': {
-      //     'type': 'LineString',
-      //     'coordinates': []
-      //   }
-      // };
-
       const theMap = this.map;
       const theGeojson = this.geojson;
 
@@ -178,17 +164,6 @@ export default {
           data: theGeojson,
         });
 
-        // Add styles to the map
-        theMap.addLayer({
-          id: "measure-points",
-          type: "circle",
-          source: "geojson",
-          paint: {
-            "circle-radius": 5,
-            "circle-color": "#000",
-          },
-          filter: ["in", "$type", "Point"],
-        });
         theMap.addLayer({
           id: "measure-lines",
           type: "line",
@@ -205,23 +180,9 @@ export default {
         });
       });
     },
-    async setViewport(locationToToggle) {
-      this.locations.forEach((location) => {
-        if (locationToToggle !== location) {
-          const popup = location.marker.getPopup();
-          if (popup.isOpen()) {
-            popup.remove();
-          }
-        }
-      });
-
-      locationToToggle.marker.togglePopup();
-      this.map.panTo(
-        [locationToToggle.Longitude, locationToToggle.Latitude],
-        5000
-      );
-
-      const routeData = await this.calculateRoute(locationToToggle);
+    async showDirections(location) {
+      this.hideAllPopups();
+      const routeData = await this.calculateRoute(location);
       console.log("Legs", routeData.Legs);
       const route = await this.makeLegFeatures(routeData.Legs);
 
@@ -236,19 +197,27 @@ export default {
         this.geojson
       );
 
-      // this.features = route;
-      // Used to draw a line between points
-      var linestring = {
-        'type': 'Feature',
-        'geometry': {
-          'type': 'LineString',
-          'coordinates': []
+      this.map.zoomTo(12, {
+        duration: 1000
+      });
+    },
+    async setViewport(locationToToggle) {
+      this.hideAllPopups(locationToToggle);
+
+      locationToToggle.marker.togglePopup();
+      this.map.panTo(
+        [locationToToggle.Longitude, locationToToggle.Latitude],
+        5000
+      );
+    },
+    hideAllPopups(locationToToggle = undefined) {
+      this.locations.forEach((location) => {
+        if (locationToToggle !== location) {
+          const popup = location.marker.getPopup();
+          if (popup.isOpen()) {
+            popup.remove();
+          }
         }
-      };
-      linestring.geometry.coordinates = route.map(function (
-        point
-      ) {
-        return point.geometry.coordinates;
       });
     },
     async calculateRoute(to) {
@@ -258,10 +227,9 @@ export default {
         DeparturePosition: [-115.170227, 36.121159],
         DestinationPosition: [to.Longitude, to.Latitude],
         IncludeLegGeometry: true,
-        DistanceUnit: 'Miles'
+        DistanceUnit: 'Miles',
+        TravelMode: 'Walking'
       };
-
-      console.log(params);
 
       const data = await this.service.calculateRoute(params).promise();
 
