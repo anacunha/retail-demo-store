@@ -32,7 +32,9 @@ export default {
       geojson: {
         'type': 'FeatureCollection',
         'features': []
-      }
+      },
+      distance: 0,
+      duration: 0
     };
   },
   watch: {
@@ -55,8 +57,10 @@ export default {
         registerMapContainer: this.registerContainer,
         onLocationsChange: this.onLocationsChange,
         changeViewport: this.setViewport,
-        showDirections: this.showDirections
-      },
+        showDirections: this.showDirections,
+        getDistance: () => this.distance,
+        getDuration: () => this.duration
+      }
     };
   },
   methods: {
@@ -180,27 +184,6 @@ export default {
         });
       });
     },
-    async showDirections(location) {
-      this.hideAllPopups();
-      const routeData = await this.calculateRoute(location);
-      console.log("Legs", routeData.Legs);
-      const route = await this.makeLegFeatures(routeData.Legs);
-
-      console.log("route", route);
-
-      this.geojson = {
-        'type': 'FeatureCollection',
-        'features': route
-      };
-
-      this.map.getSource('geojson').setData(
-        this.geojson
-      );
-
-      this.map.zoomTo(12, {
-        duration: 1000
-      });
-    },
     async setViewport(locationToToggle) {
       this.hideAllPopups(locationToToggle);
 
@@ -209,6 +192,34 @@ export default {
         [locationToToggle.Longitude, locationToToggle.Latitude],
         5000
       );
+    },
+    async showDirections(location) {
+      this.hideAllPopups();
+      const routeData = await this.calculateRoute(location);
+      console.log('routeData', routeData)
+
+      this.distance = routeData.Summary.Distance;
+      this.duration = routeData.Summary.DurationSeconds;
+
+      console.log('distance/duration', this.distance, this.duration)
+
+      const route = await this.makeLegFeatures(routeData.Legs);
+
+      console.log("makeLegFeatures route", route);
+
+      this.geojson = {
+        'type': 'FeatureCollection',
+        'features': route
+      };
+
+      // draw the route
+      this.map.getSource('geojson').setData(
+        this.geojson
+      );
+
+      this.map.zoomTo(12, {
+        duration: 1000
+      });
     },
     hideAllPopups(locationToToggle = undefined) {
       this.locations.forEach((location) => {
@@ -231,13 +242,10 @@ export default {
         TravelMode: 'Walking'
       };
 
-      const data = await this.service.calculateRoute(params).promise();
-
-      return data;
+      return await this.service.calculateRoute(params).promise();
     },
     makeLegFeatures(legs) {
       return legs.map((leg) => {
-        console.log("leg", leg);
         const geom = leg.Geometry;
 
         const { ...properties } = leg;

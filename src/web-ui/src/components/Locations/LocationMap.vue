@@ -1,5 +1,9 @@
 <template>
-  <div ref="container" class="location-map"></div>
+  <div>
+    <div ref="container" class="location-map"></div>
+    <div class="distance-container">Walking distance: {{ this.locationMapContext.getDistance() | formatMiles }}</div>
+    <div class="duration-container">Time to destination: {{ this.locationMapContext.getDuration() | formatTime }} </div>
+  </div>
 </template>
 
 <script>
@@ -9,6 +13,20 @@ export default {
   mounted() {
     this.locationMapContext.registerMapContainer(this.$refs.container);
   },
+  filters: {
+    formatMiles: function (value) {
+      if (!value) return ''
+
+      return `${value.toPrecision(3)} miles`
+    },
+    formatTime: function (value) {
+      if (!value) return ''
+      if (value > 3600) { // over an hour, show in hours
+        return `${(value / 60 / 60).toPrecision(4)} hours`
+      }
+      return `${(value / 60).toPrecision(4)} minutes`
+    }
+  }
 };
 </script>
 
