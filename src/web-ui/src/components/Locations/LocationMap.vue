@@ -1,8 +1,10 @@
 <template>
   <div>
     <div ref="container" class="location-map"></div>
-    <div class="distance-container">Walking distance: {{ this.locationMapContext.getDistance() | formatMiles }}</div>
-    <div class="duration-container">Time to destination: {{ this.locationMapContext.getDuration() | formatTime }} </div>
+    <div class="distance-container" v-if="this.locationMapContext.getDistance() > 0">
+      <div>Walking distance: {{ this.locationMapContext.getDistance() | formatMiles }}</div>
+      <div>Time to destination: {{ this.locationMapContext.getDuration() | formatTime }}</div>
+    </div>
   </div>
 </template>
 
