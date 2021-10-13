@@ -28,13 +28,16 @@ export default {
       markers: [],
       map: null,
       locationCallbacks: [],
-      // features: []
       geojson: {
         'type': 'FeatureCollection',
         'features': []
       },
       distance: 0,
-      duration: 0
+      duration: 0,
+      currentLocation: {
+        latitude: null,
+        longitude: null
+      }
     };
   },
   watch: {
@@ -62,6 +65,9 @@ export default {
         getDuration: () => this.duration
       }
     };
+  },
+  mounted() {
+    this.setCurrentLocation();
   },
   methods: {
     registerContainer(container) {
@@ -134,7 +140,7 @@ export default {
       this.map.addControl(new maplibregl.NavigationControl(), "top-left");
 
       //A button that allows the map to show the user's current location
-      const geolocateControl = this.map.addControl(
+      this.map.addControl(
         new maplibregl.GeolocateControl({
           positionOptions: {
             enableHighAccuracy: true,
@@ -142,23 +148,6 @@ export default {
           trackUserLocation: true,
         })
       );
-
-      // TODO: these never fire
-      geolocateControl.on('geolocate', function(data) {
-        console.log('A geolocate event has occurred.', data)
-      });
-      geolocateControl.on('trackuserlocationstart', function(data) {
-        console.log('A trackuserlocationstart event has occurred.', data)
-      });
-      geolocateControl.on('trackuserlocationend', function(data) {
-        console.log('A trackuserlocationend event has occurred.', data)
-      });
-      geolocateControl.on('error', function() {
-        console.log('An error event has occurred.')
-      });
-
-      // TODO: For now get current location on map load since the events above aren't firing
-      this.setCurrentLocation();
 
       if (this.locations) {
         this.markers = this.locations.map((location) => {
@@ -227,13 +216,15 @@ export default {
 
       navigator.geolocation.getCurrentPosition(this.currentLocationSuccess, this.currentLocationError, options);
     },
-    currentLocationSuccess(pos) {
-      console.log('Current location lat/long:', pos.coords.latitude, pos.coords.longitude);
-      this.currentLocationLatitude = pos.coords.latitude;
-      this.currentLocationLongitude = pos.coords.longitude;
+    currentLocationSuccess(position) {
+      console.log('Current location lat/long:', position.coords.latitude, position.coords.longitude);
+      this.currentLocation = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      }
     },
-    currentLocationError(err) {
-      console.error(`Error getting current location. ERROR(${err.code}): ${err.message}`);
+    currentLocationError(error) {
+      console.error(`Error getting current location`, error);
     },
     async showDirections(location) {
       this.hideAllPopups();
@@ -259,6 +250,9 @@ export default {
         this.geojson
       );
 
+      // show the starting point, current location
+      this.map.setCenter([this.currentLocation.longitude, this.currentLocation.latitude]);
+
       this.map.zoomTo(12, {
         duration: 1000
       });
@@ -276,7 +270,7 @@ export default {
     async calculateRoute(to) {
       const params = {
         CalculatorName: "FindMyBrewRouteCalculator",
-        DeparturePosition: [this.currentLocationLongitude, this.currentLocationLatitude],
+        DeparturePosition: [this.currentLocation.longitude, this.currentLocation.latitude],
         // DeparturePosition: [-115.170227, 36.121159],
         DestinationPosition: [to.Longitude, to.Latitude],
         IncludeLegGeometry: true,
