@@ -29,16 +29,12 @@ import LoadingFallback from '@/components/LoadingFallback/LoadingFallback';
 const ProductsRepository = RepositoryFactory.get('products');
 
 const PRODUCT_IDS = [
-  '66be3dc0-8d56-43a1-8871-9df892e86f97',
-  '8bccac2a-2f85-4cf1-b203-1b05281b6041',
-  '85017fa9-20ca-4225-836e-ff43204fae0e',
-  '05a84203-72b8-4c61-83ef-2d90d62c08ee',
-  '68c8e9e8-b02a-47dc-aa8a-f7ebeb5a1156',
-  'a3203d5c-eaab-49c1-9be1-93f22e68e525',
-  '414eb6de-c76a-478a-b1db-7329019911e8',
-  '3c2d0021-1e75-431d-84fd-511a2ba64746',
-  'ceee32d9-161b-4749-939f-8079965433cc',
-  '4a6fb15c-9d2b-4d40-8511-53fcd654c9b2',
+  'ipa-american-3e2c3c68-314c-4da8-a409-02909da91f60',
+  'sour-plum-b80ec53c-1efc-48a4-9430-5eb0c77a0964',
+  'stout-milk-35ae8bff-7408-4407-9e08-8a8424277bc8',
+  'cider-dry-6876296f-079e-4288-85b4-85e4c1459224',
+  'lager-pale-72079edd-ef8e-44fa-964e-18a613409023',
+  'witbier-17aac130-a63b-424d-9b62-a3c21571e3fe',
 ];
 
 export default {
