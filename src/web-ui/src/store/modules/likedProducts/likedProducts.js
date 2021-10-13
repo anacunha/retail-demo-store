@@ -8,7 +8,7 @@ export const likedProducts = {
   actions: {
     likeProduct: ({ commit, state, rootState }, product) => {
       if (!state.likedProducts.includes(product.id)) {
-        AnalyticsHandler.productViewed(rootState.user, product);
+        AnalyticsHandler.productLiked(rootState.user, product);
 
         commit('setLikedProducts', [...state.likedProducts, product.id])
       }

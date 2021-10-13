@@ -164,6 +164,16 @@ Resources:
                   - "lex:PostText"
                 Resource:
                   - !Sub "arn:aws:lex:${AWS::Region}:${AWS::AccountId}:bot:RetailDemoStore:*"
+              - Effect: Allow
+                Action:
+                  - geo:GetMapGlyphs
+                  - geo:GetMapSprites
+                  - geo:GetMapStyleDescriptor
+                  - geo:GetMapTile
+                  - geo:DescribeMap
+                  - geo:ListMaps
+                Resource:
+                  - !Sub "arn:aws:geo:${AWS::Region}:${AWS::AccountId}:map/${LocationResourcePrefix}*"
 
   # Create a role for authorized acces to AWS resources. Control what your user can access. This example only allows Lambda invokation
   # Only allows users in the previously created Identity Pool

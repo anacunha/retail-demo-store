@@ -2,31 +2,32 @@
 # SPDX-License-Identifier: MIT-0
 
 from flask import Flask
-from flask import abort, jsonify, request
+from flask import jsonify
+from flask import request
 from flask_cors import CORS
 
-import boto3
 import json
 import os
 import pprint
 
 RESOURCE_BUCKET = os.environ.get('RESOURCE_BUCKET')
 
-s3 = boto3.resource('s3')
-
-store_location = {}
-customer_route = {}
+locations = {}
+locationsByBeer = {}
 
 
-def load_s3_data():
-    global customer_route
-    route_file_obj = s3.Object(RESOURCE_BUCKET, 'location_services/customer_route.json')
-    customer_route = json.loads(route_file_obj.get()['Body'].read().decode('utf-8'))
+def load_data():
+    global locations_data, locations
+    with open("data/locations.json") as location_file_obj:
+        locations_data = location_file_obj.read()
+    locations = json.loads(locations_data)
 
-    global store_location
-    location_file_obj = s3.Object(RESOURCE_BUCKET, 'location_services/store_location.json')
-    store_location = json.loads(location_file_obj.get()['Body'].read().decode('utf-8'))
-
+    for location in locations:
+        for beer in location['Beers']:
+            if beer in locationsByBeer:
+                locationsByBeer[beer].append(location)
+            else:
+                locationsByBeer[beer] = [location]
 
 # -- Logging
 class LoggingMiddleware(object):
@@ -44,29 +45,55 @@ class LoggingMiddleware(object):
         return self._app(environ, log_response)
 # -- End Logging
 
+# -- Exceptions
+class BadRequest(Exception):
+    status_code = 400
+
+    def __init__(self, message, status_code=None, payload=None):
+        Exception.__init__(self)
+        self.message = message
+        if status_code is not None:
+            self.status_code = status_code
+        self.payload = payload
+
+    def to_dict(self):
+        rv = dict(self.payload or ())
+        rv['message'] = self.message
+        return rv
 
 # -- Handlers
 app = Flask(__name__)
 corps = CORS(app)
 
+@app.errorhandler(BadRequest)
+def handle_bad_request(error):
+    response = jsonify(error.to_dict())
+    response.status_code = error.status_code
+    return response
 
 @app.route('/')
 def index():
-    return 'Location Service Service'
+    return 'Locations Service is running'
 
 
-@app.route('/store_location')
-def get_store_location():
-    return jsonify(store_location)
+@app.route('/locations/all')
+def get_locations():
+    return jsonify(locations)
 
+@app.route('/locations')
+def get_locations_by_beer():
+    beer_name = request.args.get('beerName')
+    if not beer_name:
+        raise BadRequest('beerName is required')
 
-@app.route('/customer_route')
-def get_customer_route():
-    return jsonify(customer_route)
+    if not beer_name in locationsByBeer:
+        raise BadRequest('beerName not found')
+
+    return jsonify(locationsByBeer[beer_name])
 
 
 if __name__ == '__main__':
     app.wsgi_app = LoggingMiddleware(app.wsgi_app)
-    load_s3_data()
+    load_data()
 
     app.run(debug=True, host='0.0.0.0', port=80)

@@ -14,16 +14,18 @@ CATALOG_CSV_FILE is a CSV file with catalog data
 
 import argparse
 import csv
-import yaml
+import oyaml as yaml
 
 def format_product(product):
     product['abv'] = float(product['abv'])
-    product['category'] = product['category'].replace(' ', '-').lower()
+    product['price'] = float(product['price'])
     if product['ibu'] == 'N/A':
         product.pop('ibu')
     else:
         product['ibu'] = int(product['ibu'])
     product['image'] = product['id'] + ".jpg"
+    style_prefix = "-".join(product['style'].replace('-',' ').split()).lower()
+    product['id'] = f"{style_prefix}-{product['id']}"
     return product
 
 def create_category(id, product):
@@ -38,7 +40,7 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Convert catalog data from CSV file.')
     parser.add_argument('file', metavar='CATALOG_CSV_FILE', type=open, help='CSV file with catalog data')
     args = parser.parse_args()
-    
+
     products_yaml = open('src/products-service/data/products.yaml', 'w')
     categories_yaml = open('src/products-service/data/categories.yaml', 'w')
 
@@ -53,5 +55,5 @@ if __name__=="__main__":
             category_names.add(product['category'])
             categories.append(create_category(len(category_names), product))
 
-    yaml.dump(products, products_yaml, allow_unicode=True, sort_keys=False)
-    yaml.dump(categories, categories_yaml, allow_unicode=True, sort_keys=False)
+    yaml.dump(products, products_yaml, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    yaml.dump(categories, categories_yaml, allow_unicode=True, sort_keys=False, default_flow_style=False)

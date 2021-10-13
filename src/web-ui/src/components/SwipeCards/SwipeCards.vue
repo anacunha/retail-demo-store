@@ -73,7 +73,7 @@ export default {
       this.$emit('complete');
     },
     recordLikedProductViews() {
-      this.likedProducts.forEach((product) => AnalyticsHandler.productViewed(this.user, product));
+      this.likedProducts.forEach((product) => AnalyticsHandler.productLiked(this.user, product));
     },
   },
   watch: {
