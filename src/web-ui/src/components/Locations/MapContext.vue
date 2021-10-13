@@ -142,6 +142,8 @@ export default {
           trackUserLocation: true,
         })
       );
+
+      // TODO: these never fire
       geolocateControl.on('geolocate', function(data) {
         console.log('A geolocate event has occurred.', data)
       });
@@ -154,6 +156,9 @@ export default {
       geolocateControl.on('error', function() {
         console.log('An error event has occurred.')
       });
+
+      // TODO: For now get current location on map load since the events above aren't firing
+      this.setCurrentLocation();
 
       if (this.locations) {
         this.markers = this.locations.map((location) => {
@@ -213,6 +218,23 @@ export default {
         5000
       );
     },
+    setCurrentLocation() {
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 20000,
+        maximumAge: 0
+      };
+
+      navigator.geolocation.getCurrentPosition(this.currentLocationSuccess, this.currentLocationError, options);
+    },
+    currentLocationSuccess(pos) {
+      console.log('Current location lat/long:', pos.coords.latitude, pos.coords.longitude);
+      this.currentLocationLatitude = pos.coords.latitude;
+      this.currentLocationLongitude = pos.coords.longitude;
+    },
+    currentLocationError(err) {
+      console.error(`Error getting current location. ERROR(${err.code}): ${err.message}`);
+    },
     async showDirections(location) {
       this.hideAllPopups();
       const routeData = await this.calculateRoute(location);
@@ -254,8 +276,8 @@ export default {
     async calculateRoute(to) {
       const params = {
         CalculatorName: "FindMyBrewRouteCalculator",
-        // DeparturePosition: [from.longitude, from.latitude],
-        DeparturePosition: [-115.170227, 36.121159],
+        DeparturePosition: [this.currentLocationLongitude, this.currentLocationLatitude],
+        // DeparturePosition: [-115.170227, 36.121159],
         DestinationPosition: [to.Longitude, to.Latitude],
         IncludeLegGeometry: true,
         DistanceUnit: 'Miles',
