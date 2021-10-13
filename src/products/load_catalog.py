@@ -28,7 +28,7 @@ Your AWS credentials are discovered from your current environment.
 
 import sys
 import getopt
-import yaml
+import oyaml as yaml
 import boto3
 from decimal import Decimal
 
