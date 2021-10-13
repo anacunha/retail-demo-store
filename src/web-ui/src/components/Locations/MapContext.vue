@@ -133,8 +133,8 @@ export default {
       //Zoom in and out button
       this.map.addControl(new maplibregl.NavigationControl(), "top-left");
 
-      //A button that allows the map to fly to user’s current location when pressed
-      this.map.addControl(
+      //A button that allows the map to show the user's current location
+      const geolocateControl = this.map.addControl(
         new maplibregl.GeolocateControl({
           positionOptions: {
             enableHighAccuracy: true,
@@ -142,6 +142,18 @@ export default {
           trackUserLocation: true,
         })
       );
+      geolocateControl.on('geolocate', function(data) {
+        console.log('A geolocate event has occurred.', data)
+      });
+      geolocateControl.on('trackuserlocationstart', function(data) {
+        console.log('A trackuserlocationstart event has occurred.', data)
+      });
+      geolocateControl.on('trackuserlocationend', function(data) {
+        console.log('A trackuserlocationend event has occurred.', data)
+      });
+      geolocateControl.on('error', function() {
+        console.log('An error event has occurred.')
+      });
 
       if (this.locations) {
         this.markers = this.locations.map((location) => {
@@ -189,6 +201,8 @@ export default {
           filter: ["in", "$type", "LineString"],
         });
       });
+
+
     },
     async setViewport(locationToToggle) {
       this.hideAllPopups(locationToToggle);
