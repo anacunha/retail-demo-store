@@ -4,7 +4,7 @@
 
     <LoadingFallback v-if="isLoading" class="col my-4 text-center"></LoadingFallback>
     <div v-else v-for="location in locations" :key="location.Id">
-      <LocationDetail :location="location" :changeViewport="locationMapContext.changeViewport" :showDirections="locationMapContext.showDirections" />
+      <LocationDetail :location="location" :changeViewport="locationMapContext.changeViewport" :showDirections="locationMapContext.showDirections" :setSelectedLocation="locationMapContext.setSelectedLocation" />
     </div>
   </div>
 </template>

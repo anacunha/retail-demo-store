@@ -2,8 +2,11 @@
   <div>
     <div ref="container" class="location-map"></div>
     <div class="distance-container" v-if="this.locationMapContext.getDistance() > 0">
-      <div>Walking distance: {{ this.locationMapContext.getDistance() | formatMiles }}</div>
-      <div>Time to destination: {{ this.locationMapContext.getDuration() | formatTime }}</div>
+      <div>{{ this.locationMapContext.getDuration() | formatTime }} ({{ this.locationMapContext.getDistance() | formatMiles }})</div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button @click="changeTravelMode('Walking')" type="button" v-bind:class="[isWalking() ? 'btn-primary' : 'btn-outline-primary', 'btn', 'btn-sm']"><i class="fas fa-walking"></i> Walking</button>
+        <button @click="changeTravelMode('Car')" type="button" v-bind:class="[!isWalking() ? 'btn-primary' : 'btn-outline-primary', 'btn', 'btn-sm']"><i class="fas fa-car"></i> Driving</button>
+      </div>
     </div>
   </div>
 </template>
@@ -15,18 +18,26 @@ export default {
   mounted() {
     this.locationMapContext.registerMapContainer(this.$refs.container);
   },
+  methods: {
+    changeTravelMode(travelMode) {
+      this.locationMapContext.changeTravelMode(travelMode);
+    },
+    isWalking() {
+      return this.locationMapContext.getTravelMode() === 'Walking';
+    }
+  },
   filters: {
     formatMiles: function (value) {
       if (!value) return ''
 
-      return `${value.toPrecision(3)} miles`
+      return `${Number(value).toFixed(2)} miles`
     },
     formatTime: function (value) {
       if (!value) return ''
       if (value > 3600) { // over an hour, show in hours
-        return `${(value / 60 / 60).toPrecision(4)} hours`
+        return `${Number(value / 60 / 60).toFixed(2)} hours`
       }
-      return `${(value / 60).toPrecision(4)} minutes`
+      return `${Number(value / 60).toFixed(2)} minutes`
     }
   }
 };

@@ -34,10 +34,12 @@ export default {
       },
       distance: 0,
       duration: 0,
+      selectedLocation: null,
       currentLocation: {
         latitude: null,
         longitude: null
-      }
+      },
+      travelMode: 'Walking'
     };
   },
   watch: {
@@ -53,6 +55,10 @@ export default {
       this.locationCallbacks.forEach((callback) => callback(newLocations));
       this.loadCredentialsAndMap();
     },
+    travelMode() {
+      // update directions when travel mode is changed
+      this.showDirections();
+    }
   },
   provide() {
     return {
@@ -61,8 +67,11 @@ export default {
         onLocationsChange: this.onLocationsChange,
         changeViewport: this.setViewport,
         showDirections: this.showDirections,
+        changeTravelMode: this.changeTravelMode,
+        setSelectedLocation: this.setSelectedLocation,
         getDistance: () => this.distance,
-        getDuration: () => this.duration
+        getDuration: () => this.duration,
+        getTravelMode: () => this.travelMode
       }
     };
   },
@@ -167,9 +176,11 @@ export default {
           const directionsButton = document.createElement('button');
           directionsButton.classList.add('directions-button');
           directionsButton.innerHTML = `<i class="fas fa-directions"></i>`;
-          directionsButton.addEventListener('click', () => this.showDirections(location));
+          directionsButton.addEventListener('click', () => this.showDirections());
           domContentContainer.appendChild(directionsButton);
-          return marker.setPopup(new maplibregl.Popup().setDOMContent(domContentContainer));
+          const popup = new maplibregl.Popup().setDOMContent(domContentContainer);
+          popup.on('open', () => this.selectedLocation = location);
+          return marker.setPopup(popup);
         });
         this.markers.forEach((marker, i) => {
           marker.addTo(this.map);
@@ -242,9 +253,9 @@ export default {
     currentLocationError(error) {
       console.error(`Error getting current location`, error);
     },
-    async showDirections(location) {
+    async showDirections() {
       this.hideAllPopups();
-      const routeData = await this.calculateRoute(location);
+      const routeData = await this.calculateRoute(this.selectedLocation);
       console.log('routeData', routeData)
 
       this.distance = routeData.Summary.Distance;
@@ -273,6 +284,12 @@ export default {
         duration: 1000
       });
     },
+    setSelectedLocation(location) {
+      this.selectedLocation = location;
+    },
+    changeTravelMode(travelMode) {
+      this.travelMode = travelMode;
+    },
     hideAllPopups(locationToToggle = undefined) {
       this.locations.forEach((location) => {
         if (locationToToggle !== location) {
@@ -283,15 +300,14 @@ export default {
         }
       });
     },
-    async calculateRoute(to) {
+    async calculateRoute() {
       const params = {
         CalculatorName: "FindMyBrewRouteCalculator",
         DeparturePosition: [this.currentLocation.longitude, this.currentLocation.latitude],
-        // DeparturePosition: [-115.170227, 36.121159],
-        DestinationPosition: [to.Longitude, to.Latitude],
+        DestinationPosition: [this.selectedLocation.Longitude, this.selectedLocation.Latitude],
         IncludeLegGeometry: true,
         DistanceUnit: 'Miles',
-        TravelMode: 'Walking'
+        TravelMode: this.travelMode
       };
 
       return await this.service.calculateRoute(params).promise();

@@ -29,7 +29,8 @@ export default {
       required: false,
     },
     changeViewport: null,
-    showDirections: null
+    showDirections: null,
+    setSelectedLocation: null
   },
   data() {
     return {
@@ -42,7 +43,8 @@ export default {
       this.changeViewport(location);
     },
     onClickDirections(location) {
-      this.showDirections(location);
+      this.setSelectedLocation(location);
+      this.showDirections();
     },
     toggleHours() {
       this.isShowHours = !this.isShowHours;
