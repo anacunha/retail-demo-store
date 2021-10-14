@@ -2,7 +2,7 @@
   <nav class="navigation fixed-top pt-2 pb-3 p-lg-1">
     <div class="nav-contents container d-lg-flex align-items-center">
       <HomeLink class="logo"></HomeLink>
-      <router-link to="/locations" class="locations btn">Locations</router-link>
+      <ShopDropdown></ShopDropdown>
       <UserDropdown class="user-dropdown"></UserDropdown>
     </div>
   </nav>
@@ -11,12 +11,14 @@
 <script>
 import HomeLink from './HomeLink/HomeLink';
 import UserDropdown from './UserDropdown/UserDropdown';
+import ShopDropdown from './ShopDropdown/ShopDropdown';
 
 export default {
   name: 'Navigation',
   components: {
     HomeLink,
     UserDropdown,
+    ShopDropdown,
   },
 };
 </script>
