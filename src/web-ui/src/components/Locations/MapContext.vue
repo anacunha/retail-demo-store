@@ -151,7 +151,13 @@ export default {
 
       if (this.locations) {
         this.markers = this.locations.map((location) => {
-          const marker = new maplibregl.Marker().setLngLat([location.Longitude, location.Latitude]);
+          const markerDom = document.createElement('div');
+          markerDom.classList.add('location-marker');
+          markerDom.innerHTML = `
+              <i class="fas fa-map-pin fa-2x"></i>
+            `;
+
+          const marker = new maplibregl.Marker({element: markerDom}).setLngLat([location.Longitude, location.Latitude]);
           const domContentContainer = document.createElement('div');
           domContentContainer.innerHTML = `
             <h1>${location.Name}</h1>
@@ -169,6 +175,16 @@ export default {
           marker.addTo(this.map);
           this.locations[i].marker = marker;
         });
+      }
+
+      if (this.currentLocation.latitude && this.currentLocation.longitude) {
+        const markerDom = document.createElement('div');
+        markerDom.classList.add('current-location-marker');
+        markerDom.innerHTML = `
+            <i class="fas fa-circle"></i>
+          `;
+        const marker = new maplibregl.Marker({element: markerDom}).setLngLat([this.currentLocation.longitude, this.currentLocation.latitude]);
+        marker.addTo(this.map);
       }
 
       const theMap = this.map;
