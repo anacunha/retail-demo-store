@@ -1,29 +1,28 @@
 <template>
   <Layout :isLoading="isLoading">
     <template #default>
+      <main class="container product-container mb-4 text-left">
+        <div class="title-and-rating mb-md-3">
+          <h1 class="product-name">{{ product.name }}</h1>
+        </div>
+
+        <div class="add-to-cart-and-description">
+          <p class="mb-0">{{ product.description }}</p>
+        </div>
+
+        <div class="product-img">
+          <img :src="productImageUrl" class="img-fluid" :alt="product.name" />
+        </div>
+      </main>
+
       <div class="container">
-        <main class="product-container mb-5 text-left">
-          <div class="title-and-rating mb-md-3">
-            <h1 class="product-name">{{ product.name }}</h1>
-            <FiveStars></FiveStars>
-          </div>
+        <h2 class="location-heading mb-3">Find this beer</h2>
+      </div>
+      <MapContext :locations="locations" class="mb-4">
+        <LocationMap></LocationMap>
+      </MapContext>
 
-          <div class="add-to-cart-and-description">
-            <ProductPrice :price="product.price" class="mb-1"></ProductPrice>
-
-            <p>{{ product.description }}</p>
-          </div>
-
-          <div class="product-img">
-            <img :src="productImageUrl" class="img-fluid" :alt="product.name" />
-          </div>
-        </main>
-
-        <h2>Where to find this beer</h2>
-        <MapContext :locations="locations">
-          <LocationMap></LocationMap>
-        </MapContext>
-
+      <div class="container">
         <RecommendedProductsSection :recommendedProducts="relatedProducts">
           <template #heading>Compare similar beers</template>
         </RecommendedProductsSection>
@@ -40,8 +39,6 @@ import { RepositoryFactory } from '@/repositories/RepositoryFactory';
 import { product } from '@/mixins/product';
 
 import Layout from '@/components/Layout/Layout';
-import ProductPrice from '@/components/ProductPrice/ProductPrice';
-import FiveStars from '@/components/FiveStars/FiveStars';
 import RecommendedProductsSection from '@/components/RecommendedProductsSection/RecommendedProductsSection';
 import MapContext from '@/components/Locations/MapContext';
 import LocationMap from '@/components/Locations/LocationMap';
@@ -54,17 +51,15 @@ export default {
   name: 'ProductDetail',
   components: {
     Layout,
-    ProductPrice,
-    FiveStars,
     RecommendedProductsSection,
     MapContext,
-    LocationMap
+    LocationMap,
   },
   mixins: [product],
   data() {
     return {
       relatedProducts: null,
-      locations: null
+      locations: null,
     };
   },
   computed: {
@@ -103,7 +98,7 @@ export default {
 
       this.relatedProducts = response.data;
     },
-     async getLocations() {
+    async getLocations() {
       let locationsResult = await LocationsRepository.getLocationsByBeer(this.product.name);
 
       this.locations = locationsResult.data;
@@ -145,5 +140,10 @@ export default {
 
 .product-img {
   grid-area: ProductImage;
+}
+
+.location-heading {
+  font-size: 1rem;
+  text-align: left;
 }
 </style>

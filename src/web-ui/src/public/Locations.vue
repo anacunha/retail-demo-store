@@ -1,11 +1,9 @@
 <template>
   <Layout>
-    <div class="container">
-      <MapContext :locations="locations">
-        <LocationMap></LocationMap>
-        <LocationList></LocationList>
-      </MapContext>
-    </div>
+    <MapContext :locations="locations">
+      <LocationMap class="mb-4"></LocationMap>
+      <LocationList></LocationList>
+    </MapContext>
   </Layout>
 </template>
 
@@ -38,19 +36,6 @@ export default {
 
       this.locations = locationsResult.data;
     },
-  }
+  },
 };
 </script>
-
-<style scoped>
-@media (max-width: 768px) {
-  .layout--has-nav {
-    padding-top: 95px;
-  }
-
-  .container {
-    padding: 0;
-    margin: 0;
-  }
-}
-</style>

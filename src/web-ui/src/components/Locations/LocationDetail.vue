@@ -1,7 +1,7 @@
 <template>
   <div className="container">
-    <div class="location-item px-1 text-left align-self-stretch d-flex align-items-stretch text-decoration-none">
-      <div class="p-3">
+    <div class="location-item text-left align-self-stretch d-flex align-items-stretch text-decoration-none">
+      <div>
         <h1 @click="onClickLocation(location)">{{ location.Name }}</h1>
         <div>
           <p v-for="item in location.Address" :key="item">{{ item }}</p>
