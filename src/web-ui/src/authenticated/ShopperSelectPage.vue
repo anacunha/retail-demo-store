@@ -1,24 +1,22 @@
 <template>
   <SecondaryLayout>
     <div class="container">
-      <ShopperSelect @profileSwitched="onProfileSwitch"></ShopperSelect>
+      <SwipeCards @complete="onComplete"></SwipeCards>
     </div>
   </SecondaryLayout>
 </template>
 
 <script>
 import SecondaryLayout from '@/components/SecondaryLayout/SecondaryLayout';
-import ShopperSelect from '@/partials/ShopperSelect/ShopperSelect';
+import SwipeCards from '@/components/SwipeCards/SwipeCards';
 
 export default {
   name: 'ShopperSelectPage',
-  components: { SecondaryLayout, ShopperSelect },
+  components: { SecondaryLayout, SwipeCards },
   methods: {
-    onProfileSwitch() {
+    onComplete() {
       this.$router.push('/');
     },
   },
 };
 </script>
-
-<style></style>

@@ -4,7 +4,7 @@
       <div class="container">
         <main class="product-container mb-5 text-left">
           <div class="title-and-rating mb-md-3">
-            <h1 class="product-name">{{ product.name }}</h1>
+            <h1 class="product-name d-flex align-items-center">{{ product.name }} <ProductLikeButton :product="product" class="ml-2"></ProductLikeButton></h1>
             <FiveStars></FiveStars>
           </div>
 
@@ -43,6 +43,7 @@ import Layout from '@/components/Layout/Layout';
 import ProductPrice from '@/components/ProductPrice/ProductPrice';
 import FiveStars from '@/components/FiveStars/FiveStars';
 import RecommendedProductsSection from '@/components/RecommendedProductsSection/RecommendedProductsSection';
+import ProductLikeButton from '@/components/ProductLikeButton/ProductLikeButton';
 import MapContext from '@/components/Locations/MapContext';
 import LocationMap from '@/components/Locations/LocationMap';
 
@@ -57,6 +58,7 @@ export default {
     ProductPrice,
     FiveStars,
     RecommendedProductsSection,
+    ProductLikeButton,
     MapContext,
     LocationMap
   },

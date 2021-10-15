@@ -23,12 +23,9 @@ export const product = {
 
       return getProductImageUrl(this.product);
     },
-    recordProductLiked() {
-      AnalyticsHandler.productLiked(this.user, this.product);
-    },
     readableProductCategory() {
       if (!this.product) return null;
-
+      
       return capitalize(this.product.category);
     },
   },
@@ -36,6 +33,9 @@ export const product = {
     async getProductByID(product_id) {
       const { data } = await ProductsRepository.getProduct(product_id);
       this.product = data;
+    },
+    recordProductLiked() {
+      AnalyticsHandler.productLiked(this.user, this.product);
     },
   },
 };
