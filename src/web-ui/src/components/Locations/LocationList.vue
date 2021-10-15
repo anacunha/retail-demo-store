@@ -1,10 +1,10 @@
 <template>
-  <div className="container">
-    <h1>Locations</h1>
+  <div class="container">
+    <h1 class="locations-heading text-left">Locations</h1>
 
     <LoadingFallback v-if="isLoading" class="col my-4 text-center"></LoadingFallback>
     <div v-else v-for="location in locations" :key="location.Id">
-      <LocationDetail :location="location" :changeViewport="locationMapContext.changeViewport" />
+      <LocationDetail :location="location" :changeViewport="locationMapContext.changeViewport" class="mb-2"/>
     </div>
   </div>
 </template>
@@ -35,3 +35,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.locations-heading {
+  font-size: 1.5rem;
+}
+</style>

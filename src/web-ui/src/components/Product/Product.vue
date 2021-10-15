@@ -12,8 +12,6 @@
 
         <div class="p-3">
           <div class="product-name">{{ product.name }}</div>
-          <FiveStars></FiveStars>
-          <div>{{ formattedPrice }}</div>
         </div>
       </div>
     </router-link>
@@ -22,15 +20,9 @@
 
 <script>
 import { getProductImageUrl } from '@/util/getProductImageUrl';
-import { formatPrice } from '@/util/formatPrice';
-
-import FiveStars from '../../components/FiveStars/FiveStars.vue';
 
 export default {
   name: 'Product',
-  components: {
-    FiveStars,
-  },
   props: {
     product: { type: Object, required: true },
   },
@@ -38,9 +30,6 @@ export default {
   computed: {
     productImageURL() {
       return getProductImageUrl(this.product);
-    },
-    formattedPrice() {
-      return formatPrice(this.product.price);
     },
   },
 };
