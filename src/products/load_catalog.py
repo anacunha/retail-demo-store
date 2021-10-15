@@ -28,7 +28,7 @@ Your AWS credentials are discovered from your current environment.
 
 import sys
 import getopt
-import yaml
+import oyaml as yaml
 import boto3
 from decimal import Decimal
 
@@ -125,6 +125,7 @@ if __name__=="__main__":
         print(f'Updating products in table {products_table_name}')
         for product in products:
             product['id'] = str(product['id'])
+            product['price'] = Decimal(str(product['price']))
             product['abv'] = Decimal(str(product['abv']))
             if product.get('featured'):
                 product['featured'] = str(product['featured']).lower()

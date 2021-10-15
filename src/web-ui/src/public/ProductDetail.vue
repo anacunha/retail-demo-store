@@ -1,24 +1,28 @@
 <template>
   <Layout :isLoading="isLoading">
     <template #default>
+      <main class="container product-container mb-4 text-left">
+        <div class="title-and-rating mb-md-3">
+          <h1 class="product-name d-flex align-items-center">{{ product.name }} <ProductLikeButton :product="product" class="ml-2"></ProductLikeButton></h1>
+        </div>
+
+        <div class="add-to-cart-and-description">
+          <p class="mb-0">{{ product.description }}</p>
+        </div>
+
+        <div class="product-img">
+          <img :src="productImageUrl" class="img-fluid" :alt="product.name" />
+        </div>
+      </main>
+
       <div class="container">
-        <main class="product-container mb-5 text-left">
-          <div class="title-and-rating mb-md-3">
-            <h1 class="product-name d-flex align-items-center">{{ product.name }} <ProductLikeButton :product="product" class="ml-2"></ProductLikeButton></h1>
-            <FiveStars></FiveStars>
-          </div>
+        <h2 class="location-heading mb-3">Find this beer</h2>
+      </div>
+      <MapContext :locations="locations" class="mb-4">
+        <LocationMap></LocationMap>
+      </MapContext>
 
-          <div class="add-to-cart-and-description">
-            <ProductPrice :price="product.price" class="mb-1"></ProductPrice>
-
-            <p>{{ product.description }}</p>
-          </div>
-
-          <div class="product-img">
-            <img :src="productImageUrl" class="img-fluid" :alt="product.name" />
-          </div>
-        </main>
-
+      <div class="container">
         <RecommendedProductsSection :recommendedProducts="relatedProducts">
           <template #heading>Compare similar beers</template>
         </RecommendedProductsSection>
@@ -35,11 +39,12 @@ import { RepositoryFactory } from '@/repositories/RepositoryFactory';
 import { product } from '@/mixins/product';
 
 import Layout from '@/components/Layout/Layout';
-import ProductPrice from '@/components/ProductPrice/ProductPrice';
-import FiveStars from '@/components/FiveStars/FiveStars';
 import RecommendedProductsSection from '@/components/RecommendedProductsSection/RecommendedProductsSection';
 import ProductLikeButton from '@/components/ProductLikeButton/ProductLikeButton';
+import MapContext from '@/components/Locations/MapContext';
+import LocationMap from '@/components/Locations/LocationMap';
 
+const LocationsRepository = RepositoryFactory.get('locations');
 const RecommendationsRepository = RepositoryFactory.get('recommendations');
 const MAX_RECOMMENDATIONS = 6;
 
@@ -47,15 +52,16 @@ export default {
   name: 'ProductDetail',
   components: {
     Layout,
-    ProductPrice,
-    FiveStars,
     RecommendedProductsSection,
-    ProductLikeButton
+    ProductLikeButton,
+    MapContext,
+    LocationMap,
   },
   mixins: [product],
   data() {
     return {
       relatedProducts: null,
+      locations: null,
     };
   },
   computed: {
@@ -80,6 +86,7 @@ export default {
       await this.getProductByID(this.$route.params.id);
 
       this.getRelatedProducts();
+      this.getLocations();
     },
     async getRelatedProducts() {
       // reset in order to trigger recalculation in carousel - carousel UI breaks without this
@@ -92,6 +99,11 @@ export default {
       );
 
       this.relatedProducts = response.data;
+    },
+    async getLocations() {
+      let locationsResult = await LocationsRepository.getLocationsByBeer(this.product.name);
+
+      this.locations = locationsResult.data;
     },
   },
 };
@@ -130,5 +142,10 @@ export default {
 
 .product-img {
   grid-area: ProductImage;
+}
+
+.location-heading {
+  font-size: 1rem;
+  text-align: left;
 }
 </style>

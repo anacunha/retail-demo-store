@@ -1,7 +1,7 @@
 <template>
   <div class="terms-and-conditions">
     <p class="mb-1">
-      The Find My Brew is a demo application. All content displayed in the Find My Brew is fictitious and for
+      Find My Brew is a demo application. All content displayed in the Find My Brew is fictitious and for
       demonstration purposes only.
     </p>
 

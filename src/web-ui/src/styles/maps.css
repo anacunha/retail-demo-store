@@ -1,0 +1,16 @@
+.maplibregl-popup .fas {
+  margin: 0 10px;
+  font-size: 1.75em;
+}
+
+.maplibregl-popup p {
+  text-align: left;
+}
+
+.maplibregl-popup h1 {
+  font-size: 1.25em;
+}
+
+a {
+  color: inherit;
+}

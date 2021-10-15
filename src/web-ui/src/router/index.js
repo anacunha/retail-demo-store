@@ -4,9 +4,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Main from '@/public/Main.vue'
+import Locations from '@/public/Locations.vue'
 import ProductDetail from '@/public/ProductDetail.vue'
 import AuthScreen from '@/public/Auth.vue'
 import Welcome from '@/public/Welcome.vue'
+import CategoryDetail from '@/public/CategoryDetail.vue'
 import ShopperSelectPage from '@/authenticated/ShopperSelectPage'
 
 import { AmplifyEventBus } from 'aws-amplify-vue';
@@ -192,6 +194,12 @@ const router = new Router({
       meta: { requiresAuth: false}
     },
     {
+      path: '/locations',
+      name: 'Locations',
+      component: Locations,
+      meta: { requiresAuth: false}
+    },
+    {
       path: '/product/:id',
       name: 'ProductDetail',
       component: ProductDetail,
@@ -207,6 +215,12 @@ const router = new Router({
       name: 'ShopperSelect',
       component: ShopperSelectPage,
       meta: { requiresAuth: true },
+    },
+    {
+      path: '/category/:id',
+      name: 'CategoryDetail',
+      component: CategoryDetail,
+      meta: { requiresAuth: false}
     },
   ],
   scrollBehavior (_to, _from, savedPosition) {

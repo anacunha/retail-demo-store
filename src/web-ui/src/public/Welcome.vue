@@ -1,30 +1,7 @@
 <template>
   <Layout :showNav="false" :showFooter="false" backgroundColor="var(--aws-squid-ink)">
     <div class="container mb-2 text-left">
-      <h1 class="heading my-5 text-center">Welcome to the Retail Demo Store!</h1>
-
-      <p>
-        The Retail Demo Store is a demo platform to demonstrate how AWS infrastructure and services can be used to build
-        personalized customer experiences across multiple channels of engagement.
-      </p>
-
-      <p>
-        The Retail Demo Store mimics an online store with products, users and user-interactions to showcase the
-        personalized product recommendations a shopper would receive based on historical and real time click-through
-        behavior.
-      </p>
-
-      <div class="mt-2 d-flex flex-column flex-lg-row align-items-lg-center">
-        <div class="mb-2 mb-lg-0">AWS Services Included:</div>
-
-        <ul
-          class="service-list mb-0 pl-0 flex-grow-1 d-flex flex-column flex-lg-row justify-content-lg-around font-weight-bold"
-        >
-          <li v-for="service in services" :key="service.text" class="mb-2 mb-lg-0">
-            <ServiceBadge :text="service.text" :src="service.src"></ServiceBadge>
-          </li>
-        </ul>
-      </div>
+      <h1 class="heading my-5 text-center">Welcome to the Find My Brew App!</h1>
 
       <div class="mt-2 mb-4 my-sm-5 d-flex flex-column align-items-center align-items-sm-end">
         <div class="d-flex flex-column flex-sm-row align-items-center">
@@ -35,40 +12,18 @@
             >Create an account</router-link
           >
         </div>
-
-        <router-link to="/" class="mt-3 skip-login btn btn-link">Skip login for now</router-link>
       </div>
     </div>
   </Layout>
 </template>
 
 <script>
-import Layout from '@/components/Layout/Layout'
-import ServiceBadge from './components/ServiceBadge';
+import Layout from '@/components/Layout/Layout';
 
 export default {
   name: 'Welcome',
   components: {
     Layout,
-    ServiceBadge,
-  },
-  data() {
-    return {
-      services: [
-        {
-          text: 'Amazon Personalize',
-          src: '/personalize.svg',
-        },
-        {
-          text: 'Amazon Pinpoint',
-          src: '/pinpoint.svg',
-        },
-        {
-          text: 'Amazon Lex',
-          src: '/lex.svg',
-        },
-      ],
-    };
   },
 };
 </script>
@@ -79,12 +34,7 @@ export default {
   color: var(--white);
 }
 
-.service-list {
-  list-style-type: none;
-}
-
-.sign-in,
-.skip-login {
+.sign-in {
   color: var(--amazon-orange);
 }
 

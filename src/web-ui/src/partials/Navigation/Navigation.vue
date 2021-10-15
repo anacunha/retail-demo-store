@@ -2,7 +2,8 @@
   <nav class="navigation fixed-top pt-2 pb-3 p-lg-1">
     <div class="nav-contents container d-lg-flex align-items-center">
       <HomeLink class="logo"></HomeLink>
-      <UserDropdown></UserDropdown>
+      <ShopDropdown></ShopDropdown>
+      <UserDropdown class="user-dropdown"></UserDropdown>
     </div>
   </nav>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import HomeLink from './HomeLink/HomeLink';
 import UserDropdown from './UserDropdown/UserDropdown';
+import ShopDropdown from './ShopDropdown/ShopDropdown';
 
 export default {
   name: 'Navigation',
   components: {
     HomeLink,
     UserDropdown,
+    ShopDropdown,
   },
 };
 </script>
@@ -30,6 +33,11 @@ export default {
 .logo {
   grid-area: Logo;
   width: 80px;
+}
+
+.user-dropdown {
+  flex-grow: 4;
+  text-align: right;
 }
 
 .nav-contents {
