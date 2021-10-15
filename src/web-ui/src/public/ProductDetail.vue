@@ -3,7 +3,7 @@
     <template #default>
       <main class="container product-container mb-4 text-left">
         <div class="title-and-rating mb-md-3">
-          <h1 class="product-name">{{ product.name }}</h1>
+          <h1 class="product-name d-flex align-items-center">{{ product.name }} <ProductLikeButton :product="product" class="ml-2"></ProductLikeButton></h1>
         </div>
 
         <div class="add-to-cart-and-description">
@@ -40,6 +40,7 @@ import { product } from '@/mixins/product';
 
 import Layout from '@/components/Layout/Layout';
 import RecommendedProductsSection from '@/components/RecommendedProductsSection/RecommendedProductsSection';
+import ProductLikeButton from '@/components/ProductLikeButton/ProductLikeButton';
 import MapContext from '@/components/Locations/MapContext';
 import LocationMap from '@/components/Locations/LocationMap';
 
@@ -52,6 +53,7 @@ export default {
   components: {
     Layout,
     RecommendedProductsSection,
+    ProductLikeButton,
     MapContext,
     LocationMap,
   },

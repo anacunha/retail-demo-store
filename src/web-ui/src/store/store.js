@@ -11,11 +11,12 @@ import { welcomePageVisited } from './modules/welcomePageVisited/welcomePageVisi
 import { categories } from './modules/categories/categories';
 import { modal, manageResponsiveModalState } from './modules/modal/modal';
 import { lastVisitedPage } from './modules/lastVisitedPage/lastVisitedPage';
+import { likedProducts } from './modules/likedProducts/likedProducts';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  modules: { welcomePageVisited, categories, modal, lastVisitedPage },
+  modules: { welcomePageVisited, categories, modal, lastVisitedPage, likedProducts },
   state: {
     user: null,
     provisionalUserID: uuidv4(),
@@ -65,6 +66,7 @@ const store = new Vuex.Store({
         'sessionEventsRecorded',
         'welcomePageVisited',
         'lastVisitedPage',
+        'likedProducts',
       ],
     }),
   ],
