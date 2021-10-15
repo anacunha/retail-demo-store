@@ -41,6 +41,7 @@
   price: 8.13
   image: 791dfa7d-5d14-4e58-8153-34403247b479.jpg
 - id: ipa-new-england-1fd0e98b-e116-4abb-98a7-dafb8869c36a
+  featured: true
   name: Disco Ninja
   brewery: Revision Brewing Company
   category: IPA
@@ -177,6 +178,7 @@
   price: 8.13
   image: db2fc1be-a9a4-4e23-9ea7-fe85c473dbf0.jpg
 - id: lager-amber-8eaf9fd5-8b6a-4b93-ae95-200bc77145ff
+  featured: true
   name: I Love NV
   brewery: Bad Beat Brewing
   category: Lager
@@ -224,6 +226,7 @@
   price: 8.13
   image: 9b62a3c0-d9d8-4717-b610-e35a05b6f5ab.jpg
 - id: stout-milk-35ae8bff-7408-4407-9e08-8a8424277bc8
+  featured: true
   name: ¡Viva La Beaver!
   brewery: Belching Beaver Brewery
   category: Stout
@@ -478,6 +481,7 @@
   price: 8.13
   image: 3c79ae60-f52b-45eb-b5d1-fdc8820f216f.jpg
 - id: ipa-double-69facdfa-5b22-4936-9cf4-0fe38993c8f0
+  featured: true
   name: Giggle Juice
   brewery: CraftHaus Brewery
   category: IPA
@@ -1265,6 +1269,7 @@
   price: 8.13
   image: 74ec8105-5846-4840-8a1f-31e7ad1ff49f.jpg
 - id: hefeweizen-f45db90b-bd3b-462f-b9e9-9a6c37ddd7ff
+  featured: true
   name: Bluffing Isn't Weisse
   brewery: Bad Beat Brewing
   category: Wheat
@@ -1626,6 +1631,7 @@
   price: 8.13
   image: 2172e624-a0f5-435a-bf74-d960c69fdf16.jpg
 - id: sour-fruited-e90bf19a-751f-4ec0-9614-f485a9a4b165
+  featured: true
   name: 'Boba Bliss: Pink Guava'
   brewery: Front Porch Brewing
   category: Sour
@@ -1900,6 +1906,7 @@
   price: 8.13
   image: 18167ea0-91e1-41ff-8b45-3b5fde19415a.jpg
 - id: pilsner-9049b0b6-ea2f-4763-8d9e-f4911b7ab2d9
+  featured: true
   name: Popfuji
   brewery: Brouwerij West
   category: Pilsner
@@ -1924,6 +1931,7 @@
   price: 8.13
   image: 64cf3a88-9464-4d77-908b-5203a3436fb6.jpg
 - id: pale-ale-american-ae0d8709-a37f-402d-a79d-72c8d17229b4
+  featured: true
   name: Gummy Worms
   brewery: New Glory Craft Brewery
   category: Pale Ale
@@ -2077,6 +2085,7 @@
   price: 8.13
   image: e9d84ce4-015d-4ce1-8d31-a97d7c6e24bf.jpg
 - id: cider-fruit-c632cd6f-6ca6-49d1-bc1d-bd62dc74e67c
+  featured: true
   name: SpACE
   brewery: Ace Cider
   category: Cider
@@ -2225,6 +2234,7 @@
   price: 8.13
   image: 851f48bb-68f3-47bc-afff-201a83ca4b5f.jpg
 - id: sour-fruited-gose-a6119dee-93f9-428d-b3eb-b8cc33d50d20
+  featured: true
   name: Sun Trap
   brewery: Three Weavers Brewing Company
   category: Sour
@@ -2314,6 +2324,7 @@
   price: 8.13
   image: ff220751-c3cc-46a0-8b87-63d814aac7b5.jpg
 - id: cream-ale-d1b1f4a8-0aca-4ad4-8b11-11ee88d4d95e
+  featured: true
   name: Coconut Wireless
   brewery: Maui Brewing Company
   category: Cream Ale
@@ -2688,6 +2699,7 @@
   price: 8.13
   image: f9d28b5e-04da-4d0d-ae6c-41cfcf2939cc.jpg
 - id: belgian-tripel-45b0f655-875f-40d3-9a01-8a12e1f707f4
+  featured: true
   name: Gamma Ray Burst
   brewery: Able Baker Brewing Company
   category: Belgian
