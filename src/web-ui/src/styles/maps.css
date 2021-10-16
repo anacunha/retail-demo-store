@@ -14,3 +14,16 @@
 a {
   color: inherit;
 }
+
+.directions-button {
+  background: none;
+  border: none;
+}
+
+.current-location-marker {
+  color: var(--blue-600);
+}
+
+.location-marker i {
+  color: var(--red-600);
+}

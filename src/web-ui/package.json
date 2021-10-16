@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@optimizely/optimizely-sdk": "4.0.0",
+    "@turf/turf": "^6.5.0",
     "amplitude-js": "^5.8.0",
     "aws-amplify": "^3.0.23",
     "aws-amplify-vue": "^2.1.2",
