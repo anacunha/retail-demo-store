@@ -176,7 +176,7 @@ Resources:
                   - !Sub "arn:aws:geo:${AWS::Region}:${AWS::AccountId}:map/${LocationResourcePrefix}*"
               - Effect: Allow
                 Action:
-                  -geo:CalculateRoute
+                  - geo:CalculateRoute
                 Resource:
                   - !Sub "arn:aws:geo:${AWS::Region}:${AWS::AccountId}:route-calculator/${LocationResourcePrefix}*"
 
@@ -260,7 +260,7 @@ Resources:
                   - !Sub "arn:aws:geo:${AWS::Region}:${AWS::AccountId}:map/${LocationResourcePrefix}*"
               - Effect: Allow
                 Action:
-                  -geo:CalculateRoute
+                  - geo:CalculateRoute
                 Resource:
                   - !Sub "arn:aws:geo:${AWS::Region}:${AWS::AccountId}:route-calculator/${LocationResourcePrefix}*"
 
