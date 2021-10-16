@@ -7,8 +7,10 @@
     <div class="card position-relative">
       <img :src="productImageURL" class="card-img-top" :alt="product.name" />
       <div class="card-body">
-        <div class="card-text">
-          {{ product.name }}
+        <div class="card-text text-left">
+          <div class="product-name mb-1">{{ product.name }}</div>
+
+          <p class="mb-0">{{ product.description }}</p>
         </div>
       </div>
 
@@ -120,6 +122,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 180px;
+  pointer-events: none;
 }
 
 .right-overlay {
@@ -131,10 +134,20 @@ export default {
 }
 
 .left-overlay {
-  background: rgba(255, 69, 0, 0.1)
+  background: rgba(255, 69, 0, 0.1);
 }
 
 .fa-times-circle {
   color: red;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* keep card height consistent */
+.card-text {
+  height: 200px;
 }
 </style>
