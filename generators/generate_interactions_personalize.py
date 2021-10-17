@@ -116,7 +116,7 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
     shopping behaviour."""
 
     # Count of interactions generated for each event type
-    product_viewed_count = 0
+    product_liked_count = 0
     discounted_product_viewed_count = 0
 
     Path(out_interactions_filename).parents[0].mkdir(parents=True, exist_ok=True)
@@ -282,7 +282,7 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
                             this_timestamp,
                             discount_context])
                 next_timestamp += seconds_increment
-                product_viewed_count += 1
+                product_liked_count += 1
                 interactions += 1
 
                 if discounted:
@@ -290,7 +290,7 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
 
     print("Interactions generation done.")
     print(f"Total interactions: {interactions}")
-    print(f"Total product viewed: {product_viewed_count} ({discounted_product_viewed_count})")
+    print(f"Total product liked: {product_liked_count} ({discounted_product_viewed_count})")
 
     globals().update(locals())   # This can be used for inspecting in console after script ran or if run with ipython.
     print('Generation script finished')
