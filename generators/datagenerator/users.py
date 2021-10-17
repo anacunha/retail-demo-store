@@ -37,12 +37,12 @@ category_preference_personas = [
     'cider_fruit_barleywine', 'cream-ale_root-beer_fruit',
     'farmhouse-ale_sour_golden-ale', 'fruit_pilsner_brett',
     'golden-ale_ipa_root-beer', 'ipa_pale-ale_farmhouse-ale',
-    'kölsch_kombucha_brown-ale', 'kombucha_wheat_cider',
+    'kolsch_kombucha_brown-ale', 'kombucha_wheat_cider',
     'lager_cider_ipa', 'mead_smoked-beer_porter',
-    'pale-ale_lager_blonde-ale', 'pilsner_kölsch_lager',
+    'pale-ale_lager_blonde-ale', 'pilsner_kolsch_lager',
     'porter_red-ale_strong-ale', 'red-ale_bock_mead',
     'root-beer_blonde-ale_seasonal', 'seasonal_barleywine_kombucha',
-    'smoked-beer_strong-ale_bock', 'sour_brett_kölsch',
+    'smoked-beer_strong-ale_bock', 'sour_brett_kolsch',
     'stout_porter_cream-ale', 'strong-ale_brown-ale_belgian',
     'wheat_belgian_pilsner'
 ]

@@ -1507,11 +1507,11 @@
   abv: 4.9
   price: 8.13
   image: 9536406f-fa53-44ff-b188-6ba53b4de281.jpg
-- id: kölsch-1a446bf1-8406-4e65-b2fe-dffb37342e8d
+- id: kolsch-1a446bf1-8406-4e65-b2fe-dffb37342e8d
   name: Kolsch
   brewery: Nevada Brew Works
-  category: Kölsch
-  style: Kölsch
+  category: Kolsch
+  style: Kolsch
   description: Refreshing like a lager, fruity character like an ale, this ight beer
     is made for easy drinking on the patio in the summertime heat.
   abv: 4.5
@@ -1944,11 +1944,11 @@
   abv: 5.8
   price: 8.13
   image: ae0d8709-a37f-402d-a79d-72c8d17229b4.jpg
-- id: kölsch-a366949e-bc10-4096-ad60-c375d4a2da31
+- id: kolsch-a366949e-bc10-4096-ad60-c375d4a2da31
   name: Swan Song
   brewery: Banger Brewing
-  category: Kölsch
-  style: Kölsch
+  category: Kolsch
+  style: Kolsch
   description: New beer alert! Swan Song, kolsch is on tap! Perfect for these hot
     summer days! C'mon in and drink up this light refreshing brew before it's gone!
   abv: 5.1
@@ -1967,11 +1967,11 @@
   abv: 5.5
   price: 8.13
   image: eeb200dd-acf0-4de0-b507-6b5808c10496.jpg
-- id: kölsch-coffee-2cae5064-83bd-4c35-a5a8-fecad50c7922
+- id: kolsch-coffee-2cae5064-83bd-4c35-a5a8-fecad50c7922
   name: Morning Joe
   brewery: Banger Brewing
-  category: Kölsch
-  style: Kölsch - Coffee
+  category: Kolsch
+  style: Kolsch - Coffee
   description: Coffee flavored
   abv: 5.9
   ibu: 23
@@ -2181,11 +2181,11 @@
   abv: 5.5
   price: 8.13
   image: 56405d5a-87e9-4fe3-8df0-ad24edfdfccf.jpg
-- id: kölsch-61262242-5d6e-4f42-90f1-75cd0846df41
+- id: kolsch-61262242-5d6e-4f42-90f1-75cd0846df41
   name: Cave Rock Kolsch
   brewery: Brasserie Saint James
-  category: Kölsch
-  style: Kölsch
+  category: Kolsch
+  style: Kolsch
   description: German style kolsch
   abv: 4.9
   price: 8.13
