@@ -7,7 +7,7 @@ phases:
     commands:
       - echo Installing NPM dependencies...
       - cd src/web-ui
-      - npm ci
+      - npm install
   build:
     commands:
       - chmod a+x ./gen_env.sh
