@@ -3,7 +3,8 @@
     <template #default>
       <main class="container product-container mb-4 text-left">
         <div class="title-and-rating mb-md-3">
-          <h1 class="product-name d-flex align-items-center">{{ product.name }} <ProductLikeButton :product="product" class="ml-2"></ProductLikeButton></h1>
+          <h1 class="product-name d-flex align-items-center mb-0">{{ product.name }} <ProductLikeButton :product="product" class="ml-2"></ProductLikeButton></h1>
+          <div class="mb-2 font-italic">{{ product.style }}</div>
         </div>
 
         <div class="add-to-cart-and-description">

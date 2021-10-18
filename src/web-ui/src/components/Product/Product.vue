@@ -12,6 +12,7 @@
 
         <div class="p-3">
           <div class="product-name">{{ product.name }}</div>
+          <div class="d-block text-truncate font-italic small">{{ product.style }}</div>
         </div>
       </div>
     </router-link>
