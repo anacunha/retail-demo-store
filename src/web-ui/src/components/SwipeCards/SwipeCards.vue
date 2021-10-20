@@ -2,6 +2,12 @@
   <div class="card-container">
     <LoadingFallback v-if="!products"></LoadingFallback>
 
+    <!-- <div v-else-if="true" class="submitting-container"> -->
+      <div v-else-if="isSubmittingSwipes" class="submitting-container">
+      <LoadingFallback class="mb-4"></LoadingFallback>
+      <div>Generating beer recommendations tailored to your preferences</div>
+    </div>
+
     <div
       v-else
       class="swipable-card-container"
@@ -66,6 +72,8 @@ const PRODUCTS = [
   },
 ];
 
+const sleep = (n) => new Promise((resolve) => setTimeout(resolve, n));
+
 export default {
   name: 'SwipeCards',
   components: { LoadingFallback, SwipeCard },
@@ -73,6 +81,7 @@ export default {
     return {
       products: null,
       likedProducts: [],
+      isSubmittingSwipes: false,
     };
   },
   async mounted() {
@@ -94,13 +103,18 @@ export default {
 
       this.likedProducts.push(likedProduct);
     },
-    onCompletion() {
-      this.recordLikedProductViews();
+    async onCompletion() {
+      this.isSubmittingSwipes = true;
+
+      await this.recordLikedProductViews();
 
       this.$emit('complete');
     },
-    recordLikedProductViews() {
+    async recordLikedProductViews() {
       this.likedProducts.forEach((product) => AnalyticsHandler.productLiked(this.user, product));
+
+      // allow enough time to pass for personalize to change recommendations based on interactions
+      return await sleep(5000);
     },
   },
   watch: {
@@ -114,7 +128,7 @@ export default {
 <style scoped>
 .card-container {
   position: relative;
-  height: 400px;
+  height: 480px;
 }
 
 .swipable-card-container {
@@ -125,5 +139,12 @@ export default {
   transform: translateY(calc(var(--card-index) * 6px)) scale(calc(1 - 0.01 * var(--card-index)));
   transition: transform 150ms ease-in-out;
   z-index: calc(var(--card-index) * -1);
+}
+
+.submitting-container {
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
