@@ -4,7 +4,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router';
-import { Auth, Logger, Analytics, Interactions, AWSPinpointProvider, AmazonPersonalizeProvider } from 'aws-amplify';
+import { Auth, Logger, Analytics, Interactions, AWSPinpointProvider, AmazonPersonalizeProvider, Geo } from 'aws-amplify';
 import { components } from 'aws-amplify-vue';
 import store from '@/store/store';
 import Amplitude from 'amplitude-js'
@@ -43,20 +43,16 @@ const amplifyConfig = {
       },
     }
   },
-  geo: {
-    AmazonLocationServices: {
+  Geo: {
+    AmazonLocationService: {
       maps: {
         items: {
           [process.env.VUE_APP_LOCATION_RESOURCE_NAME] : { // REQUIRED - Amazon Location Service Map resource name
-            style: "VectorEsriStreets", // REQUIRED - String representing the style of map resource
+            style: "VectorEsriNavigation", // REQUIRED - String representing the style of map resource
           },
         },
         default: process.env.VUE_APP_LOCATION_RESOURCE_NAME, // REQUIRED - Amazon Location Service Map resource name to set as default
       },
-      // search_indices: {
-      //   items: ["XXXXXXXXX"], // REQUIRED - Amazon Location Service Place Index name
-      //   default: "XXXXXXXXX", // REQUIRED - Amazon Location Service Place Index name to set as default
-      // },
       region: process.env.VUE_APP_AWS_REGION, // REQUIRED - Amazon Location Service Region
     },
   }
@@ -111,6 +107,7 @@ else {
 Auth.configure(amplifyConfig);
 Analytics.configure(amplifyConfig);
 Interactions.configure(amplifyConfig);
+Geo.configure(amplifyConfig);
 
 require('dotenv').config()
 

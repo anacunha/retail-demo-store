@@ -6,10 +6,12 @@
 
 <script>
 import * as turf from "@turf/turf";
-import maplibregl from "maplibre-gl";
+// import maplibregl from "maplibre-gl";
 import { Auth } from "aws-amplify";
 import location from "aws-sdk/clients/location";
-import { Signer } from "@aws-amplify/core";
+// import { Signer } from "@aws-amplify/core";
+import { createMap } from "maplibre-gl-js-amplify";
+// import "maplibre-gl/dist/maplibre-gl.css";
 
 export default {
   name: "MapContext",
@@ -100,103 +102,106 @@ export default {
       });
       this.initializeMap();
     },
-    transformRequest(url, resourceType) {
-      if (resourceType === "Style" && !url.includes("://")) {
-        // resolve to an AWS URL
-        url =
-          "https://maps.geo." +
-          process.env.VUE_APP_AWS_REGION +
-          ".amazonaws.com/maps/v0/maps/" +
-          url +
-          "/style-descriptor";
-      }
-      if (url.includes("amazonaws.com")) {
-        // only sign AWS requests (with the signature as part of the query string)
-        return {
-          url: Signer.signUrl(url, {
-            access_key: this.credentials.accessKeyId,
-            secret_key: this.credentials.secretAccessKey,
-            session_token: this.credentials.sessionToken,
-          }),
-        };
-      }
-      // Don't sign
-      return { url: url || "" };
-    },
+    // transformRequest(url, resourceType) {
+    //   if (resourceType === "Style" && !url.includes("://")) {
+    //     // resolve to an AWS URL
+    //     url =
+    //       "https://maps.geo." +
+    //       process.env.VUE_APP_AWS_REGION +
+    //       ".amazonaws.com/maps/v0/maps/" +
+    //       url +
+    //       "/style-descriptor";
+    //   }
+    //   if (url.includes("amazonaws.com")) {
+    //     // only sign AWS requests (with the signature as part of the query string)
+    //     return {
+    //       url: Signer.signUrl(url, {
+    //         access_key: this.credentials.accessKeyId,
+    //         secret_key: this.credentials.secretAccessKey,
+    //         session_token: this.credentials.sessionToken,
+    //       }),
+    //     };
+    //   }
+    //   // Don't sign
+    //   return { url: url || "" };
+    // },
     async initializeMap() {
       if (this.locations && this.locations.length != 0) {
-        this.center = new maplibregl.LngLat(
-          this.locations[0].Longitude,
-          this.locations[0].Latitude
-        );
+        this.center = [this.locations[0].Longitude, this.locations[0].Latitude];
         this.zoom = 9;
       } else {
         // The Venetian Resort
-        this.center = new maplibregl.LngLat(-115.170227, 36.121159);
+        this.center = [-115.170227, 36.121159];
         this.zoom = 18;
       }
 
-      this.map = new maplibregl.Map({
+      // this.map = new maplibregl.Map({
+      //   container: this.container,
+      //   //Specify the centre of the map when it gets rendered
+      //   center: this.center,
+      //   zoom: this.zoom, //Adjust the zoom level
+      //   style: process.env.VUE_APP_LOCATION_RESOURCE_NAME,
+      //   transformRequest: this.transformRequest,
+      // });
+
+      this.map = await createMap({
         container: this.container,
-        //Specify the centre of the map when it gets rendered
         center: this.center,
-        zoom: this.zoom, //Adjust the zoom level
-        style: process.env.VUE_APP_LOCATION_RESOURCE_NAME,
-        transformRequest: this.transformRequest,
+        zoom: this.zoom,
       });
 
       //Zoom in and out button
-      this.map.addControl(new maplibregl.NavigationControl(), "top-left");
+      // this.map.addControl(new maplibregl.NavigationControl(), "top-left");
 
-      //A button that allows the map to show the user's current location
-      this.map.addControl(
-        new maplibregl.GeolocateControl({
-          positionOptions: {
-            enableHighAccuracy: true,
-          },
-          trackUserLocation: true,
-        })
-      );
+      // //A button that allows the map to show the user's current location
+      // this.map.addControl(
+      //   new maplibregl.GeolocateControl({
+      //     positionOptions: {
+      //       enableHighAccuracy: true,
+      //     },
+      //     trackUserLocation: true,
+      //   })
+      // );
 
-      if (this.locations) {
-        this.markers = this.locations.map((location) => {
-          const markerDom = document.createElement('div');
-          markerDom.classList.add('location-marker');
-          markerDom.innerHTML = `
-              <i class="fas fa-map-pin fa-2x"></i>
-            `;
+      // if (this.locations) {
+      //   this.markers = this.locations.map((location) => {
+      //     const markerDom = document.createElement('div');
+      //     markerDom.classList.add('location-marker');
+      //     markerDom.innerHTML = `
+      //         <i class="fas fa-map-pin fa-2x"></i>
+      //       `;
 
-          const marker = new maplibregl.Marker({element: markerDom}).setLngLat([location.Longitude, location.Latitude]);
-          const domContentContainer = document.createElement('div');
-          domContentContainer.innerHTML = `
-            <h1>${location.Name}</h1>
-            <p>${location.Address}</p>
-            <a href="tel:${location.Phone}"><i class="fas fa-phone"></i></a>
-          `;
-          const directionsButton = document.createElement('button');
-          directionsButton.classList.add('directions-button');
-          directionsButton.innerHTML = `<i class="fas fa-directions"></i>`;
-          directionsButton.addEventListener('click', () => this.showDirections());
-          domContentContainer.appendChild(directionsButton);
-          const popup = new maplibregl.Popup().setDOMContent(domContentContainer);
-          popup.on('open', () => this.selectedLocation = location);
-          return marker.setPopup(popup);
-        });
-        this.markers.forEach((marker, i) => {
-          marker.addTo(this.map);
-          this.locations[i].marker = marker;
-        });
-      }
+      //     const marker = new maplibregl.Marker({element: markerDom}).setLngLat([location.Longitude, location.Latitude]);
+      //     const domContentContainer = document.createElement('div');
+      //     domContentContainer.innerHTML = `
+      //       <h1>${location.Name}</h1>
+      //       <p>${location.Address}</p>
+      //       <a href="tel:${location.Phone}"><i class="fas fa-phone"></i></a>
+      //     `;
+      //     const directionsButton = document.createElement('button');
+      //     directionsButton.classList.add('directions-button');
+      //     directionsButton.innerHTML = `<i class="fas fa-directions"></i>`;
+      //     directionsButton.addEventListener('click', () => this.showDirections());
+      //     domContentContainer.appendChild(directionsButton);
+      //     const popup = new maplibregl.Popup().setDOMContent(domContentContainer);
+      //     popup.on('open', () => this.selectedLocation = location);
+      //     return marker.setPopup(popup);
+      //   });
+      //   this.markers.forEach((marker, i) => {
+      //     marker.addTo(this.map);
+      //     this.locations[i].marker = marker;
+      //   });
+      // }
 
-      if (this.currentLocation.latitude && this.currentLocation.longitude) {
-        const markerDom = document.createElement('div');
-        markerDom.classList.add('current-location-marker');
-        markerDom.innerHTML = `
-            <i class="fas fa-circle"></i>
-          `;
-        const marker = new maplibregl.Marker({element: markerDom}).setLngLat([this.currentLocation.longitude, this.currentLocation.latitude]);
-        marker.addTo(this.map);
-      }
+      // if (this.currentLocation.latitude && this.currentLocation.longitude) {
+      //   const markerDom = document.createElement('div');
+      //   markerDom.classList.add('current-location-marker');
+      //   markerDom.innerHTML = `
+      //       <i class="fas fa-circle"></i>
+      //     `;
+      //   const marker = new maplibregl.Marker({element: markerDom}).setLngLat([this.currentLocation.longitude, this.currentLocation.latitude]);
+      //   marker.addTo(this.map);
+      // }
 
       const theMap = this.map;
       const theGeojson = this.geojson;
