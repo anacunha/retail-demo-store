@@ -195,8 +195,6 @@ export default {
           filter: ["in", "$type", "LineString"],
         });
       });
-
-
     },
     async setViewport(locationToToggle) {
       this.hideAllPopups(locationToToggle);
@@ -234,11 +232,7 @@ export default {
       this.distance = routeData.Summary.Distance;
       this.duration = routeData.Summary.DurationSeconds;
 
-      console.log('distance/duration', this.distance, this.duration)
-
       const route = await this.makeLegFeatures(routeData.Legs);
-
-      console.log("makeLegFeatures route", route);
 
       this.geojson = {
         'type': 'FeatureCollection',
