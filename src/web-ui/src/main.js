@@ -43,7 +43,7 @@ const amplifyConfig = {
       },
     }
   },
-  Geo: {
+  geo: {
     AmazonLocationService: {
       maps: {
         items: {
