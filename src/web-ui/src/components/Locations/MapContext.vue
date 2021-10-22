@@ -8,8 +8,10 @@
 import * as turf from "@turf/turf";
 import maplibregl from "maplibre-gl";
 import { Auth } from "aws-amplify";
-import location from "aws-sdk/clients/location";
-import { Signer } from "@aws-amplify/core";
+import Location from "aws-sdk/clients/location";
+import { createMap } from "maplibre-gl-js-amplify";
+
+const WYNN_LAS_VEGAS_COORDINATES = [-115.164833, 36.127106];
 
 export default {
   name: "MapContext",
@@ -94,55 +96,26 @@ export default {
     async loadCredentialsAndMap() {
       this.credentials = await Auth.currentCredentials();
 
-      this.service = new location({
+      this.service = new Location({
         credentials: this.credentials,
         region: process.env.VUE_APP_AWS_REGION,
       });
       this.initializeMap();
     },
-    transformRequest(url, resourceType) {
-      if (resourceType === "Style" && !url.includes("://")) {
-        // resolve to an AWS URL
-        url =
-          "https://maps.geo." +
-          process.env.VUE_APP_AWS_REGION +
-          ".amazonaws.com/maps/v0/maps/" +
-          url +
-          "/style-descriptor";
-      }
-      if (url.includes("amazonaws.com")) {
-        // only sign AWS requests (with the signature as part of the query string)
-        return {
-          url: Signer.signUrl(url, {
-            access_key: this.credentials.accessKeyId,
-            secret_key: this.credentials.secretAccessKey,
-            session_token: this.credentials.sessionToken,
-          }),
-        };
-      }
-      // Don't sign
-      return { url: url || "" };
-    },
     async initializeMap() {
       if (this.locations && this.locations.length != 0) {
-        this.center = new maplibregl.LngLat(
-          this.locations[0].Longitude,
-          this.locations[0].Latitude
-        );
+        this.center = [this.locations[0].Longitude, this.locations[0].Latitude];
         this.zoom = 9;
       } else {
-        // The Venetian Resort
-        this.center = new maplibregl.LngLat(-115.170227, 36.121159);
+        // The Wynn Las Vegas
+        this.center = WYNN_LAS_VEGAS_COORDINATES;
         this.zoom = 18;
       }
 
-      this.map = new maplibregl.Map({
+      this.map = await createMap({
         container: this.container,
-        //Specify the centre of the map when it gets rendered
         center: this.center,
-        zoom: this.zoom, //Adjust the zoom level
-        style: process.env.VUE_APP_LOCATION_RESOURCE_NAME,
-        transformRequest: this.transformRequest,
+        zoom: this.zoom,
       });
 
       //Zoom in and out button
@@ -222,8 +195,6 @@ export default {
           filter: ["in", "$type", "LineString"],
         });
       });
-
-
     },
     async setViewport(locationToToggle) {
       this.hideAllPopups(locationToToggle);
@@ -261,11 +232,7 @@ export default {
       this.distance = routeData.Summary.Distance;
       this.duration = routeData.Summary.DurationSeconds;
 
-      console.log('distance/duration', this.distance, this.duration)
-
       const route = await this.makeLegFeatures(routeData.Legs);
-
-      console.log("makeLegFeatures route", route);
 
       this.geojson = {
         'type': 'FeatureCollection',
