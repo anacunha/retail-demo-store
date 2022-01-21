@@ -117,7 +117,7 @@ class UserPool:
 
 class User:
   def __init__(self, id_string=None):
-    if(id_string != None):
+    if(id_string is not None):
       self.id = id_string
     else:
       self.id = str(random.randint(1000000000, 99999999999))
@@ -181,7 +181,7 @@ class User:
     ]
 
   def set_traits(self, traits):
-    if traits != None:
+    if traits is not None:
       for (k,v) in traits.items():
         self.traits[k] = random.choice(v)
 
