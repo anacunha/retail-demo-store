@@ -228,7 +228,7 @@ def delete_all_channels(event, _):
 
     ssm_client.put_parameter(
         Name=SSM_VIDEO_CHANNEL_MAP_PARAM,
-        Value="NONE" if len(new_video_channel_map)==0 else json.dumps(new_video_channel_map),
+        Value="NONE" if not new_video_channel_map else json.dumps(new_video_channel_map),
         Type='String',
         Overwrite=True
     )

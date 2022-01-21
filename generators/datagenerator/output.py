@@ -57,7 +57,7 @@ class OutputWriter:
           batch.append(event)
         event = formatter.amplitude_event()
         batch.append(event)
-      if len(batch) > 0:
+      if batch:
         response = sender.send_batch(funnel.platform, batch, debug)
         if response != None and response.status_code > 200:
           print(f'Error sending to Amplitude: {response.text}')
@@ -78,7 +78,7 @@ class OutputWriter:
           batch.append(event)
         event = formatter.segment_track()
         batch.append(event)
-      if len(batch) > 0:
+      if batch:
         response = sender.send_batch(funnel.platform, batch, debug)
         if response != None and response.status_code > 200:
           print(f'Error sending to Segment: {response.text}')

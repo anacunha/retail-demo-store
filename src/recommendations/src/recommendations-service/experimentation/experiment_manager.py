@@ -48,7 +48,7 @@ class ExperimentManager:
                 if feature in config.features_map:
                     optimizely_feature = config.features_map[feature]
                     experiment_keys = optimizely_feature.experiments_map.keys()
-                    if len(experiment_keys) > 0:
+                    if experiment_keys:
                         experiment_key = list(experiment_keys)[0]
                         experiment = optimizely_feature.experiments_map[experiment_key]
                         data = {'id': experiment.id,

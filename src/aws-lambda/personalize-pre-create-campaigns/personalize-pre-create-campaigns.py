@@ -481,7 +481,7 @@ def delete_event_rule(rule_name):
     try:
         response = cw_events.list_targets_by_rule(Rule = rule_name)
 
-        if len(response['Targets']) > 0:
+        if response['Targets']:
             logger.info('Removing event targets from rule {}'.format(rule_name))
 
             target_ids = []
@@ -904,7 +904,7 @@ def update():
 
     schemas = {}
 
-    if len(desired_dataset_group_names) > 0:
+    if desired_dataset_group_names:
         #  We want to create some dataset groups so we'll be needing the schema and the role
         role_arn = create_personalize_role(role_name)
         if not role_arn:

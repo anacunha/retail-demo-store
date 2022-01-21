@@ -70,7 +70,7 @@ def lookup_user(identity_id):
 
     if response.ok:
         user_check = response.json()
-        if user_check.get('id') and len(user_check.get('id')) > 0:
+        if user_check.get('id'):
             user = user_check
             logger.debug('Found user: ' + json.dumps(user, indent = 2))
         else:
@@ -106,7 +106,7 @@ def recommend_products(intent_request):
         if not user_name:
             user_name = "there"
 
-        if recommendations and len(recommendations) > 0:
+        if recommendations:
             attachments = []
 
             for recommendation in recommendations:

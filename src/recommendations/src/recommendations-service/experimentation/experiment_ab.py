@@ -90,7 +90,7 @@ class ABExperiment(Experiment):
         The same variation will be returned for given user for this experiment no 
         matter how many times this method is called.
         """
-        if len(self.variations) == 0:
+        if not self.variations:
             return -1
 
         hash_str = f'experiments.{self.feature}.{self.name}.{user_id}'.encode('ascii')

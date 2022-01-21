@@ -96,7 +96,7 @@ def elasticsearch_create(event,_):
                     es.bulk(index = INDEX_NAME, body = bulk_data)
                     bulk_data = []
 
-            if len(bulk_data) > 0:
+            if bulk_data:
                 es.bulk(index = INDEX_NAME, body = bulk_data)
 
         logger.info('Products successfully indexed!')

@@ -73,7 +73,7 @@ class UserPool:
       self.users.append(user)
 
   def user(self, select_active=False):
-    if len(self.users) == 0:
+    if not self.users:
       self.grow_pool(1000)
       self.save(self.file)  # Cache the whole pool back to the file
     if select_active and len(self.active) > 0:

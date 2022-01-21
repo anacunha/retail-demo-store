@@ -262,9 +262,9 @@ def generate_interactions(out_interactions_filename, users_df, products_df):
 
             num_interaction_sets_to_insert = 1
             prodcnts = list(interaction_product_counts.values())
-            prodcnts_max = max(prodcnts) if len(prodcnts)>0 else 0
-            prodcnts_min = min(prodcnts) if len(prodcnts) > 0 else 0
-            prodcnts_avg = sum(prodcnts)/len(prodcnts) if len(prodcnts)>0 else 0
+            prodcnts_max = max(prodcnts) if prodcnts else 0
+            prodcnts_min = min(prodcnts) if prodcnts else 0
+            prodcnts_avg = sum(prodcnts)/len(prodcnts) if prodcnts else 0
             if interaction_product_counts[product.id] * 2 < prodcnts_max:
                 num_interaction_sets_to_insert += 1
             if interaction_product_counts[product.id] < prodcnts_avg:

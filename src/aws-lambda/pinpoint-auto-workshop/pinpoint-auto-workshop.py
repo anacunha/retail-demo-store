@@ -504,7 +504,7 @@ def create_campaign(application_id,
         message_config = {}
         template_config = {}
         if email_from is not None and email_template_name is not None:
-            if len(email_from) > 0:
+            if email_from:
                 message_config["EmailMessage"] = {"FromAddress": email_from}
                 template_config["EmailTemplate"] = {"Name": email_template_name}
             else:
@@ -556,7 +556,7 @@ def delete_event_rule(rule_name):
     try:
         response = cw_events.list_targets_by_rule(Rule = rule_name)
 
-        if len(response['Targets']) > 0:
+        if response['Targets']:
             logger.info('Removing event targets from rule {}'.format(rule_name))
 
             target_ids = []

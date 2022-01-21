@@ -85,7 +85,7 @@ def get_user_opted_phone_number(shopper_user_id):
     endpoints = [endpoint_item for endpoint_item in endpoints['EndpointsResponse']['Item'] if
                  'ChannelType' in endpoint_item and endpoint_item['ChannelType'] == 'SMS' and
                  endpoint_item['EndpointStatus'].upper() == 'ACTIVE' and endpoint_item['OptOut'] == 'NONE']
-    if len(endpoints) > 0:
+    if endpoints:
         if len(endpoints) > 1:
             logger.warning(f'User has more than 1 SMS endpoint: {endpoints}')
         return endpoints[0]['Address']
@@ -137,7 +137,7 @@ def pinpoint_fire_location_approached_event(shopper_user_id, event_timestamp_iso
             else:
                 removed.append(endpoint)
                 logger.info(f"Dropping endpoint with Id {endpoint['Id']}")
-        if len(removed) > 0:
+        if removed:
             logger.info(f"Dropped {len(removed)} endpoints.")
         endpoints = []
         for endpointlist in kept.values():
@@ -161,7 +161,7 @@ def pinpoint_fire_location_approached_event(shopper_user_id, event_timestamp_iso
                                         'Timestamp': timestamp}}}  # required
               for endpoint_id in endpoint_ids}
 
-    if len(events) > 0:
+    if events:
         logger.info(f'Firing Pinpoint events: {events}')
         pinpoint.put_events(
             ApplicationId=pinpoint_app_id,
@@ -677,7 +677,7 @@ def handle_geofence_enter(event):
         username = userid_to_username(shopper_user_id, users_service)
         orders = get_orders_with_details(username, orders_service, products_service)
 
-        if len(orders) > 0:
+        if orders:
             logger.info(f'User {shopper_user_id}/{username} (name {first_name} {last_name}) has waiting orders')
             send_pickup_email(to_email, orders)
             send_pickup_sms(orders)  # phone number is recorded against the order

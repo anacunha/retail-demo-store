@@ -254,8 +254,8 @@ def stream(s3_video_key, ivs_channel_arn, channel_id):
                     send_text = ''
                     while True:
                         text = next(lines).strip()
-                        if len(text) == 0: break
-                        if len(send_text)>0: send_text+='\n'
+                        if not text: break
+                        if send_text: send_text+='\n'
                         send_text += text
                     put_ivs_metadata(ivs_channel_arn, send_text)
                 except StopIteration:
