@@ -88,9 +88,9 @@ class UserPool:
     all_users.extend(self.users)
     all_users.extend(self.active)
     json_data = json.dumps(all_users, default=lambda x: x.__dict__)
-    f = gzip.open(file, 'wt', encoding='utf-8')
-    f.write(json_data)
-    f.close()
+    with gzip.open(file, 'wt', encoding='utf-8') as f:
+      f.write(json_data)
+      f.close()
 
   @classmethod
   def from_file(cls, filename):

@@ -37,11 +37,11 @@ class OutputWriter:
 
   def to_file(self, file_name):
     # Write to the specified file using the FileEvent output formatter
-    f = open(file_name, 'w')
-    for funnel in self.sessions:
-      for formatter in funnel:
-        event = formatter.file_event()
-        f.write(event.str())
+    with open(file_name, 'w') as f:
+      for funnel in self.sessions:
+        for formatter in funnel:
+          event = formatter.file_event()
+          f.write(event.str())
   
   def to_amplitude(self, config, debug=False):
     sender = AmplitudeSender(config)

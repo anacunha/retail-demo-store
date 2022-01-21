@@ -7,8 +7,8 @@ from collections import UserList
 class RDSCatalog(UserList):
   def __init__(self, file):
     self.data = []
-    f = open(file)
-    self.data = yaml.safe_load(f)
+    with open(file) as f:
+      self.data = yaml.safe_load(f)
 
   def subcategory_sample(self, categories):
     return list(filter(lambda item: item['category'] in categories, self.data))
