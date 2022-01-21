@@ -20,7 +20,7 @@ import json
 import boto3
 import logging
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from botocore.exceptions import ClientError
 from collections import defaultdict
 import time
@@ -498,7 +498,7 @@ def create_campaign(application_id,
     if not campaign_config:
         logger.info(f'{campaign_name} campaign does not exist; creating')
 
-        campaign_start = datetime.utcnow() + timedelta(minutes=16)
+        campaign_start = datetime.now(timezone.utc) + timedelta(minutes=16)
         campaign_end = campaign_start + timedelta(days=180)
 
         message_config = {}

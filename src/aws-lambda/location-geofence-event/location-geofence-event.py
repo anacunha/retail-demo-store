@@ -9,7 +9,7 @@ import uuid
 import os
 import json
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from collections import defaultdict
 
 # The event type we send to Pinpoint to initiate campaigns
@@ -148,7 +148,7 @@ def pinpoint_fire_location_approached_event(shopper_user_id, event_timestamp_iso
                     ('ChannelType' in endpoint and endpoint['ChannelType'] in restrict_to_endpoint_types)]
 
     if event_timestamp_iso is None:
-        timestamp = datetime.now().isoformat()
+        timestamp = datetime.now(timezone.utc).isoformat()
     else:
         timestamp = event_timestamp_iso
 
