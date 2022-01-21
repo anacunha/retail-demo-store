@@ -191,15 +191,15 @@ def get_products(feature, user_id, current_item_id, num_results, campaign_arn_pa
 
             if 'experiment' in item and 'url' in product:
                 # Append the experiment correlation ID to the product URL so it gets tracked if used by client.
-                product_url = product.get('url')
-                if '?' in product_url:
-                    product_url += '&'
+                product_url = [product.get('url')]
+                if '?' in product.get('url'):
+                    product_url.append('&')
                 else:
-                    product_url += '?'
+                    product_url.append('?')
 
-                product_url += 'exp=' + item['experiment']['correlationId']
+                product_url.append('exp=').append(item['experiment']['correlationId'])
 
-                product['url'] = product_url
+                product['url'] = ''.join(product_url)
 
             item.update({
                 'product': product
@@ -480,15 +480,15 @@ def get_ranking(user_id, items, feature,
 
             if 'url' in item:
                 # Append the experiment correlation ID to the product URL so it gets tracked if used by client.
-                product_url = item.get('url')
-                if '?' in product_url:
-                    product_url += '&'
+                product_url = [item.get('url')]
+                if '?' in item.get('url'):
+                    product_url.append('&')
                 else:
-                    product_url += '?'
+                    product_url.append('?')
 
-                product_url += 'exp=' + ranked_item['experiment']['correlationId']
+                product_url.append('exp=').append(ranked_item['experiment']['correlationId'])
 
-                item['url'] = product_url
+                item['url'] = ''.join(product_url)
 
         response_items.append(item)
 
@@ -613,15 +613,15 @@ def get_top_n(user_id, items, feature, top_n,
 
             if 'url' in item:
                 # Append the experiment correlation ID to the product URL so it gets tracked if used by client.
-                product_url = item.get('url')
-                if '?' in product_url:
-                    product_url += '&'
+                product_url = [item.get('url')]
+                if '?' in item.get('url'):
+                    product_url.append('&')
                 else:
-                    product_url += '?'
+                    product_url.append('?')
 
-                product_url += 'exp=' + top_item['experiment']['correlationId']
+                product_url.append('exp=').append(top_item['experiment']['correlationId'])
 
-                item['url'] = product_url
+                item['url'] = ''.join(product_url)
 
         response_items.append(item)
 

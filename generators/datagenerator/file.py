@@ -8,11 +8,11 @@ class FileEvent:
     self.user_id = user.id
     self.anonymous_id = user.get_platform_data(platform)['anonymous_id']
     self.platform = platform
-    self.traits = ''
+    self.traits = []
 
     if len(user.traits.items()) > 0:
       for (k,v) in user.traits.items():
-        self.traits += f',{v}'
+        self.traits.append(f',{v}')
 
   def str(self):
     return self.__repr__()
@@ -20,6 +20,6 @@ class FileEvent:
   def __repr__(self):
     output = f'{self.event},{self.timestamp},{self.user_id},{self.anonymous_id},{self.platform}'
     if self.traits:
-      output += self.traits
+      output += ''.join(self.traits)
     output += f'\n'
     return output

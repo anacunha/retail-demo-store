@@ -442,20 +442,20 @@ def send_pickup_email(to_email, orders):
     html_intro_text = intro_text.replace('\n', '</p><p>')
 
     # Build the order list in text and HTML at the same time.
-    html_orders = "<ul>"
-    text_orders = ""
+    html_orders = ["<ul>"]
+    text_orders = [""]
     for order in orders:
         ordername = f"Order #{order['id']}"
-        html_orders += f"\n  <li>{ordername}:<ul>"
-        text_orders += f'\n{ordername}:'
+        html_orders.append(f"\n  <li>{ordername}:<ul>")
+        text_orders.append(f'\n{ordername}:')
         for item in order['items']:
             img_url = item["details"]["image_url"]
             url = item["details"]["url"]
             name = item["details"]["name"]
-            html_orders += F'\n    <li><a href="{url}">{name}</a> - ${item["price"]}<br/><a href="{url}"><img src="{img_url}" width="100px"></a></br></a></li>'
-            text_orders += f'\n  - {item["details"]["name"]}: {item["details"]["url"]}'
-        html_orders += "\n  </ul></li>"
-    html_orders += "\n</ul>"
+            html_orders.append(F'\n    <li><a href="{url}">{name}</a> - ${item["price"]}<br/><a href="{url}"><img src="{img_url}" width="100px"></a></br></a></li>')
+            text_orders.append(f'\n  - {item["details"]["name"]}: {item["details"]["url"]}')
+        html_orders.append("\n  </ul></li>")
+    html_orders.append("\n</ul>")
 
     # Build HTML message
     html = f"""
@@ -464,7 +464,7 @@ def send_pickup_email(to_email, orders):
         <h1>{heading}</h1>
         <h2>{subheading}</h2>
         <p>{html_intro_text}
-        {html_orders}
+        {''.join(html_orders)}
         <p><a href="{os.environ['WebURL']}">Thank you for shopping!</a></p>
     </body>
     """
@@ -474,7 +474,7 @@ def send_pickup_email(to_email, orders):
 {heading}
 {subheading}
 {intro_text}
-{text_orders}
+{''.join(text_orders)}
 Thank you for shopping!
 {os.environ['WebURL']}
     """
