@@ -90,7 +90,7 @@ class ExperimentManager:
         """ Looks up an experiment by its ID """
         table = self.__get_table()
         if not table:
-            raise Exception('Experiment strategy table has not been configured')
+            raise SystemError('Experiment strategy table has not been configured')
 
         experiment = None
 

@@ -35,7 +35,7 @@ class Experiment(ABC):
     def track_conversion(self, user_id, variation_index, result_rank):
         """ Call this method to track a conversion/outcome for an experiment """
         if variation_index < 0 or variation_index >= len(self.variations):
-            raise Exception('variation_index is out of bounds')
+            raise ValueError('variation_index is out of bounds')
 
         log.debug(f'Incrementing conversion count for variation {variation_index}, rank {result_rank}, based on user {user_id}')
 

@@ -18,9 +18,9 @@ class ABExperiment(Experiment):
 
     def get_items(self, user_id, current_item_id=None, item_list=None, num_results=10, tracker=None, context=None):
         if not user_id:
-            raise Exception('user_id is required')
+            raise ValueError('user_id is required')
         if len(self.variations) < 2:
-            raise Exception(f'Experiment {self.id} does not have 2 or more variations')
+            raise ValueError(f'Experiment {self.id} does not have 2 or more variations')
 
         # Determine which variation to use for the user.
         variation_idx = self.calculate_variation_index(user_id)

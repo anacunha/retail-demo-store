@@ -22,7 +22,7 @@ personalize_events = boto3.client('personalize-events')
 
 if not 'personalize_tracking_id' in os.environ or os.environ['personalize_tracking_id'] == '':
     logger.error("Missing personalize_tracking_id environment variable in lambda configuration.")
-    raise Exception('personalize_tracking_id not configured as environment variable')
+    raise SystemError('personalize_tracking_id not configured as environment variable')
 else:
     personalize_tracking_id = os.environ['personalize_tracking_id'] 
 

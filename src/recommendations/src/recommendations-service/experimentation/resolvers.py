@@ -106,7 +106,7 @@ class DefaultProductResolver(Resolver):
                     if len(items) >= num_results:
                         break
         else:
-            raise Exception(f'Error calling products service: {response.status_code}: {response.reason}')
+            raise SystemError(f'Error calling products service: {response.status_code}: {response.reason}')
 
         return items
 
@@ -146,7 +146,7 @@ class SearchSimilarProductsResolver(Resolver):
         """
         product_id = kwargs.get('product_id') 
         if not product_id: 
-            raise Exception('product_id is required') 
+            raise ValueError('product_id is required')
  
         num_results = 10 
         if kwargs.get('num_results'): 
@@ -163,7 +163,7 @@ class SearchSimilarProductsResolver(Resolver):
             if len(items) > num_results:
                 items = items[:num_results]
         else: 
-            raise Exception(f'Error calling products service: {response.status_code}: {response.reason}') 
+            raise SystemError(f'Error calling products service: {response.status_code}: {response.reason}')
  
         return items 
 
@@ -176,7 +176,7 @@ class PersonalizeRecommendationsResolver(Resolver):
         # All we need to initialize this resolver is the ARN for the Personalize campaign
         self.campaign_arn = params.get('campaign_arn')
         if not self.campaign_arn:
-            raise Exception('campaign_arn required for PersonalizeRecommendationsResolver')
+            raise ValueError('campaign_arn required for PersonalizeRecommendationsResolver')
 
         # Optionally support filter specified at resolver creation.
         self.filter_arn = params.get('filter_arn')
@@ -200,7 +200,7 @@ class PersonalizeRecommendationsResolver(Resolver):
         filter_arn = kwargs.get('filter_arn')
 
         if not user_id and not item_id:
-            raise Exception('user_id or product_id is required')
+            raise ValueError('user_id or product_id is required')
 
         if user_id:
             params['userId'] = user_id
@@ -235,7 +235,7 @@ class HttpResolver(Resolver):
     def __init__(self, **params):
         self.base_url = params.get('base_url')
         if not self.base_url:
-            raise Exception('base_url required for HttpResolver')
+            raise ValueError('base_url required for HttpResolver')
         self.user_id_parameter_name = params.get('user_id_parameter_name', 'userId')
         self.item_id_parameter_name = params.get('item_id_parameter_name', 'itemId')
         self.num_results_parameter_name = params.get('num_results_parameter_name', 'numResults')
@@ -279,7 +279,7 @@ class HttpResolver(Resolver):
                 if len(items) >= num_results:
                     break
         else:
-            raise Exception(f'Error calling HTTP endpoint service: {response.status_code}: {response.reason}')
+            raise SystemError(f'Error calling HTTP endpoint service: {response.status_code}: {response.reason}')
 
         return items
 
@@ -295,7 +295,7 @@ class PersonalizeRankingResolver(Resolver):
         # All we need to initialize this resolver is the ARN for the Personalize campaign
         self.campaign_arn = params.get('campaign_arn')
         if not self.campaign_arn:
-            raise Exception('campaign_arn required for PersonalizeRankingResolver')
+            raise ValueError('campaign_arn required for PersonalizeRankingResolver')
 
         # Optionally support filter specified at resolver creation.
         self.filter_arn = params.get('filter_arn')
@@ -313,10 +313,10 @@ class PersonalizeRankingResolver(Resolver):
         input_list = kwargs.get('product_list')
 
         if not user_id:
-            raise Exception('user_id is required')
+            raise ValueError('user_id is required')
 
         if not input_list:
-            raise Exception('product_list is required')
+            raise ValueError('product_list is required')
 
         params = {
             'campaignArn': self.campaign_arn,
@@ -364,7 +364,7 @@ class RankingProductsNoOpResolver(Resolver):
         input_list = kwargs.get('product_list')
 
         if not input_list:
-            raise Exception('product_list is required')
+            raise ValueError('product_list is required')
 
         # Reformat response as an array of dict with 'itemId' key to match what Personalize would return.
         echo_items = [{'itemId': item_id} for item_id in input_list]
@@ -393,7 +393,7 @@ class PersonalizeContextComparePickResolver(Resolver):
         top_n = kwargs.get('num_results')
 
         if top_n is None:
-            raise Exception('num_results is required')
+            raise ValueError('num_results is required')
 
         log.debug('PersonalizeContextComparePickResolver - comparing personalized rankings...')
         with_ranked = self.with_resolver.get_items(**kwargs)
@@ -428,10 +428,10 @@ class RandomPickResolver(Resolver):
         top_n = kwargs.get('num_results')
 
         if not top_n:
-            raise Exception('num_results is required')
+            raise ValueError('num_results is required')
 
         if not input_list:
-            raise Exception('product_list is required')
+            raise ValueError('product_list is required')
 
         ranked_items = input_list.copy()
         shuffle(ranked_items)

@@ -20,12 +20,12 @@ logger.setLevel(logging.INFO)
 
 # Check that the Segment env variables are set correctly
 if not 'segment_personas_write_key' in os.environ or os.environ['segment_personas_write_key'] == '':
-    raise Exception('segment_personas_write_key is null or not defined.')
+    raise SystemError('segment_personas_write_key is null or not defined.')
 else:
     analytics.write_key = os.environ['segment_personas_write_key']
 
 if not 'recommendations_service_url' in os.environ or os.environ['recommendations_service_url'] == '':
-    raise Exception('recommendations_service_url not configured as environment variable')
+    raise SystemError('recommendations_service_url not configured as environment variable')
 else:
     recommendations_service_url = os.environ['recommendations_service_url']
 
