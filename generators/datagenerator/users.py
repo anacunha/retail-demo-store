@@ -76,7 +76,7 @@ class UserPool:
     if not self.users:
       self.grow_pool(1000)
       self.save(self.file)  # Cache the whole pool back to the file
-    if select_active and len(self.active) > 0:
+    if select_active and self.active:
       user = random.choice(self.active)
     else:
       user = self.users.pop(random.randrange(len(self.users)))

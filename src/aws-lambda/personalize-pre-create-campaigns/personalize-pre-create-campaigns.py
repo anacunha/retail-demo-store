@@ -1075,10 +1075,10 @@ def update():
         tracker_config = trainstep_config['dataset_groups'][dataset_group_name]['tracker']
         if tracker_config:
             list_event_trackers_response = personalize.list_event_trackers(datasetGroupArn=dataset_group_arn)
-            if len(list_event_trackers_response['eventTrackers']) == 0 and all_created:
+            if not list_event_trackers_response['eventTrackers'] and all_created:
 
                 # Either hasn't been created yet or isn't active yet.
-                if len(list_event_trackers_response['eventTrackers']) == 0:
+                if not list_event_trackers_response['eventTrackers']:
                     logger.info('Event Tracker does not exist; creating')
                     event_tracker = personalize.create_event_tracker(
                         datasetGroupArn=dataset_group_arn,
@@ -1124,7 +1124,7 @@ def update():
                         dataset_group_arn=dataset_group_arn,
                         solution_arn=solution['solutionArn'])
 
-            if len(list_solutions_response['solutions'])>0:
+            if list_solutions_response['solutions']:
                 logger.info(f"We do not need this dataset group {dataset_group_arn} but it still has solutions.")
             else:
                 logger.info(f"We do not need this dataset group {dataset_group_arn}. Let us take it down.")
@@ -1137,7 +1137,7 @@ def update():
                         if delete_dataset_group(dataset_group_arn):
                             logger.info('DatasetGroup fully deleted')
 
-    if len(desired_dataset_group_names) == 0:
+    if not desired_dataset_group_names:
         all_deleted = all_deleted and delete_personalize_schemas(train_state['schema'])
         all_deleted = all_deleted and delete_personalize_role()
 
