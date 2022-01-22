@@ -325,9 +325,7 @@ def index():
 
 @app.route('/stream_details')
 def streams():
-    response_data = []
-    for value in stream_details.values():
-        response_data.append(value)
+    response_data = [value for value in stream_details.values()]
     response = {
         "streams": response_data
     }

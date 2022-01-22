@@ -42,9 +42,7 @@ def build_response_card_attachment(title, subtitle, image_url, link_url, options
     """
     buttons = None
     if options is not None:
-        buttons = []
-        for i in range(min(5, len(options))):
-            buttons.append(options[i])
+        buttons = [options[i] for i in range(min(5, len(options)))]
 
     if len(title) > 80:
         title = title[:77] + '...'

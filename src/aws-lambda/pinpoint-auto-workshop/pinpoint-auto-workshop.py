@@ -559,10 +559,7 @@ def delete_event_rule(rule_name):
         if response['Targets']:
             logger.info('Removing event targets from rule {}'.format(rule_name))
 
-            target_ids = []
-
-            for target in response['Targets']:
-                target_ids.append(target['Id'])
+            target_ids = [target['Id'] for target in response['Targets']]
 
             response = cw_events.remove_targets(
                 Rule = rule_name,

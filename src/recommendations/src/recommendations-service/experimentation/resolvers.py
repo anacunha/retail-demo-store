@@ -367,10 +367,7 @@ class RankingProductsNoOpResolver(Resolver):
             raise Exception('product_list is required')
 
         # Reformat response as an array of dict with 'itemId' key to match what Personalize would return.
-        echo_items = []
-        for item_id in input_list:
-            echo_items.append({'itemId': item_id})
-
+        echo_items = [{'itemId': item_id} for item_id in input_list]
         return echo_items
 
 
@@ -440,10 +437,7 @@ class RandomPickResolver(Resolver):
         shuffle(ranked_items)
         ranked_items = ranked_items[:top_n]
 
-        echo_items = []
-        for item_id in ranked_items:
-            echo_items.append({'itemId': item_id})
-
+        echo_items = [{'itemId': item_id} for item_id in ranked_items]
         return echo_items
 
 

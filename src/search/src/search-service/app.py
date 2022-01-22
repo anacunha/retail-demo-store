@@ -123,12 +123,7 @@ def searchProducts():
 
         app.logger.debug(json.dumps(results))
 
-        found_items = []
-
-        for item in results['hits']['hits']:
-            found_items.append({
-                'itemId': item['_id']
-            })
+        found_items = [{'itemId': item['_id']} for item in results['hits']['hits']]
         return json.dumps(found_items)
 
     except Exception as e:
@@ -162,12 +157,7 @@ def similarProducts():
 
         app.logger.debug(json.dumps(results))
 
-        found_items = []
-
-        for item in results['hits']['hits']:
-            found_items.append({
-                'itemId': item['_id']
-            })
+        found_items = [{'itemId': item['_id']} for item in results['hits']['hits']]
         return json.dumps(found_items)
 
     except Exception as e:

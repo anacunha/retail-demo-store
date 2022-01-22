@@ -25,10 +25,7 @@ class Experiment(ABC):
         self.status = data['status']
         self.type = data['type']
 
-        self.variations = []
-
-        for v in data['variations']:
-            self.variations.append(Variation(**v))
+        self.variations = [Variation(**v) for v in data['variations']]
 
     @abstractmethod
     def get_items(self, user_id, current_item_id=None, item_list=None, num_results=10, tracker=None, context=None):
