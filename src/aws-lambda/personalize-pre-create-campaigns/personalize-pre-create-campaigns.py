@@ -320,7 +320,7 @@ def create_import_job(job_name, dataset_arn, account_id, region, data_location, 
     import_job_exists=False
     response=str(personalize.list_dataset_import_jobs(datasetArn = dataset_arn))
     logger.info(response)
-    if response.find(job_name) != -1:
+    if job_name in response:
         logger.info("Dataset import job "+job_name+" already exists, not creating")
         import_job_exists = True
         import_job_arn="arn:aws:personalize:"+region+":"+account_id+":dataset-import-job/"+job_name
