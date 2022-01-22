@@ -93,8 +93,8 @@ def create_email_template(template_name, template_fname_root, subject, descripti
         except pinpoint.exceptions.BadRequestException as e:
             try:
                 delete_response = pinpoint.delete_email_template(TemplateName=template_name)
-            except:
-                pass
+            except e:
+                logging.exception('Exception: %s', e)
             backoff_seconds = 30
             logger.info(f"Waiting for old template to delete: {template_name} - waiting {backoff_seconds} seconds")
             time.sleep(backoff_seconds)
